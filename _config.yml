@@ -29,6 +29,7 @@ domain: jonkap.com
 url: "https://jonkap.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username: jekyll
+permalink: /:title:output_ext
 
 # Build settings
 theme: minima
