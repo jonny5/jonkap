@@ -21,7 +21,7 @@
 title: Jon Kaplan's Blog
 email: jonwiththewind@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Musings and thoughts on travel, meditation, and hopefully some humor
+  Thoughts on travel, meditation, and hopefully some humor
 baseurl: "" # the subpath of your site, e.g. /blog
 domain: jonkap.com
 url: "https://jonkap.com" # the base hostname & protocol for your site, e.g. http://example.com
