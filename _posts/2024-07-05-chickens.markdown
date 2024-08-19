@@ -1,0 +1,8 @@
+---
+layout: post
+title: Chickens
+date: 2024-08-16 08:46:35 -0700
+categories: elkenmist
+---
+
+<iframe width="600" height="400" src="https://www.youtube.com/embed/QhMo4WlBmGM" title="Werner Herzog on Chickens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

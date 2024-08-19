@@ -1,0 +1,12 @@
+.video-container {
+  width: 100%;
+  max-width: 640px; /* This matches the width you set in the video tag */
+  margin: 0 auto; /* This centers the container if it's narrower than its parent */
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block; /* This removes any unwanted space below the video */
+}
