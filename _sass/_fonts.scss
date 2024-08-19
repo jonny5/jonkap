@@ -1,0 +1,247 @@
+/* Variable Fonts */
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("fonts/sourceserif/SourceSerif4-VariableFont_opsz,wght.ttf")
+    format("truetype-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("fonts/sourceserif/SourceSerif4-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-style: italic;
+}
+
+/* Fallback for browsers that don't support variable fonts */
+@supports not (font-variation-settings: normal) {
+  /* 18pt styles */
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-ExtraLight.ttf")
+      format("truetype");
+    font-weight: 200;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-ExtraLightItalic.ttf")
+      format("truetype");
+    font-weight: 200;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-Light.ttf")
+      format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-LightItalic.ttf")
+      format("truetype");
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-Regular.ttf")
+      format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-Italic.ttf")
+      format("truetype");
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-Medium.ttf")
+      format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-MediumItalic.ttf")
+      format("truetype");
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-SemiBold.ttf")
+      format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-SemiBoldItalic.ttf")
+      format("truetype");
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-Bold.ttf")
+      format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-BoldItalic.ttf")
+      format("truetype");
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-ExtraBold.ttf")
+      format("truetype");
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-ExtraBoldItalic.ttf")
+      format("truetype");
+    font-weight: 800;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-Black.ttf")
+      format("truetype");
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_18pt-BlackItalic.ttf")
+      format("truetype");
+    font-weight: 900;
+    font-style: italic;
+  }
+
+  /* 36pt styles */
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_36pt-ExtraLight.ttf")
+      format("truetype");
+    font-weight: 200;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_36pt-ExtraLightItalic.ttf")
+      format("truetype");
+    font-weight: 200;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_36pt-Light.ttf")
+      format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_36pt-LightItalic.ttf")
+      format("truetype");
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_36pt-Regular.ttf")
+      format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_36pt-Italic.ttf")
+      format("truetype");
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_36pt-Medium.ttf")
+      format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_36pt-MediumItalic.ttf")
+      format("truetype");
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_36pt-Bold.ttf")
+      format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_36pt-BoldItalic.ttf")
+      format("truetype");
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_36pt-ExtraBold.ttf")
+      format("truetype");
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("fonts/sourceserif/static/SourceSerif4_36pt-ExtraBoldItalic.ttf")
+      format("truetype");
+    font-weight: 800;
+    font-style: italic;
+  }
+}
