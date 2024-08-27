@@ -4,11 +4,49 @@ title: Books
 permalink: /books/
 ---
 <p>
-  Here's a bunch of books I have read or listened to (incomplete list scraped from goodreads/kindle/etc). I bolded some
-  I've read more recently that I'd recommend.
+  Here's a bunch of books I have read or listened to. I generally enjoyed all of them, otherwise I wouldn't have
+  finished them. I bolded some I read more recently/enjoy discussing.
 </p>
 
-<h2>Currently and recently read (as of August 2024)</h2>
+<div class="toc">
+  <div class="toc-item toc-level-1">
+    <span class="toc-toggle"> Categories </span>
+    <div class="toc-content">
+      <div class="toc-item toc-level-2">
+        <a href="#currently-and-recently-read-as-of-august-2024">Currently and recently read</a>
+      </div>
+      <div class="toc-item toc-level-2">
+        <a href="#non-fiction-and-popular-science">Non-Fiction and Popular Science</a>
+      </div>
+      <div class="toc-item toc-level-2">
+        <a href="#memoir-and-biography">Memoir and Biography</a>
+      </div>
+      <div class="toc-item toc-level-2">
+        <a href="#meditation-and-mindfulness">Meditation and Mindfulness</a>
+      </div>
+      <div class="toc-item toc-level-2">
+        <a href="#history">History</a>
+      </div>
+      <div class="toc-item toc-level-2">
+        <a href="#humor-and-essays">Humor and Essays</a>
+      </div>
+      <div class="toc-item toc-level-2">
+        <a href="#mythology">Mythology</a>
+      </div>
+      <div class="toc-item toc-level-2">
+        <a href="#philosophy-and-psychology">Philosophy and Psychology</a>
+      </div>
+      <div class="toc-item toc-level-2">
+        <a href="#science-fictionfantasy">Science Fiction/Fantasy</a>
+      </div>
+      <div class="toc-item toc-level-2">
+        <a href="#various-fiction">Various Fiction</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 id="currently-and-recently-read-as-of-august-2024">Currently and recently read (as of August 2024)</h2>
 
 Currently:
 
@@ -27,12 +65,11 @@ Recently:
   <li>Say Nothing by Patrick Radden Keefe</li>
 </ul>
 
-<h2>Non-Fiction and Popular Science</h2>
+<h2 id="non-fiction-and-popular-science">Non-Fiction and Popular Science</h2>
 <ul>
   <li>The Devil in the White City by Erik Larson</li>
   <li>Killers of the Flower Moon by David Grann</li>
   <li>The Power Broker by Robert A. Caro</li>
-  <li>What We Owe the Future by William MacAskill</li>
   <li>Dreamland by Sam Quinones</li>
   <li>The Looming Tower by Lawrence Wright</li>
   <li>The Scout Mindset by Julia Galef</li>
@@ -40,11 +77,11 @@ Recently:
   <li>Bad Blood by John Carreyrou</li>
   <li>Why We Sleep by Matthew Walker</li>
   <li>How to Change Your Mind by Michael Pollan</li>
-  <li><strong>Going Clear by Lawrence Wright</strong></li>
+  <li>Going Clear by Lawrence Wright</li>
   <li>The Know-It-All by A. J. Jacobs</li>
   <li>Sapiens by Yuval Noah Harari</li>
   <li>Homo Deus by Yuval Noah Harari</li>
-  <li>Because Internet by Gretchen McCulloch</li>
+  <li><strong>Because Internet by Gretchen McCulloch</strong></li>
   <li>The Doors of Perception by Aldous Huxley</li>
   <li>Conscious by Annaka Harris</li>
   <li>Inadequate Equilibria by Eliezer Yudkowsky</li>
@@ -59,7 +96,7 @@ Recently:
   <li>The Snow Leopard by Peter Matthiessen</li>
   <li>116 Days on the Road by Ben Kaplan</li>
   <li>So You've Been Publicly Shamed by Jon Ronson</li>
-  <li>Recoding America by Jennifer Pahlka</li>
+  <li><strong>Recoding America by Jennifer Pahlka</strong></li>
   <li>Meet Me in the Bathroom by Lizzy Goodman</li>
   <li>The War for Late Night by Bill Carter</li>
   <li>The Debutante by Jon Ronson</li>
@@ -73,37 +110,89 @@ Recently:
   <li>The Psychopath Test by Jon Ronson</li>
 </ul>
 
-<h2>Memoir and Biography</h2>
+<h2 id="memoir-and-biography">Memoir and Biography</h2>
 <ul>
   <li>A Life in Parts by Bryan Cranston</li>
   <li>Comedy Comedy Comedy Drama by Bob Odenkirk</li>
   <li>All About Me! by Mel Brooks</li>
   <li>Based on a True Story by Norm Macdonald</li>
   <li>Yearbook by Seth Rogen</li>
-  <li><strong>Barbarian Days by William Finnegan</strong></li>
+  <li>Barbarian Days by William Finnegan</li>
   <li>Born to Run by Christopher McDougall</li>
   <li>Hitch-22 by Christopher Hitchens</li>
   <li>Kitchen Confidential by Anthony Bourdain</li>
   <li>Beastie Boys Book by Michael Diamond</li>
   <li>The Boys in the Boat by Daniel James Brown</li>
   <li>I'll Be Gone in the Dark by Michelle McNamara</li>
-  <li><strong>Surely You're Joking, Mr. Feynman! by Richard Feynman</strong></li>
+  <li>Surely You're Joking, Mr. Feynman! by Richard Feynman</li>
   <li>Everything Is Horrible and Wonderful by Stephanie Wittels Wachs</li>
   <li>The Disaster Artist: My Life Inside the Room, the Greatest Bad Movie Ever Made by Greg Sestero</li>
 </ul>
 
-<h2>Science Fiction/Fantasy</h2>
+<h2 id="meditation-and-mindfulness">Meditation and Mindfulness</h2>
 <ul>
-  <li>Dune by Frank Herbert</li>
+  <li>The Art of Living by Thích Nhất Hạnh</li>
+  <li>A Guide to the Good Life by William B. Irvine</li>
+  <li>Say What You Mean by Oren Jay Sofer</li>
+  <li>The Life-Changing Magic of Tidying Up by Marie Kondo</li>
+  <li>Waking Up by Sam Harris</li>
+  <li>Wherever You Go There You Are by Jon Kabat-Zinn</li>
+  <li>After the Ecstasy, the Laundry by Jack Kornfield</li>
+  <li>Relax and Be Aware by Sayadaw U Tejaniya</li>
+  <li>When Awareness Becomes Natural by Sayadaw U Tejaniya</li>
+  <li>Zen Mind, Beginner's Mind by Shunryu Suzuki</li>
+  <li>Insight Meditation by Joseph Goldstein</li>
+  <li>The Untethered Soul by Michael A. Singer</li>
+  <li>Zen and the Art of Happiness by Chris Prentiss</li>
+  <li>A Path with Heart by Jack Kornfield</li>
+  <li>The First Free Women by Matty Weingast</li>
+  <li>The Issue at Hand by Gil Fronsdal</li>
+  <li><strong>Still, Flowing Water: Eight Dhamma Talks by Ajahn Chah</strong></li>
+</ul>
+
+<h2 id="history">History</h2>
+<ul>
+  <li>Say Nothing by Patrick Radden Keefe</li>
+  <li>Act of Oblivion by Robert Harris</li>
+  <li>An Officer and a Spy by Robert Harris</li>
+  <li>The Republic of Pirates by Colin Woodard</li>
+</ul>
+
+<h2 id="humor-and-essays">Humor and Essays</h2>
+<ul>
+  <li><strong>Someone Who Will Love You in All Your Damaged Glory by Raphael Bob-Waksberg</strong></li>
+  <li><strong>Medallion Status by John Hodgman</strong></li>
+  <li><strong>Hits and Misses by Simon Rich</strong></li>
+  <li>Vacationland by John Hodgman</li>
+  <li>Sex, Drugs, and Cocoa Puffs by Chuck Klosterman</li>
+  <li>But What If We're Wrong? by Chuck Klosterman</li>
+  <li>Consider the Lobster by David Foster Wallace</li>
+</ul>
+
+<h2 id="mythology">Mythology</h2>
+<ul>
+  <li>Heroes by Stephen Fry</li>
+  <li>Mythos by Stephen Fry</li>
+</ul>
+
+<h2 id="philosophy-and-psychology">Philosophy and Psychology</h2>
+<ul>
+  <li>Man's Search for Meaning by Viktor E. Frankl</li>
+  <li>The Examined Life by Stephen Grosz</li>
+  <li>Free Will by Sam Harris</li>
+</ul>
+
+<h2 id="science-fictionfantasy">Science Fiction/Fantasy</h2>
+<ul>
   <li>The Martian by Andy Weir</li>
   <li>Artemis by Andy Weir</li>
   <li>Project Hail Mary by Andy Weir</li>
   <li>1Q84 by Haruki Murakami</li>
   <li>Foundation series by Isaac Asimov</li>
   <li>The Expanse series by James S. A. Corey</li>
-  <li>The Lathe of Heaven by Ursula K. Le Guin</li>
+  <li><strong>The Lathe of Heaven by Ursula K. Le Guin</strong></li>
   <li>The Dispossessed by Ursula K. Le Guin</li>
-  <li>Vorkosigan Saga by Lois McMaster Bujold</li>
+  <li><strong>Vorkosigan Saga by Lois McMaster Bujold</strong></li>
   <li>The Forever War by Joe Haldeman</li>
   <li>The Dark Tower I: The Gunslinger by Stephen King</li>
   <li>Neuromancer by William Gibson</li>
@@ -127,7 +216,7 @@ Recently:
   <li>A Scanner Darkly by Phillip K Dick</li>
   <li>Do Androids Dream of Electric Sheep? by Phillip K Dick</li>
   <li>Flow My Tears, the Policeman Said by Phillip K Dick</li>
-  <li>Mother of Learning by Domagoj Kurmaic</li>
+  <li><strong>Mother of Learning by Domagoj Kurmaic</strong></li>
   <li>The Diamond Age by Neal Stephenson</li>
   <li>Foundation by Isaac Asimov</li>
   <li><strong>worm by John McCrae</strong></li>
@@ -147,53 +236,7 @@ Recently:
   <li>Miracle Workers by Simon Rich</li>
 </ul>
 
-<h2>Meditation and Mindfulness</h2>
-<ul>
-  <li>The Art of Living by Thích Nhất Hạnh</li>
-  <li>A Guide to the Good Life by William B. Irvine</li>
-  <li>Say What You Mean by Oren Jay Sofer</li>
-  <li>The Life-Changing Magic of Tidying Up by Marie Kondo</li>
-  <li>Waking Up by Sam Harris</li>
-  <li>Wherever You Go There You Are by Jon Kabat-Zinn</li>
-  <li>After the Ecstasy, the Laundry by Jack Kornfield</li>
-  <li>Relax and Be Aware by Sayadaw U Tejaniya</li>
-  <li>When Awareness Becomes Natural by Sayadaw U Tejaniya</li>
-  <li>Zen Mind, Beginner's Mind by Shunryu Suzuki</li>
-  <li>Insight Meditation by Joseph Goldstein</li>
-  <li>The Untethered Soul by Michael A. Singer</li>
-  <li>Zen and the Art of Happiness by Chris Prentiss</li>
-  <li>A Path with Heart by Jack Kornfield</li>
-  <li>The First Free Women by Matty Weingast</li>
-  <li>The Issue at Hand by Gil Fronsdal</li>
-  <li><strong>Still, Flowing Water: Eight Dhamma Talks by Ajahn Chah</strong></li>
-</ul>
-
-<h2>History</h2>
-<ul>
-  <li>Say Nothing by Patrick Radden Keefe</li>
-  <li>Act of Oblivion by Robert Harris</li>
-  <li>An Officer and a Spy by Robert Harris</li>
-  <li>The Republic of Pirates by Colin Woodard</li>
-</ul>
-
-<h2>Humor and Essays</h2>
-<ul>
-  <li>Someone Who Will Love You in All Your Damaged Glory by Raphael Bob-Waksberg</li>
-  <li>Medallion Status by John Hodgman</li>
-  <li>Hits and Misses by Simon Rich</li>
-  <li>Vacationland by John Hodgman</li>
-  <li>But What If We're Wrong? by Chuck Klosterman</li>
-  <li>Consider the Lobster by David Foster Wallace</li>
-</ul>
-
-<h2>Philosophy and Psychology</h2>
-<ul>
-  <li>Man's Search for Meaning by Viktor E. Frankl</li>
-  <li>The Examined Life by Stephen Grosz</li>
-  <li>Free Will by Sam Harris</li>
-</ul>
-
-<h2>Various Fiction</h2>
+<h2 id="various-fiction">Various Fiction</h2>
 <ul>
   <li>The Book Thief by Markus Zusak</li>
   <li>The Wind-Up Bird Chronicle by Haruki Murakami</li>
@@ -223,12 +266,6 @@ Recently:
   <li>Antkind by Charlie Kaufman</li>
   <li>Jeeves & Wooster: The Collected Radio Dramas by P. G. Wodehouse</li>
   <li>The Twenty-One Balloons by William Pene du Bois</li>
-</ul>
-
-<h2>Mythology</h2>
-<ul>
-  <li>Heroes by Stephen Fry</li>
-  <li>Mythos by Stephen Fry</li>
 </ul>
 
 <script>
