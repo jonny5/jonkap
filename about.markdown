@@ -17,7 +17,7 @@ permalink: /about/
 
 <p>
   Built with <a href="https://jekyllrb.com/">Jekyll</a>. Styling partially adapted from and inspired by
-  <a href="https://gwern.net/">gwern.net</a>
+  <a href="https://gwern.net/">gwern.net.</a>
 </p>
 
 ---
