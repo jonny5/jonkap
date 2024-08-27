@@ -102,26 +102,3 @@
   width: 100%;
   display: block;
 }
-
-#cloudshock-image {
-  filter: brightness(0.7) /* Darken the image */ contrast(120%)
-    /* Increase contrast */ grayscale(100%) /* Convert to grayscale */
-    drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)); /* Add a subtle glow */
-
-  /* Optional: Add animation for a lightning effect */
-  animation: lightning 5s infinite;
-}
-
-@keyframes lightning {
-  0%,
-  95%,
-  98% {
-    filter: brightness(0.7) contrast(120%) grayscale(100%)
-      drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-  }
-  96%,
-  99% {
-    filter: brightness(1.2) contrast(120%) grayscale(100%)
-      drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
-  }
-}

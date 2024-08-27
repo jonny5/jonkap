@@ -7,7 +7,6 @@ categories: elkenmist
 <style>
   .video-container {
     width: 100%;
-    max-width: 640px; /* This matches the width you set in the video tag */
     margin: 0 auto; /* This centers the container if it's narrower than its parent */
   }
 
@@ -23,6 +22,5 @@ categories: elkenmist
     <source src="assets/videos/elkwalkingshortsmall2.mp4" type="video/mp4">
   </video>
 </div>
-<img src="assets/images/elkenmisttext.png" alt="elkenmist text">
 
 <p>Testing out the text</p>

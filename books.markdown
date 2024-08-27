@@ -5,7 +5,7 @@ permalink: /books/
 ---
 <p>
   Here's a bunch of books I have read or listened to. I generally enjoyed all of them, otherwise I wouldn't have
-  finished them. I bolded some I read more recently/enjoy discussing.
+  finished them. I bolded a few I read more recently/enjoy discussing.
 </p>
 
 <div class="toc">
@@ -261,11 +261,12 @@ Recently:
   <li>A Delicate Truth by John le Carré</li>
   <li>Secret Adversary by Agatha Christie</li>
   <li>Franz Kafka - Collected Works by Franz Kafka</li>
-  <li>The Philip K. Dick MEGAPACK ® by Philip K. Dick</li>
+  <li>The Philip K. Dick MEGAPACK by Philip K. Dick</li>
   <li>Fear and Loathing in Las Vegas by Hunter S. Thompson</li>
   <li>Antkind by Charlie Kaufman</li>
   <li>Jeeves & Wooster: The Collected Radio Dramas by P. G. Wodehouse</li>
   <li>The Twenty-One Balloons by William Pene du Bois</li>
+  <li><strong>The Death of Ivan Ilyich by Leo Tolstoy</strong></li>
 </ul>
 
 <script>
