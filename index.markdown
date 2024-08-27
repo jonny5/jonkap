@@ -6,35 +6,27 @@ layout: default
 custom_css: home
 test_variable: This is a test
 ---
-
 <div class="home">
   {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
   <div style="margin-top: 100px">
-    <img src="{{ site.baseurl }}/assets/images/armless.png" width="200" style="z-index: 3; position: relative">
-    <img class="arm-image rotating-element" src="{{ site.baseurl }}/assets/images/arm.png" width="75" style="z-index: 2">
-    <div class="nes" style="position: relative;
-    top: -350px;
-    left: 90px;
-    z-index: 1;">
+    <img class="armless" src="{{ site.baseurl }}/assets/images/armless.png">
+    <img class="arm-image rotating-element" src="{{ site.baseurl }}/assets/images/arm.png">
+    <div class="nes nes-dialog-wrapper" style="">
       <div class="nes-balloon from-left dialog-box" id="game-dialog">
-          <p style="color: black" id="dialog-text"></p>
-          <div id="continue-indicator">▼</div>
+        <p id="dialog-text"></p>
+        <div id="continue-indicator">▼</div>
       </div>
     </div>
   </div>
-
 </div>
 
 <script>
   let dialogueIndex = 0;
   let isTyping = false;
-  const dialogueSegments = [
-    "Hello there!",
-    "I am generally available!",
-  ];
+  const dialogueSegments = ['Hello there!', 'Welcome to my site!', 'Stay awhile and click around!'];
 
   function typeWriter(text, speed = 24) {
     isTyping = true;
@@ -68,11 +60,6 @@ test_variable: This is a test
       } else {
         document.getElementById('continue-indicator').style.display = 'none';
       }
-    } else {
-      // If still typing, complete the current segment immediately
-      document.getElementById('dialog-text').textContent = dialogueSegments[dialogueIndex];
-      isTyping = false;
-      document.getElementById('continue-indicator').style.display = 'block';
     }
   }
 

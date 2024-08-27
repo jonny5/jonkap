@@ -1,0 +1,60 @@
+.toc {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #333;
+  background-color: #222;
+  padding: 10px;
+}
+.toc-item {
+  margin-bottom: 5px;
+  padding: 5px;
+  border-left: 3px solid transparent;
+}
+.toc-item:hover {
+  border-left-color: #666;
+  background-color: #2a2a2a;
+}
+.toc-item a {
+  color: #c0c0c0;
+  text-decoration: none;
+}
+.toc-item a:hover {
+  color: #ffffff;
+}
+.toc-level-1 {
+  margin-left: 0;
+}
+.toc-level-2 {
+  margin-left: 20px;
+}
+.toc-number {
+  color: #666;
+  margin-right: 5px;
+}
+.toc-year {
+  color: #666;
+  margin-left: 5px;
+  font-size: 0.9em;
+}
+.toc-toggle {
+  cursor: pointer;
+  user-select: none;
+}
+.toc-toggle::before {
+  content: "▼";
+  display: inline-block;
+  margin-right: 5px;
+  transition: transform 0.3s;
+}
+.toc-toggle.collapsed::before {
+  transform: rotate(-90deg);
+}
+.toc-content {
+  display: block;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  max-height: 1000px;
+}
+.toc-content.collapsed {
+  max-height: 0;
+}
