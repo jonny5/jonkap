@@ -8,43 +8,6 @@ permalink: /books/
   I've read more recently that I'd recommend.
 </p>
 
-<div class="toc">
-  <div class="toc-item toc-level-1">
-    <span class="toc-toggle">
-      <span class="toc-number">1</span>
-      <a href="#gwern">Gwern</a>
-    </span>
-    <div class="toc-content">
-      <div class="toc-item toc-level-2">
-        <span class="toc-number">1.1</span>
-        <a href="#why-not-write">"Why To Not Write A Book"</a>
-        <span class="toc-year">Gwern 2024</span>
-      </div>
-      <div class="toc-item toc-level-2">
-        <span class="toc-number">1.2</span>
-        <a href="#marvel-silver-age">"Marvel's Silver Age of Comics: Humanizing Mythology"</a>
-        <span class="toc-year">Gwern 2024</span>
-      </div>
-      <div class="toc-item toc-level-2">
-        <span class="toc-number">1.3</span>
-        <a href="#gamblers-fallacy">"A World Where the Gambler's Fallacy Was True via Sampling-without-Replacement"</a>
-        <span class="toc-year">Gwern 2024</span>
-      </div>
-      <div class="toc-item toc-level-2">
-        <span class="toc-number">1.4</span>
-        <a href="#writers-llms">"Why Do Writers Still Underestimate LLMs?"</a>
-        <span class="toc-year">Gwern 2023</span>
-      </div>
-      <div class="toc-item toc-level-2">
-        <span class="toc-number">1.5</span>
-        <a href="#ai-mode-collapse">"Generative AI Mode Collapse"</a>
-        <span class="toc-year">Gwern 2022</span>
-      </div>
-      <!-- Add more items as needed -->
-    </div>
-  </div>
-</div>
-
 <h2>Currently and recently read (as of August 2024)</h2>
 
 Currently:
