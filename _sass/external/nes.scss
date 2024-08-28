@@ -9,7 +9,14 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
+
  */
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("/assets/fonts/PressStart2P-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 .nes {
   font-family: "Press Start 2P";

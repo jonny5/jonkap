@@ -10,20 +10,18 @@ test_variable: This is a test
   {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
-  <div style="position: absolute; width: 150px; right: 20%; top: 10%">
-    <div id="cloud-container">
-      <img src="{{ site.baseurl }}/assets/images/cloud.png" class="cloud" id="cloud-image">
-      <img
-        src="{{ site.baseurl }}/assets/images/cloudhappy.png"
-        class="cloud cloud-hover hidden"
-        id="cloudhappy-image"
-      >
-      <img
-        src="{{ site.baseurl }}/assets/images/cloudshock.png"
-        class="cloud hidden"
-        id="cloudshock-image"
-      >
-    </div>
+  <div id="cloud-container">
+    <img src="{{ site.baseurl }}/assets/images/cloud.png" class="cloud" id="cloud-image">
+    <img
+      src="{{ site.baseurl }}/assets/images/cloudhappy.png"
+      class="cloud cloud-hover hidden"
+      id="cloudhappy-image"
+    >
+    <img
+      src="{{ site.baseurl }}/assets/images/cloudshock.png"
+      class="cloud hidden"
+      id="cloudshock-image"
+    >
   </div>
   <div id="scene-container" style="position: relative">
     <div class="video-container" style="display: none;">
@@ -31,7 +29,7 @@ test_variable: This is a test
         <source src="assets/videos/lightning.mp4" type="video/mp4">
       </video>
     </div>
-    <div class="robot" style="margin-top: 150px">
+    <div class="robot">
       <img class="armless" src="{{ site.baseurl }}/assets/images/armless.png">
       <img class="arm-image rotating-element" src="{{ site.baseurl }}/assets/images/arm.png">
       <div class="nes nes-dialog-wrapper" style="">
@@ -167,134 +165,4 @@ test_variable: This is a test
   });
 </script>
 
-<style>
-  body {
-    transition: background-color 1s ease;
-  }
-  body.fade-to-black {
-    background-color: black;
-  }
-  body.fade-to-black * {
-    color: white;
-  }
-  .cloud {
-    cursor: pointer;
-  }
-  .fade-to-black .robot {
-    position: relative;
-    z-index: 10;
-  }
-  .video-container {
-    position: absolute;
-    top: -80px;
-    left: -240px;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-    display: none;
-  }
-
-  @keyframes lightningStrike {
-    0% {
-      filter: blur(0px) brightness(100%);
-    }
-    10% {
-      filter: blur(2px) brightness(200%);
-    }
-    60% {
-      filter: blur(0px) brightness(100%);
-    }
-    80% {
-      filter: blur(2px) brightness(200%);
-    }
-    100% {
-      filter: blur(0px) brightness(100%);
-    }
-  }
-
-  .spin-robot {
-    animation: lightningStrike 4s linear 1;
-    transform-style: preserve-3d;
-  }
-
-  .robot {
-    transition: transform 0.5s ease-in-out;
-    transform-style: preserve-3d;
-  }
-
-  .robot img {
-    backface-visibility: visible;
-  }
-
-  #cloud-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  #cloud-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  #cloud-container:hover #cloud-image {
-    display: none;
-  }
-
-  #cloudhappy-image {
-    display: none;
-  }
-
-  #cloud-container:hover #cloudhappy-image {
-    display: block;
-  }
-
-  .nes {
-    transition: opacity 0.5s ease;
-  }
-  .hidden {
-    display: none;
-  }
-
-  #cloudshock-image {
-    filter: brightness(0.7) /* Darken the image */ contrast(120%) /* Increase contrast */ grayscale(100%)
-      /* Convert to grayscale */ drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)); /* Add a subtle glow */
-
-    /* Optional: Add animation for a lightning effect */
-    animation: lightning 2s linear;
-  }
-
-  @keyframes lightning {
-    0%,
-    20%,
-    40%,
-    60%,
-    80% {
-      filter: brightness(0.7) contrast(120%) grayscale(100%) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-    }
-    10%,
-    30%,
-    50%,
-    70%,
-    90% {
-      filter: brightness(1.2) contrast(120%) grayscale(100%) drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
-    }
-    100% {
-      filter: brightness(0.7) contrast(120%) grayscale(100%) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-    }
-  }
-
-  .video-container {
-    width: 100%;
-    max-width: 640px; /* This matches the width you set in the video tag */
-    margin: 0 auto; /* This centers the container if it's narrower than its parent */
-  }
-
-  .video-container video {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    display: block; /* This removes any unwanted space below the video */
-  }
-</style>
+<style></style>

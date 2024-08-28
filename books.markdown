@@ -243,6 +243,7 @@ Recently:
   <li>Kafka on the Shore by Haruki Murakami</li>
   <li>Infinite Jest by David Foster Wallace</li>
   <li>Dance Dance Dance by Haruki Murakami</li>
+  <li><strong>Hard-Boiled Wonderland and the End of the World by Haruki Murakami</strong></li>
   <li>Walden; Or, Life in the Woods by Henry David Thoreau</li>
   <li>Adventures of Huckleberry Finn by Mark Twain</li>
   <li>The Mysterious Stranger by Mark Twain</li>

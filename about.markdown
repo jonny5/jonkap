@@ -9,7 +9,7 @@ permalink: /about/
 <p>
   It's always tricky to label oneself. I am trying to do some writing and connection through this site. I am passionate
   about meditation and the teachings of the Buddha. I am a freelance software developer, and try to find ways to use
-  technology in positive ways. To that end I manage the website <a href="wwww.audiodharma.org">Audiodharma</a> for the
+  technology in positive ways. To that end I manage the website <a href="wwww.audiodharma.org">AudioDharma</a> for the
   <a href="https://insightmeditationcenter.org">Insight Meditation Center</a>.
 </p>
 
