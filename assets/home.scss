@@ -177,7 +177,10 @@ body.fade-to-black * {
   top: 0;
 }
 
-.home-description {
+#home-description {
+  z-index: 5;
+  position: relative;
+
   margin-left: 300px;
   padding-top: 75px;
   max-width: 250px;

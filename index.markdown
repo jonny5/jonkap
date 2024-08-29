@@ -42,7 +42,7 @@ test_variable: This is a test
         </div>
       </div>
 
-      <p class="home-description">
+      <p id="home-description">
         The header has all the relevant links, here is <a href="/welcome">the welcome post</a> for
         <a href="/blog">my blog</a>.
       </p>
@@ -118,7 +118,6 @@ test_variable: This is a test
     const cloudImage = document.getElementById('cloud-image');
     const cloudHappyImage = document.getElementById('cloudhappy-image');
     const cloudContainer = document.getElementById('cloud-container');
-
     const cloudShockImage = document.getElementById('cloudshock-image');
     const sceneContainer = document.getElementById('scene-container');
     const videoContainer = document.querySelector('.video-container');
@@ -126,6 +125,7 @@ test_variable: This is a test
     const armImage = document.querySelector('.arm-image');
     const robot = document.querySelector('.armless');
     const dialogText = document.getElementById('dialog-text');
+    const textContainer = document.getElementById('home-description');
 
     cloudContainer.addEventListener('click', function () {
       if (alreadyAlive) {
@@ -142,6 +142,7 @@ test_variable: This is a test
         cloudShockImage.classList.add('hidden');
         cloudContainer.classList.add('hidden');
         document.body.classList.add('fade-to-black');
+        textContainer.classList.add('hidden');
         nesElement.style.display = 'none';
         armImage.classList.remove('rotating-element');
 
@@ -159,6 +160,7 @@ test_variable: This is a test
             document.body.classList.remove('fade-to-black');
             cloudContainer.classList.remove('hidden');
             cloudImage.classList.remove('hidden');
+            textContainer.classList.remove('hidden');
 
             setTimeout(() => {
               nesElement.style.display = 'block';
