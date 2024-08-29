@@ -23,21 +23,29 @@ test_variable: This is a test
       id="cloudshock-image"
     >
   </div>
-  <div id="scene-container" style="position: relative">
+  <div id="scene-container">
     <div class="video-container" style="display: none;">
       <video muted autoplay loop playsinline id="myVideo">
         <source src="assets/videos/lightning.mp4" type="video/mp4">
       </video>
     </div>
-    <div class="robot">
-      <img class="armless" src="{{ site.baseurl }}/assets/images/armless.png">
-      <img class="arm-image rotating-element" src="{{ site.baseurl }}/assets/images/arm.png">
-      <div class="nes nes-dialog-wrapper" style="">
-        <div class="nes-balloon from-left dialog-box" id="game-dialog">
-          <p id="dialog-text"></p>
-          <div id="continue-indicator">▼</div>
+
+    <div class="content-wrapper">
+      <div class="robot">
+        <img class="armless" src="{{ site.baseurl }}/assets/images/armless.png">
+        <img class="arm-image rotating-element" src="{{ site.baseurl }}/assets/images/arm.png">
+        <div class="nes nes-dialog-wrapper">
+          <div class="nes-balloon from-left dialog-box" id="game-dialog">
+            <p id="dialog-text"></p>
+            <div id="continue-indicator">▼</div>
+          </div>
         </div>
       </div>
+
+      <p class="home-description">
+        The header has all the relevant links, here is <a href="/welcome">the welcome post</a> for
+        <a href="/blog">my blog</a>.
+      </p>
     </div>
   </div>
 </div>
@@ -69,11 +77,11 @@ test_variable: This is a test
     let i = 0;
     const dialogText = document.getElementById('dialog-text');
     const continueIndicator = document.getElementById('continue-indicator');
-    dialogText.textContent = ''; // Clear existing text
+    dialogText.innerHTML = ''; // Change textContent to innerHTML
     continueIndicator.style.display = 'none';
     function type() {
       if (i < text.length) {
-        dialogText.textContent += text.charAt(i);
+        dialogText.innerHTML += text.charAt(i); // Change textContent to innerHTML
         i++;
         setTimeout(type, speed);
       } else {

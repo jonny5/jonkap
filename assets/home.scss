@@ -165,11 +165,30 @@ body.fade-to-black * {
   transform-style: preserve-3d;
 }
 
+.content-wrapper {
+  margin-top: 150px;
+}
 .robot {
   height: 300px;
   transition: transform 0.5s ease-in-out;
   transform-style: preserve-3d;
-  margin-top: 150px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.home-description {
+  margin-left: 300px;
+  padding-top: 75px;
+  max-width: 250px;
+  @media (max-width: 768px) {
+    margin-left: 190px;
+  }
+}
+
+#scene-container {
+  position: relative;
+  min-height: 300px;
 }
 
 .robot img {
