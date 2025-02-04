@@ -48,16 +48,25 @@ permalink: /books/
 
 <h2 id="currently-and-recently-read-as-of-august-2024">Currently and recently read (as of August 2024)</h2>
 
-Currently:
+2025:
 
 <ul>
-  <li>Travels with Charley by John Steinbeck</li>
-  <li>The Undoing Project by Michael Lewis</li>
+  <li>Nightfall by Isaac Aasimov</li>
+  <li>Upstream by Mary Oliver</li>
+  <li>A Distant Mirror (partial) by Barbara W. Tuchman</li>
+  <li>The Lies of Locke Lamora by Scott Lynch</li>
+  <li>The Anthropocene Reviewed by John Green</li>
+  <li>Mania of Subjugation by Dan Carlin</li>
 </ul>
 
-Recently:
+2024:
 
 <ul>
+  <li>Parable of the Sower by Octavia E Butler</li>
+  <li>Bird by Bird by Anne Lamott</li>
+  <li>Barbarians at the Gate by Bryan Burrough</li>
+  <li>Travels with Charley by John Steinbeck</li>
+  <li>The Undoing Project by Michael Lewis</li>
   <li>The Wise Man's Fear by Patrick Rothfuss</li>
   <li>The Name of the Wind by Patrick Rothfuss</li>
   <li>Empire of Pain by Patrick Radden Keefe</li>
