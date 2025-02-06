@@ -1,3 +1,11 @@
+---
+layout: post
+title: Seat Number 12
+date: 2024-08-16 08:46:35 -0700
+categories: robyn
+published: false
+
+---
 There's some irony in how worrying about what time to wake up can be an impediment to sleep. That decision kept my mind
 too busy to sleep as a I lay in bed in my tiny room. It was my last night in Bagan, the miraculous part of Burma filled
 with pagodas. Waking up at sunrise to see the first light hit the pagodas and the hot air balloons taking off over them
