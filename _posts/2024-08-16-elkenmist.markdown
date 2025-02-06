@@ -22,5 +22,3 @@ categories: elkenmist
     <source src="assets/videos/elkwalkingshortsmall2.mp4" type="video/mp4">
   </video>
 </div>
-
-<p>Testing out the text</p>
