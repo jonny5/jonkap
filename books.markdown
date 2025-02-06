@@ -13,7 +13,7 @@ permalink: /books/
     <span class="toc-toggle"> Categories </span>
     <div class="toc-content">
       <div class="toc-item toc-level-2">
-        <a href="#currently-and-recently-read-as-of-august-2024">Currently and recently read</a>
+        <a href="#currently-and-recently-read">Currently and recently read</a>
       </div>
       <div class="toc-item toc-level-2">
         <a href="#non-fiction-and-popular-science">Non-Fiction and Popular Science</a>
@@ -46,7 +46,7 @@ permalink: /books/
   </div>
 </div>
 
-<h2 id="currently-and-recently-read-as-of-august-2024">Currently and recently read (as of August 2024)</h2>
+<h2 id="currently-and-recently-read">Currently and recently read</h2>
 
 2025:
 
