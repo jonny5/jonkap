@@ -51,12 +51,14 @@ permalink: /books/
 2025:
 
 <ul>
-  <li>Nightfall by Isaac Aasimov</li>
+  <li>Nightfall by Isaac Asimov</li>
   <li>Upstream by Mary Oliver</li>
   <li>A Distant Mirror (partial) by Barbara W. Tuchman</li>
   <li>The Lies of Locke Lamora by Scott Lynch</li>
   <li>The Anthropocene Reviewed by John Green</li>
   <li>Mania of Subjugation by Dan Carlin</li>
+  <li>George Smiley radio dramas by John le Carré</li>
+  <li>Smiley's People by John le Carré</li>
 </ul>
 
 2024:
