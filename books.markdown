@@ -59,6 +59,12 @@ permalink: /books/
   <li>Mania of Subjugation by Dan Carlin</li>
   <li>George Smiley radio dramas by John le Carré</li>
   <li>Smiley's People by John le Carré</li>
+  <li>Abundance by Ezra Klein and Derek Thompson</li>
+  <li>Imperium (Cicero #1) by Robert Harris</li>
+  <li>Conspirata (Cicero #2) by Robert Harris</li>
+  <li>Dictator (Cicero #3) by Robert Harris</li>
+  <li>Careless People by Sarah Wynn-Williams</li>
+  <li>Invisible Rulers by Renee DiResta</li>
 </ul>
 
 2024:
