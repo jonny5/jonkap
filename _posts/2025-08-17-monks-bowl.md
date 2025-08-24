@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Monk's Bowl
-date: 2025-08-17 08:46:35 -0700
-published: false
+date: 2025-08-18 08:46:35 -0700
+published: true
 ---
 
 Standing in a line, 
