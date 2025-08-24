@@ -3,6 +3,7 @@ layout: post
 title: Welcome
 date: 2024-08-28 08:46:35 -0700
 categories: welcome, introduction
+pinned: true
 ---
 This blog exists firstly to organize my thoughts and get them out of the head. That's for me. For you, the intention is
 to share stories that can point to a way of living that is more conducive to contentment. Hopefully it will be

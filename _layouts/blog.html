@@ -2,10 +2,28 @@
 layout: default
 ---
 {%- if site.posts.size > 0 -%}
-  <h2 class="post-list-heading">{{ page.list_title | default: 'Posts' }}</h2>
+  {%- assign pinned_posts = site.posts | where: 'pinned', true -%}
+  {%- if pinned_posts.size > 0 -%}
+    <div class="pinned-section">
+      {%- for post in pinned_posts -%}
+        <div class="pinned-post">
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+          {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+    <hr class="pinned-divider">
+  {%- endif -%}
+
   <ul class="post-list">
     {%- for post in site.posts -%}
-      {% unless post.hide_from_feed %}
+      {% unless post.hide_from_feed or post.pinned %}
         <li>
           {%- assign date_format = site.minima.date_format | default: '%b %-d, %Y' -%}
           <h3>

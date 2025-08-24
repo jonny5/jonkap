@@ -1,0 +1,7 @@
+# Ignore Markdown files to preserve formatting
+*.md
+*.markdown
+
+# Ignore Jekyll files
+_posts/
+_drafts/

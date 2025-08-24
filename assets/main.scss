@@ -4,3 +4,21 @@
 
 @import "minima/skins/dark";
 @import "minima";
+
+.pinned-divider {
+  margin: 2rem 0;
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.poem {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.6;
+  white-space: pre-line;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 1rem 0;
+}
