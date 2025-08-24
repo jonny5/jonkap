@@ -7,7 +7,7 @@ published: false
 
 Standing in a line, 
 a row of hands,
-each holding bowls of food.
+holding bowls of food.
 
 The monk approaches the first offering.
 
