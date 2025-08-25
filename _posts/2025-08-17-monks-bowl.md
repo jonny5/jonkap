@@ -21,9 +21,10 @@ to the movement
 than the volume
 
 The monk approaches the final offering,
-looks down at his bowl
-and patiently explains:
-"This is my only meal for the day you know"
+looks down at his partially filled bowl
+over to the remaining food
+and patiently says:
+"This is all I'll eat today you know."
 
 He begins again.
 A spoon moves.

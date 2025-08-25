@@ -6,12 +6,12 @@ categories: conspiracy, right speech
 published: false
 ---
 
-Of the many forms of suffering happening in the world, one that my mind goes to frequently is the people of Burma*. First with the coup and more recently with a serious earthquake. I am quite fond of the people I met there (and selfishly would like to be able to visit again).
+Of the many forms of suffering happening in the world, one that my mind goes to frequently is the people of Burma*. Starting with the coup in 2021 and more recently with a serious earthquake in 2025. I am quite fond of the people I met there (and selfishly would like to be able to visit again).
 
 
 Being a tourist, I have often been transformed into a walking neon dollar sign. This is totally understandable, and part of traveling is accepting this. Inherent to travel is many transactions and I do not begrudge folks for trying to maximize those transactions (although in the moment that is not always easy). This is all to lay the groundwork for the contrast of many of the people I met in Burma, where I rarely felt this way. Generosity seemed to be a core guiding principle for many people I met there and I was very touched  seeing it in practice.
 
-The image of my last moment in the country sticks in my mind. As I gathered my belongings from my taxi, I held out all my remaining cash for the driver, planning on giving him a generous tip. This taxi driver in particular was extra deserving – I had forgotten to return my room key from the monastery where he picked me up and he was kind enough to say he would return it. As I was holding out the cash, he took a look and decided what was a reasonable tip (it was much less than I offered). I gave one verbal nudge that it was all for him and he shook his head. The part that stands out the most is that him doing me that favor seemed to bring him more joy than the money. Obviously I expected him to take what I offered, I've done that in several countries where I only have some cash left. It's a way to be slightly generous as a way to say goodbye. But now his generosity has lasted in me, more than anything I did for him.
+As I gathered my belongings from my taxi, I held out all my remaining cash for the driver, planning on giving him a generous tip. This taxi driver in particular was extra deserving – I had forgotten to return my room key from the monastery where he picked me up and he was kind enough to say he would return it. As I was holding out the cash, he took a look and decided what was a reasonable tip (it was much less than I offered). I gave one verbal nudge that it was all for him and he shook his head. The part that stands out the most is that him doing me that favor seemed to bring him more joy than the money. Obviously I expected him to take what I offered, I've done that in several countries where I only have some cash left. It's a way to be slightly generous as a way to say goodbye. But now his generosity has lasted in me, more than anything I did for him.
 
 From getting my pants fixed and repairing a flat bicycle tire, normal transactions became real acts of generosity by the service provider.
 
@@ -30,6 +30,10 @@ I was very inspired by the dedication to teaching and to practice this monk had 
 
 
 The banh mi
+
+
+
+
 
 The full arc of meeting Sane started on the bus (seat number #12 link). I was the only non Burmese speaker on the bus. We stopped for food halfway through at a semi outdoor cafe where I wouldn't have normally gotten anything. Sane offered to have me sit with her and her friends and ordered me some food. 
 
