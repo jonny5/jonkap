@@ -22,9 +22,8 @@ than the volume
 
 The monk approaches the final offering,
 looks down at his partially filled bowl
-over to the remaining food
-and patiently says:
-"This is all I'll eat today you know."
+looks over to the remaining food and says:
+"You know this meal has to last me all day, right?"
 
 He begins again.
 A spoon moves.
