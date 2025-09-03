@@ -21,8 +21,8 @@ to the movement
 than the volume
 
 The monk approaches the final offering,
-looks down at his partially filled bowl
-looks over to the remaining food and says:
+looks down at his half-empty bowl
+looks over to the remaining food:
 "You know this meal has to last me all day, right?"
 
 He begins again.
