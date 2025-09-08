@@ -20,7 +20,7 @@ Paying more attention
 to the movement
 than the portion
 
-The monks approaches the final offering,
+The monk approaches the final hands,
 looks down at his half-empty bowl
 looks over to the remaining food:
 "You know this meal has to last me all day, right?"
