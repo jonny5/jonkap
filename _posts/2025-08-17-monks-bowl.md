@@ -6,29 +6,29 @@ published: true
 ---
 <pre class="poem">
 A row of hands,
-each offering a portion of food
+holding offerings of food
 
-The monk approaches my hands first
+The monk approaches the first hands
 Iron bowl at the ready
 
-Spoonfuls of rice
-Coat the bottom of his bowl.
-My mind attending to the movement
-More than the portion.
-Careful not to spill,
-cautious of overfilling
+A spoon moves deliberately,
+From the rice bowl
+to the monk's bowl
+From the quinoa bowl
+to the monk's bowl.
+Paying more attention
+to the movement
+than the portion
 
-He continues down the line,
-each offering gently added,
-then pauses.
-His eyes move back and forth
-from his half-empty bowl
-to the remaining food:
+The monks approaches the final offering,
+looks down at his half-empty bowl
+looks over to the remaining food:
 "You know this meal has to last me all day, right?"
 
 He begins again.
-My spoon now a shovel,
-rice pours from above.
-My offering empty,
-The monk's bowl full
+
+A spoon moves,
+All the rice
+All the quinoa
+fill the bowl
 </pre>
