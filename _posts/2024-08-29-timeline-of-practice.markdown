@@ -2,6 +2,7 @@
 layout: post
 title: Timeline of Practice
 date: 2024-08-28 08:46:35 -0700
+section: Meditation
 categories: meditation
 ---
 Everyone has their own unique path in this life and I don't expect yours to resemble mine. With that said, a natural

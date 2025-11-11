@@ -2,6 +2,7 @@
 layout: post
 title: Monk's Bowl
 date: 2025-08-18 08:46:35 -0700
+section: Poetry
 published: true
 ---
 <pre class="poem">

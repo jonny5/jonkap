@@ -184,6 +184,8 @@ permalink: /books/
   <li>Sex, Drugs, and Cocoa Puffs by Chuck Klosterman</li>
   <li>But What If We're Wrong? by Chuck Klosterman</li>
   <li>Consider the Lobster by David Foster Wallace</li>
+  <li>New Teeth by Simon Rich</li>
+  <li>Hits and Misses by Simon Rich</li>
 </ul>
 
 <h2 id="mythology">Mythology</h2>
@@ -285,6 +287,7 @@ permalink: /books/
   <li>Jeeves & Wooster: The Collected Radio Dramas by P. G. Wodehouse</li>
   <li>The Twenty-One Balloons by William Pene du Bois</li>
   <li><strong>The Death of Ivan Ilyich by Leo Tolstoy</strong></li>
+  <li>No 44, The Mysterious Stranger by Mark Twain</li>
 </ul>
 
 <script>

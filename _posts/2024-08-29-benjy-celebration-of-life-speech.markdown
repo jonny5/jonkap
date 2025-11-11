@@ -2,6 +2,7 @@
 layout: post
 title: Speech for Benjy's Celebration of Life
 date: 2024-08-16 08:46:35 -0700
+section: Culture
 hide_from_feed: true
 categories: death, benjy
 ---

@@ -12,6 +12,28 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
+.sections-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.section-column {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.section-heading {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+}
+
 .poem {
   font-family: inherit;
   font-size: inherit;

@@ -21,23 +21,41 @@ layout: default
     <hr class="pinned-divider">
   {%- endif -%}
 
-  <ul class="post-list">
-    {%- for post in site.posts -%}
-      {% unless post.hide_from_feed or post.pinned %}
-        <li>
-          {%- assign date_format = site.minima.date_format | default: '%b %-d, %Y' -%}
-          <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
-          </h3>
-          {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-          {%- endif -%}
-        </li>
-      {% endunless %}
-    {%- endfor -%}
-  </ul>
+  {% assign sections = "Poetry,Meditation,Culture" | split: "," %}
+
+  <div class="sections-container">
+    {% for section in sections %}
+      {% assign section_posts = site.posts | where: "section", section %}
+      {% assign has_visible = false %}
+      {% for post in section_posts %}
+        {% unless post.hide_from_feed or post.pinned %}
+          {% assign has_visible = true %}
+        {% endunless %}
+      {% endfor %}
+
+      {% if has_visible %}
+        <div class="section-column">
+          <h2 class="section-heading">{{ section }}</h2>
+          <ul class="post-list">
+            {% for post in section_posts %}
+              {% unless post.hide_from_feed or post.pinned %}
+                <li>
+                  <h3>
+                    <a class="post-link" href="{{ post.url | relative_url }}">
+                      {{ post.title | escape }}
+                    </a>
+                  </h3>
+                  {% if site.show_excerpts %}
+                    {{ post.excerpt }}
+                  {% endif %}
+                </li>
+              {% endunless %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 {%- endif -%}
