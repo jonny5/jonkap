@@ -7,22 +7,21 @@ categories: robyn
 published: false
 
 ---
-The ways in which the internet and collaboration more generally can go badly are obvious. Unfortunately lots of social
-media is an experiment in negative human collaboration.
 
-Music represents a form of positive collaboration.
+I often will get a song in my head and then listen to it repeatedly. Sometimes it will just be for a short period and I'll barely listen again, other times it will make it to playlist and my regular rotation. This particular pattern is most true for upbeat music that I listen to while exercising.
 
-One of my favorite upbeat songs is this(https://www.youtube.com/watch?v=GyeypSlBr4c). It's a fourth iteration of a song:
+The artist Robyn's songs regularly follow this process. Electronic heavy songs featuring her hit a sweet spot for me. And a one in particular I kept coming back to was Royksopp's The Girl and the Robot. As I was looking for songs with a similar style I came across this song: Robyn – Cobrastyle (Bloody Beetroots remix) (https://www.youtube.com/watch?v=GyeypSlBr4c). It has persisted on my regular rotation for a long time; something about it clicks with my brain. The sonic qualities of the song are why I keep listening, but the full history of it is also quite appealing.
 
-Original: https://www.youtube.com/watch?v=awIY7IgGDg0 Sampled in: https://www.youtube.com/watch?v=s5SA6L722kI Covered by
-Robyn: https://www.youtube.com/watch?v=s5SA6L722kI And finally remixed by Bloody Beetroots. There is something very cool
-about this, particularly that the final version couldn't exist without it's predecessors (and all the songs on the path
-are somewhat different and cool).
+My first few listens I wasn't so focused on the lyrics, just the overall vibe. Once I listened enough though, I got curious. And the lyrics don't seem very typical for Robyn. So I listened to the non remixed version https://www.youtube.com/watch?v=s5SA6L722kI (which is also great and has a breezier feel). Didn't answer my question though. I found it was a cover of this (quite popular) song https://www.youtube.com/watch?v=s5SA6L722kI . That song makes heavy use of Mad Cobra's song Press Trigger https://www.youtube.com/watch?v=awIY7IgGDg0 which was part of an album called Buzz Riddim where artists created their songs over beats.
 
-Some of my favorite memes
+So to recap:
+- A producer Troyton Rami creates Buzz Riddim (Sean Paul's Give Me The Light is also on this album, can hear the same beat)
+- Mad Cobra raps over it
+- Teddybears samples the rapping over their own beat, creates Cobrastyle
+- Robyn covers the Teddybears song
+- Bloody Beetroots remixes the cover
+- I listen :) 
 
-This is also one of my favorite forms of a meme:
+Pretty amazing. The number of ears and hands involved, the amount of inspiration and amount of variation that came along. And that each song along the way has its own appeal – if you do listen to all the iterations I'd be curious which song along the path you prefer. And from the original beat there would be no way to predict the path or what would come of it.
 
-https://www.youtube.com/watch?v=Ecl2kZBnBnY
-
-https://www.youtube.com/watch?v=isiVdlz8bDY
+Now to the Buddhist connection, as I will tend to look for on most of my posts. I will often go to a half day retreat at IMC, and the head teacher Gil will end the day with a simple dedication of the day of practice, hoping that any good that comes from sitting peacefully will spread out into the world. He will give small examples of just being a bit more patient in traffic or friendlier to someone at a cafe. The ripples of actions we take are both more profound and more widespread than we can imagine. Music provides a very tangible way of seeing how one thing can influence another, but that is just a clear example. It's hard to know the impact one can have, so acting with kindness and care toward the world (including to ourselves!) is the only sensible path forward. And that is my intention of writing, even if just one person reads something, and gets inspired, who knows where those ripples where land. 
