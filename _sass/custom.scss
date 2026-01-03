@@ -58,3 +58,245 @@
 .toc-content.collapsed {
   max-height: 0;
 }
+
+/* ========================================
+   FOOTNOTES - POPUPS + BOTTOM SECTION
+   ======================================== */
+
+/* Footnote reference (citation) styling */
+a.footnote,
+sup a[href^="#fn"] {
+  text-decoration: none;
+  color: #a0a0a0;
+  font-size: 0.75em;
+  font-weight: 600;
+  vertical-align: super;
+  line-height: 0.3;
+  padding: 0 0.05em;
+  position: relative;
+  top: 0.05em;
+  transition: box-shadow 0.15s ease 0.05s;
+  z-index: 1;
+
+  &:hover,
+  &.popup-open {
+    color: #fff;
+    box-shadow:
+      2px 4px 0 4px #1a1a1a,
+      -2px 4px 0 4px #1a1a1a,
+      2px 4px 0 5px #888,
+      -2px 4px 0 5px #888;
+  }
+}
+
+/* ==========================================
+   HOVER POPUPS
+   ========================================== */
+
+/* Popup container */
+#footnote-popup-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+/* Individual footnote popup */
+.footnote-popup {
+  position: absolute;
+  max-width: min(640px, calc(100vw - 40px));
+  min-width: 250px;
+  pointer-events: auto;
+  z-index: 1;
+
+  /* Gwern-style border and shadow */
+  border: 3px double #666;
+  box-shadow: 1px 2px 8px 0 rgba(0, 0, 0, 0.5);
+  background-color: #1a1a1a;
+
+  /* Padding */
+  padding: 0.7em 0.9em 0.8em 0.9em;
+
+  /* Typography */
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #c8c8c8;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Content styling - handle Kramdown's <li><p> structure */
+  p {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  /* List styling within popups */
+  ol, ul {
+    margin: 0.5em 0;
+    padding-left: 1.5em;
+  }
+
+  li {
+    margin-bottom: 0.25em;
+
+    p {
+      display: inline;
+      margin: 0;
+    }
+  }
+
+  /* Links within popup */
+  a {
+    color: #6495ed;
+    text-decoration: underline;
+
+    &:hover {
+      color: #87ceeb;
+    }
+  }
+
+  /* Code within popup */
+  code {
+    font-size: 0.9em;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2px 5px;
+    border-radius: 3px;
+    border: 1px solid #333;
+  }
+
+  /* Remove back-reference links from popups */
+  .reversefootnote {
+    display: none;
+  }
+}
+
+/* ========================================
+   FOOTNOTES SECTION AT BOTTOM
+   ======================================== */
+
+.footnotes {
+  margin-top: 3em;
+  padding-top: 1.5em;
+  position: relative;
+  font-size: 0.95em;
+  border-top: 1px solid #333;
+
+  /* Hide the default <hr> */
+  hr {
+    display: none;
+  }
+
+  /* Footnotes list */
+  ol {
+    padding-left: 2.5em;
+    list-style: none;
+    counter-reset: footnotes;
+  }
+
+  /* Individual footnote */
+  li {
+    counter-increment: footnotes;
+    position: relative;
+    min-height: calc(1.75em + 1px);
+    padding: 6px 0 0.25em 0;
+    margin-bottom: 0.5em;
+    color: #b0b0b0;
+
+    /* Footnote number indicator */
+    &::before {
+      content: counter(footnotes);
+      position: absolute;
+      right: calc(100% + 0.75em);
+      top: calc(-0.125em + 5px);
+      width: 1.75em;
+      height: 1.75em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px dotted #666;
+      line-height: 1;
+      font-size: 0.9em;
+      font-weight: 600;
+      color: #888;
+      z-index: 1;
+    }
+
+    /* Hover effect on footnote item */
+    &:hover::before {
+      border-color: #777;
+      color: #aaa;
+    }
+
+    /* Paragraph within footnote */
+    p {
+      margin: 0;
+      padding: 0;
+      display: inline;
+    }
+
+    /* Links within footnotes */
+    a:not(.reversefootnote) {
+      color: #6495ed;
+
+      &:hover {
+        color: #87ceeb;
+      }
+    }
+  }
+
+  /* Back-to-reference link */
+  .reversefootnote {
+    display: inline-block;
+    margin: 0 0 0 0.5em;
+    padding: 0.25em 0.30em;
+    line-height: 0.5;
+    width: 0.70em;
+    font-size: 1em;
+    border: 1px dotted #666;
+    color: transparent;
+    text-decoration: none;
+    transition: border-color 0.15s ease;
+    position: relative;
+    top: 0.10em;
+    z-index: 1;
+
+    &:hover {
+      border-color: #999;
+      border-style: solid;
+      box-shadow:
+        0 0 0 1px #1a1a1a inset,
+        0 0 0 2px #999 inset;
+    }
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .footnotes {
+    font-size: 0.9em;
+
+    ol {
+      padding-left: 2em;
+    }
+
+    li::before {
+      font-size: 0.85em;
+      right: calc(100% + 0.5em);
+    }
+  }
+}

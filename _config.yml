@@ -34,6 +34,12 @@ minima:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# Kramdown settings for footnotes
+kramdown:
+  input: GFM
+  footnote_backlink: "&#8617;"
+  footnote_nr: 1
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

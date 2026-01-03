@@ -65,6 +65,8 @@ permalink: /books/
   <li>Dictator (Cicero #3) by Robert Harris</li>
   <li>Careless People by Sarah Wynn-Williams</li>
   <li>Invisible Rulers by Renee DiResta</li>
+  <li>Rendezvous with Rama by Arthur C. Clarke</li>
+  <li>Everything is Tuberculosis by John Green</li>
 </ul>
 
 2024:
