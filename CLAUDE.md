@@ -10,6 +10,51 @@ This is a personal blog built with Jekyll and hosted on GitHub Pages. The site (
 
 The site's design is inspired by [Gwern Branwen's website](https://github.com/gwern/gwern.net/), particularly its approach to typography and interactive reading features. The implementation is custom-built for Jekyll/Kramdown rather than Gwern's Hakyll-based system.
 
+## Working Modes
+
+This project has two distinct working modes that determine how Claude Code should approach tasks:
+
+### CODE Mode (Default)
+**When to use:** For all technical work including development, styling, configuration, and site functionality.
+
+**Focus areas:**
+- Jekyll configuration and build system
+- HTML/CSS/JavaScript implementation
+- Site architecture and layouts
+- Interactive features and functionality
+- Dependencies and tooling
+- Technical debugging
+
+**Approach:** Technical precision, code quality, testing changes with `bundle exec jekyll serve`
+
+### EDITOR Mode
+**When to use:** When the user explicitly requests content analysis or editing of blog posts. User will specify "EDITOR mode" or similar language.
+
+**Focus areas:**
+- Analyzing full post content for clarity, flow, and coherence
+- Evaluating argument structure and logical progression
+- Identifying unclear passages or awkward phrasing
+- Suggesting improvements to prose and style
+- Answering questions about post content and themes
+- Making content edits (grammar, structure, phrasing)
+- Reviewing how ideas connect within a post
+
+**Approach:**
+1. **Read the entire post** from `_posts/` directory when entering EDITOR mode
+2. **Analyze holistically** - consider the full narrative arc, not just individual sentences
+3. **Preserve the author's voice** - suggest edits that maintain the personal, reflective tone
+4. **Be specific** - reference exact passages when suggesting changes
+5. **Focus on content, not code** - ignore technical markdown details unless they affect readability
+6. **Ask clarifying questions** about the author's intent before making significant structural changes
+
+**Out of scope in EDITOR mode:**
+- Technical implementation details (unless they directly impact content display)
+- Styling or layout changes
+- Adding new features or functionality
+- Jekyll configuration
+
+**Switching modes:** The user will explicitly state when they want to enter EDITOR mode and which post to analyze. Return to CODE mode when technical work is requested or EDITOR session is complete.
+
 ## Development Commands
 
 ### Local Development
