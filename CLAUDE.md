@@ -180,3 +180,37 @@ View test post at `_posts/2024-12-11-sidenotes-test.md:1` for reference implemen
 
 ### Modifying Styles
 Primary custom styles in `_sass/custom.scss`. Changes auto-reload with jekyll serve. Uses SCSS nesting and variables.
+
+### Publishing to Substack
+
+The `publish_to_substack.rb` script automates preparing posts for Substack while maintaining your site as the canonical source.
+
+**Workflow:**
+1. Build the site to generate fresh RSS feed:
+   ```bash
+   bundle exec jekyll build
+   ```
+
+2. Run the publisher script:
+   ```bash
+   ruby publish_to_substack.rb
+   ```
+
+3. Select the post number you want to publish
+
+4. The script will generate a `substack_[post-title].html` file containing:
+   - Post title and metadata
+   - HTML content with footnotes converted to Substack-friendly format
+   - Canonical link back to your original post
+
+5. Copy the HTML content and paste into Substack's editor
+
+6. In Substack post settings, set the "Canonical URL" to your original post URL
+
+**What the script does:**
+- Reads your RSS feed (`_site/feed.xml`)
+- Converts footnote markup to simpler format for Substack
+- Adds canonical link attribution at bottom
+- Saves prepared HTML for easy copying
+
+**Note:** The script uses your site's RSS feed, so posts marked with `hide_from_feed: true` won't appear in the list.

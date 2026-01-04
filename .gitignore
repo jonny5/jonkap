@@ -5,3 +5,6 @@ _site
 vendor
 .vscode
 .claude/settings.local.json
+
+# Substack export files
+substack_*.html

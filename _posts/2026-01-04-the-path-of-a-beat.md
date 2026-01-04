@@ -15,11 +15,11 @@ Robyn's music often breaks through this barrier.  Electronic heavy songs where s
  A song's sonic qualities are always going to be why I most enjoy it. This song has extra staying power and appeal contained in its origin. Initially I wasn't so focused on the lyrics, just the beat and feeling. As I kept listening I got more curious. So I listened to [the non remixed version](https://www.youtube.com/watch?v=1zVECruSI3k) which is also great and has a breezier feel. It doesn't take a musical genius to hear the opening lyrics  (I press trigga, I don't press people button // Nobody tjaffs come face me with something) and not expect them coming from a Swedish woman like Robyn. So I found the song it was a cover of: [this (quite popular) song – Teddybears Cobrastyle](https://www.youtube.com/watch?v=s5SA6L722kI). That song in turn makes heavy use of [Mad Cobra's Press Trigger](https://www.youtube.com/watch?v=awIY7IgGDg0). That song's origin is on an album called [Buzz Riddim](https://www.youtube.com/watch?v=u2Xg7E5c08Q), where artists created their songs over an iconic beat ([Sean Paul's Give Me the Light](https://www.youtube.com/watch?v=8MmW_GOFS8I) is also on this album).
 
 So the full timeline:
-- A producer named [Troyton Rami](https://www.instagram.com/troytonramimusic/?hl=en) creates Buzz Riddim
-- Mad Cobra raps over it
-- Teddybears samples the rapping over their own beat, creates Cobrastyle
-- Robyn covers the Teddybears song
-- Bloody Beetroots remixes the cover
+- A producer named [Troyton Rami](https://www.instagram.com/troytonramimusic/?hl=en) creates [Buzz Riddim](https://www.youtube.com/watch?v=u2Xg7E5c08Q)
+- [Mad Cobra raps over it](https://www.youtube.com/watch?v=awIY7IgGDg0)
+- [Teddybears samples the rapping over their own beat, creates Cobrastyle](https://www.youtube.com/watch?v=s5SA6L722kI)
+- [Robyn covers the Teddybears song](https://www.youtube.com/watch?v=1zVECruSI3k)
+- [Bloody Beetroots remixes the cover](https://www.youtube.com/watch?v=GyeypSlBr4c)
 - I listen :)
 
 A pretty amazing path. The number of ears and hands involved, the amount of inspiration and amount of variation along the way.  Influence and inspiration in art has some direct lines and some abstract ones – samples and covers in music provide one of the most tangible ways of seeing these evolutionary branches  [^1]. Part of the beauty is that there is no "best" version, each song has its own appeal. If you listen to all the iterations I'd be curious which you prefer.
