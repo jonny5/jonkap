@@ -2,7 +2,7 @@
 layout: post
 title: Meditation Resources
 date: 2025-11-11 08:46:35 -0700
-section: Meditation
+section: Writing
 hide_from_feed: true
 categories: meditation
 ---

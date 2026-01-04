@@ -11,6 +11,9 @@ layout: default
             <a class="post-link" href="{{ post.url | relative_url }}">
               {{ post.title | escape }}
             </a>
+            {% if post.draft %}
+              <span class="draft-badge">DRAFT</span>
+            {% endif %}
           </h3>
           {%- if site.show_excerpts -%}
             {{ post.excerpt }}
@@ -21,11 +24,11 @@ layout: default
     <hr class="pinned-divider">
   {%- endif -%}
 
-  {% assign sections = "Poetry,Meditation,Culture" | split: "," %}
+  {% assign sections = 'Writing,Poetry' | split: ',' %}
 
   <div class="sections-container">
     {% for section in sections %}
-      {% assign section_posts = site.posts | where: "section", section %}
+      {% assign section_posts = site.posts | where: 'section', section %}
       {% assign has_visible = false %}
       {% for post in section_posts %}
         {% unless post.hide_from_feed or post.pinned %}
@@ -44,6 +47,9 @@ layout: default
                     <a class="post-link" href="{{ post.url | relative_url }}">
                       {{ post.title | escape }}
                     </a>
+                    {% if post.draft %}
+                      <span class="draft-badge">DRAFT</span>
+                    {% endif %}
                   </h3>
                   {% if site.show_excerpts %}
                     {{ post.excerpt }}

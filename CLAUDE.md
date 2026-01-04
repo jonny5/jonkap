@@ -63,6 +63,12 @@ bundle exec jekyll serve
 ```
 Runs the Jekyll development server. Changes to most files will be auto-reloaded, but `_config.yml` changes require a server restart.
 
+**To view drafts in development:**
+```bash
+bundle exec jekyll serve --drafts
+```
+This includes draft posts in the site and displays them with a gold "DRAFT" badge in the blog listing and on individual post pages.
+
 ### Building
 ```bash
 bundle exec jekyll build
@@ -85,8 +91,10 @@ Install or update Ruby gems defined in Gemfile.
 - Configured in `_config.yml:1`
 
 ### Content Structure
-- Blog posts in `_posts/` following Jekyll naming convention: `YYYY-MM-DD-title.md`
-- Posts include front matter with: `layout`, `title`, `date`, `section`, `categories`, `published`
+- **Published posts** in `_posts/` following Jekyll naming convention: `YYYY-MM-DD-title.md`
+- **Draft posts** in `_drafts/` without date prefix (e.g., `title.md`)
+- Posts include front matter with: `layout`, `title`, `date`, `section`, `categories`
+- Drafts do NOT need `published: false` flag (handled by folder location)
 - Static pages (About, Books, Content) in root as `.md` files
 - Uses `layout: post` for blog entries, `layout: blog` for blog index
 
@@ -102,7 +110,8 @@ Custom styles are in `_sass/custom.scss:1` and include:
 
 1. **Table of Contents** (`.toc`, lines 1-60) - Collapsible navigation with hover effects
 2. **Footnotes System** (lines 62-267) - Hover popups and bottom footnotes section styled for dark theme
-3. **Responsive Design** - Mobile-friendly layouts
+3. **Draft Badge** (`.draft-badge`, lines 304+) - Gold badge indicating draft posts (visible only with `--drafts` flag)
+4. **Responsive Design** - Mobile-friendly layouts
 
 Font definitions in `_sass/_fonts.scss` reference self-hosted Lato and Source Serif fonts in `assets/fonts/`.
 
@@ -144,11 +153,27 @@ Posts support Kramdown-flavored markdown including footnotes `[^1]` syntax. The 
 
 ## Common Workflows
 
-### Adding a New Post
+### Working with Drafts
+**Creating a new draft:**
+1. Create file in `_drafts/` with format: `title.md` (no date prefix needed)
+2. Include front matter with required fields: `layout: post`, `title`, `date`, `section`
+3. Do NOT include `published: false` - folder location handles draft status
+
+**Viewing drafts:**
+- Run `bundle exec jekyll serve --drafts` to view drafts locally
+- Drafts will appear in the blog listing with a gold "DRAFT" badge
+- Individual draft posts also show the "DRAFT" badge in the page title
+
+**Publishing a draft:**
+1. Move file from `_drafts/` to `_posts/`
+2. Rename file to include date prefix: `YYYY-MM-DD-title.md`
+3. Verify the `date` field in front matter is correct
+4. The draft badge will automatically disappear once published
+
+### Adding a New Published Post
 1. Create file in `_posts/` with format: `YYYY-MM-DD-title.md`
 2. Include front matter with required fields: `layout: post`, `title`, `date`, `section`
-3. Set `published: true` when ready to publish
-4. Use Kramdown syntax for footnotes: `[^n]` for citation, `[^n]: text` for definition
+3. Use Kramdown syntax for footnotes: `[^n]` for citation, `[^n]: text` for definition
 
 ### Testing Footnotes
 View test post at `_posts/2024-12-11-sidenotes-test.md:1` for reference implementation. Hover over footnote citations to see popups.

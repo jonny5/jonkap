@@ -2,7 +2,7 @@
 layout: post
 title: Testing Sidenotes
 date: 2024-12-11 21:50:00 -0700
-section: Meditation
+section: Writing
 categories: test sidenotes
 published: true
 ---
