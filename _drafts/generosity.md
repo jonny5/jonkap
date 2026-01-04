@@ -4,7 +4,6 @@ title: Generosity as a practice
 date: 2025-05-14 08:46:35 -0700
 section: Meditation
 categories: conspiracy, right speech
-published: false
 ---
 Of the many forms of suffering happening in the world, one that my mind goes to frequently is the people of Burma*.
 Starting with the coup in 2021 and more recently with a serious earthquake in 2025. I am quite fond of the people I met
