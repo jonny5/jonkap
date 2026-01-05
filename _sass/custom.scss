@@ -81,11 +81,8 @@ sup a[href^="#fn"] {
   &:hover,
   &.popup-open {
     color: #fff;
-    box-shadow:
-      2px 4px 0 4px #1a1a1a,
-      -2px 4px 0 4px #1a1a1a,
-      2px 4px 0 5px #888,
-      -2px 4px 0 5px #888;
+    box-shadow: 2px 4px 0 4px #1a1a1a, -2px 4px 0 4px #1a1a1a,
+      2px 4px 0 5px #888, -2px 4px 0 5px #888;
   }
 }
 
@@ -146,7 +143,8 @@ sup a[href^="#fn"] {
   }
 
   /* List styling within popups */
-  ol, ul {
+  ol,
+  ul {
     margin: 0.5em 0;
     padding-left: 1.5em;
   }
@@ -263,24 +261,32 @@ sup a[href^="#fn"] {
   .reversefootnote {
     display: inline-block;
     margin: 0 0 0 0.5em;
-    padding: 0.25em 0.30em;
-    line-height: 0.5;
-    width: 0.70em;
-    font-size: 1em;
-    border: 1px dotted #666;
-    color: transparent;
+    width: 1em;
+    height: 1em;
     text-decoration: none;
+    border: 1px dotted #666;
+    border-radius: 2px;
+    padding: 0.15em;
     transition: border-color 0.15s ease;
     position: relative;
-    top: 0.10em;
+    top: 0.15em;
     z-index: 1;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: #888;
+      transition: fill 0.15s ease;
+    }
 
     &:hover {
       border-color: #999;
       border-style: solid;
-      box-shadow:
-        0 0 0 1px #1a1a1a inset,
-        0 0 0 2px #999 inset;
+
+      svg {
+        fill: #ccc;
+      }
     }
   }
 }

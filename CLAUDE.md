@@ -183,34 +183,23 @@ Primary custom styles in `_sass/custom.scss`. Changes auto-reload with jekyll se
 
 ### Publishing to Substack
 
-The `publish_to_substack.rb` script automates preparing posts for Substack while maintaining your site as the canonical source.
+The `publish_to_substack.rb` script copies a post to your clipboard, ready to paste into Substack.
 
 **Workflow:**
-1. Build the site to generate fresh RSS feed:
-   ```bash
-   bundle exec jekyll build
-   ```
+```bash
+bundle exec jekyll build
+ruby publish_to_substack.rb monks-bowl   # by slug
+ruby publish_to_substack.rb --latest     # most recent post
+ruby publish_to_substack.rb              # interactive menu
+```
 
-2. Run the publisher script:
-   ```bash
-   ruby publish_to_substack.rb
-   ```
-
-3. Select the post number you want to publish
-
-4. The script will generate a `substack_[post-title].html` file containing:
-   - Post title and metadata
-   - HTML content with footnotes converted to Substack-friendly format
-   - Canonical link back to your original post
-
-5. Copy the HTML content and paste into Substack's editor
-
-6. In Substack post settings, set the "Canonical URL" to your original post URL
+Then paste into Substack and set the canonical URL shown in the output.
 
 **What the script does:**
 - Reads your RSS feed (`_site/feed.xml`)
-- Converts footnote markup to simpler format for Substack
-- Adds canonical link attribution at bottom
-- Saves prepared HTML for easy copying
+- Cleans HTML for Substack's editor
+- Converts footnotes to simple `[1]` format with Notes section
+- Adds canonical attribution at bottom
+- Copies directly to clipboard
 
-**Note:** The script uses your site's RSS feed, so posts marked with `hide_from_feed: true` won't appear in the list.
+**Note:** Posts with `hide_from_feed: true` won't appear.
