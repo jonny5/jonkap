@@ -40,6 +40,12 @@ kramdown:
   input: GFM
   footnote_backlink: "&#8617;"
   footnote_nr: 1
+
+# SVG injection - replaces element content with SVG files at build time
+svg_inject:
+  - selector: ".reversefootnote"
+    svg: "arrow-up"
+    replace: "content"
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
