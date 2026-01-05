@@ -35,6 +35,12 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+# Sass settings - silence deprecation warnings from theme dependencies
+sass:
+  quiet_deps: true
+  silence_deprecations:
+    - import
+
 # Kramdown settings for footnotes
 kramdown:
   input: GFM
