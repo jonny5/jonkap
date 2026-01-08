@@ -8,25 +8,33 @@ published: true
 ---
 Conspiracy in My Room
 
-I opened the door to my room at the monastery, mattress in hand. Where my mattress was meant to go, the bedframe was covered in various bottles and knick knacks. On the other side of the room lay my new roommate, typing away on a laptop. The scene before me a stark contrast to other places I practiced – where one mostly kept to themselves and avoided all external stimulation. 
+Carrying my mattress pad in hand, I opened the door to my room at the monastery. A basic room greeted me: an empty frame for my pad, a small desk, and another bed for my roommate. Except my bedframe wasn't empty, various bottles and knick-knacks were strewn across where my mattress was meant to go. And the other bed was fully occupied by an older man lying supine, typing away at a laptop balanced on his belly.
 
-Importantly, while other retreats had been in silence, here discussion was encouraged. So sharing a room meant having a proper roommate. Quickly it was clear we had some things in common, we shared first names and both had spent large parts of life in the Bay Area.
+I had known this was going to be different from previous retreats I had done, which were largely in silence with minimal stimulation. I was at Shwee Oo Min Monastery in Burma, led by Sayadaw U Tejaniya. He encourages a form of practice to bring mindfulness to all aspects of life, which includes encouraging discussion. So sharing a room meant having a more substantial relationship than just another body sleeping in the same space.
 
-For the first couple days, we mostly discussed the center and meditation practice more broadly. We talked about our previous experience and what brought us to the center. For me, that meant my time at centers in California and the earlier parts of my trip. His time had been with several teachers in Asia. He was looking as much for a guru as for meditation guidance.  
+So I began chatting with my new roommate. Quickly it was clear we had some things in common, we shared first names and both had spent large parts of life in the Bay Area. I could see why we were paired together.
 
-One of his teachers had written down a date and told him that was the day he would die. He wanted to go back to the teacher the day after the fateful written date to prove him wrong[^1]. He started to laugh when describing it, and then abruptly stopped. I could tell he didn't think it was entirely implausible. He followed another teacher who he believed to have traveled to astral planes and virtually to space.
+For the first couple days, our conversations largely centered around the center and meditation practice more broadly. We talked about our previous experience and what brought us to the center. For me, that meant my time mostly practicing in California and the earlier parts of my trip. He gave me a more full backstory of his life[^1] and his journey with several teachers and monasteries in Asia. It was clear he was looking for a guru more than just meditation guidance.  
 
-I didn't find these very plausible, but I also understand how the mind can get into fairly different mental states as a result of meditation practice. I credited some of his belief to the fundamental mysteriousness of consciousness. We really do not understand much about why it exists, so I figured his way of filling in the gaps was following these gurus.
+One of his teachers had written down a date and told him that was the day he would die. He wanted to go back to the teacher the day after the fateful written date to prove him wrong. He started to laugh when describing it, and then abruptly stopped. I could tell he didn't think it was entirely implausible. He then followed another teacher who he believed to have traveled to astral planes and virtually to space.
 
-He then sprinkled in a few other comments, about the government and the CIA and their corruption. His anger describing it felt a little extreme, but I didn't think too much of it. Maybe as he grew more comfortable over our time he shared more of his thinking and he went on in a lot more detail about the government and I could see his appetite for conspiracies was large. I mostly listened. With some curiousity I asked him to give me some examples of government corruption. 
+I am naturally skeptical and his view of the supernatural with these teachers was no exception. But I have seen how meditation can create fairly different mental states, so I didn't think too deeply about his beliefs and chalked them up to the fundamental mysteriousness of consciousness.
 
-The example that stayed with me was also new to me: a conspiracy around a weather station in Alaska. Specifically that it was being used to create hurricanes off of the Gulf Coast[^2]. This was a bridge too far for me. Most of what he had previously outlined to me were thinking groups or individuals had nefarious motives where I was skeptical. Arguing over the inner workings of a government officials mind did not feel worthy. Here though, we were talking clear physics. 
+As we kept talking over the next few days, more opinions emerged - thoughts about government corruption, the CIA, various nefarious schemes. While there was often a kernel of truth, his appetite for conspiracies was clearly large. I mostly just listened. 
 
-I tried to explain that even the most evil government in the world physically could not create a hurricane. I outlined the amount of power that would be needed would be astronomical, let alone the logistics of somehow transferring that energy from Alaska to the Atlantic Ocean. This seemed clear to me, if something is physically impossible no amount of motivation would be sufficient.
+At one point I asked him what are some other things the government was doing. He outlined how a weather station in Alaska was being used to create hurricanes off the Gulf Coast[^2]. Here my ability to just listen ended. While I wasn't going to argue about the motivations of politicians or US foreign policy, I felt had to defend basic physics. Part of the conversation went something like:
 
-We went back and forth. His retort that mostliy ended the debate was something like "Where did you learn that? At your Ivy League school, or from the New York Times?" and I realized that the debate was not going far. To him, the conspiracy could spread all the way to all the physicists, meteorologists and journalists. 
+Me: Even the most evil government in the world couldn't physically create a hurricane. The amount of power needed would be astronomical. And how would you even transfer that energy from Alaska to the Atlantic?
 
-One day toward the end of my time, I happened to take a closer look at the bottles that had littered my be on arrival. One of them was a serum for Alex Jones' InfoWars. A more observant eye on my part could have had me understand his view of of he world much sooner.
+Him: Where did you learn that? At your Ivy League school? From the New York Times?
+
+Me: This is just how the world works. Any physicist would tell you the same thing.
+
+Him: Sure, physicists who were taught at the same corrupt universities.
+
+I could feel myself getting more animated as we went back and forth. Where I saw a clear line between scientific understanding and human motivations, he saw conspiracy all the way down. 
+
+Later, I took a closer look at the bottles that had been strewn across my bed that first day. One of them bore the logo of Alex Jones' InfoWars. I couldn't have asked for a clearer sign. And it had been there from the start.
 
 *******
 
