@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Conspiracy in my room
-date: 2025-05-14 08:46:35 -0700
+date: 2026-01-10 08:46:35 -0700
 section: Writing
 categories: conspiracy, right speech
 published: true
@@ -30,7 +30,7 @@ Later, I took a closer look at the bottles that had been strewn across my bed th
 
 *******
 
-This was the setting I found myself practicing meditation at the monastery. I tried to use it as a way to practice Right Speech[^4], the basic outline of it is to only speak with three conditions: is it kind, is it true, is it necessary. I did my best to practice being in the body in the moment and while talking. Often when speaking my attention would escape the body and I would get caught up in my ideas. What proved most valuable was to go to the meditation hall after one of these heated discussions and really watch my body there. Eventually, I could see the agitation dissipate. Then the thought might arise again: "How can I show him how he is wrong???". When my awareness would eventually return, I'd observe as my body eventually relaxed. 
+This was the setting I found myself practicing meditation at the monastery. I tried to use it as a way to practice Right Speech[^4], the basic outline of it is to only speak with three conditions: is it kind, is it true, is it necessary. I did my best to practice being in the body in the moment and while talking. Often when speaking my attention would escape the body and I would get caught up in my ideas. What proved most valuable was to go to the meditation hall after one of these heated discussions and really watch my body there. Eventually, I could see the agitation dissipate. Then the thought might arise again: "How can I show him how he is wrong???". When my awareness would eventually return, I'd observe as my body eventually relaxed.
 
 Conversely there is how to listen. With my roommate, our room setup was supportive of this. I would sit cross-legged on my bed when our discussions took place. So I was able to better be with my body and notice my reactivity when we talked. I found when he came after me personally, I was much more reactive. And this came across in my body, I could feel the heat and pressure in my chest pulsing. This was very valuable relational practice. It helped that the stakes were pretty low – this wasn't someone close and while he would often make it personal, it wasn't an argument with lasting effects. So practicing in this setting gave me the space to see my reactivity.
 
@@ -38,7 +38,7 @@ It has stuck with me, I find I get less caught up in arguments now. I try to not
 
 ******
 
-Toward the end of my time at the monastery, my roommate and another man had donated the breakfast meal[^5]. He enlisted me as part of the team helping (we did get along fine despite our arguments). 
+Toward the end of my time at the monastery, my roommate and another man had donated the breakfast meal[^5]. He enlisted me as part of the team helping (we did get along fine despite our arguments).
 
 The most substantive support I gave was during the meal itself. I was tasked with serving everyone their coffee. It was quite simple, just handing coffees to those who requested them. It gave me a lot of joy, being able to have a simple interaction with all of the monks, nuns and various practitioners at the center. I felt like I was receiving their warmth of spirit as I was handing them their hot drinks.
 
