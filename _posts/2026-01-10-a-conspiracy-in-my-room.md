@@ -53,7 +53,7 @@ The most substantive support I gave was during the meal itself. I was tasked wit
 It was a memorable experience and I have to credit my roommate for fueling it with his generosity. While I couldn't connect with him in the realm of speech – there is another part of the Eightfold Path that is Right Action. And for that morning we were able to practice that together.
 
 [^1]: I was at Shwee Oo Min Monastery in Burma, led by Sayadaw U Tejaniya. He encourages a form of practice to bring mindfulness to all aspects of life, which includes encouraging discussion.
-[^2]: He was about 40 years older than me.
-[^3]: See https://en.wikipedia.org/wiki/High-frequency_Active_Auroral_Research_Program#Conspiracy_theories
+[^2]: Worth noting that he was about 40 years older than me.
+[^3]: See [HAARP conspiracy theories](https://en.wikipedia.org/wiki/High-frequency_Active_Auroral_Research_Program#Conspiracy_theories) on Wikipedia.
 [^4]: One of the core teachings in Buddhism is the Eightfold path, outlining how a wise person should live. Right speech is included as one of these eight practices. There are 3 main aspects to Right Speech: is it kind, is it true, is it necessary.
 [^5]: A monastery like this one runs entirely on donations. There are different ways to contribute, and one is to donate a meal. The logistics are such that its a monetary donation, it's not feasible to physically donate the meal (whereas this might be possible in another setting).
