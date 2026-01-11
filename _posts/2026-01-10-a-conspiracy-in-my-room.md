@@ -34,11 +34,11 @@ Later, I took a closer look at the bottles that had been strewn across my bed th
 
 <br>
 
-This was the setting I found myself practicing meditation at the monastery. I tried to use it as a way to practice Right Speech[^4], the basic outline of it is to only speak with three conditions: is it kind, is it true, is it necessary. I did my best to practice being in the body in the moment and while talking. Often when speaking my attention would escape the body and I would get caught up in my ideas. What proved most valuable was to go to the meditation hall after one of these heated discussions and really watch my body there. Eventually, I could see the agitation dissipate. Then the thought might arise again: "How can I show him how he is wrong???". When my awareness would eventually return, I'd observe as my body eventually relaxed.
+This was the setting I found myself practicing meditation at the monastery. I tried to use it as a way to practice Right Speech[^4]. I did my best to practice being in the body in the moment and while talking. Often when speaking my attention would escape the body and I would get caught up in my ideas. What proved most valuable was to go to the meditation hall after one of these heated discussions and really watch my body there. Eventually, I could see the agitation dissipate. Then the thought might arise again: "How can I show him how he is wrong???". When my awareness would eventually return, I'd observe as my body eventually relaxed.
 
 Conversely there is how to listen. With my roommate, our room setup was supportive of this. I would sit cross-legged on my bed when our discussions took place. So I was able to better be with my body and notice my reactivity when we talked. I found when he came after me personally, I was much more reactive. And this came across in my body, I could feel the heat and pressure in my chest pulsing. This was very valuable relational practice. It helped that the stakes were pretty low – this wasn't someone close and while he would often make it personal, it wasn't an argument with lasting effects. So practicing in this setting gave me the space to see my reactivity.
 
-It has stuck with me, I find I get less caught up in arguments now. I try to notice and be intentional with what I say. Listening with the whole body is very useful too. All of this helps me be more engaged with other people and less caught in thinking of what next to say.
+I often get less caught up in arguments now. I try to notice and be intentional with what I say. Listening with the whole body is very useful too. This is supportive of staying more engaged in conversation and less caught in thinking of what next to say.
 
 <br>
 
@@ -50,7 +50,7 @@ Toward the end of my time at the monastery, my roommate and another man had dona
 
 The most substantive support I gave was during the meal itself. I was tasked with serving everyone their coffee. It was quite simple, just handing coffees to those who requested them. It gave me a lot of joy, being able to have a simple interaction with all of the monks, nuns and various practitioners at the center. I felt like I was receiving their warmth of spirit as I was handing them their hot drinks.
 
-It was a memorable experience and I have to credit my roommate for fueling it with his generosity. While I couldn't connect with him in the realm of speech – there is another part of the Eightfold Path that is Right Action. And for that morning we were able to practice that together.
+This morning has stuck with me, and I have to credit my roommate for fueling it with his generosity. While I couldn't connect with him in the realm of speech – there is another part of the Eightfold Path that is Right Action. And for that morning we were able to practice that together.
 
 [^1]: I was at Shwee Oo Min Monastery in Burma, led by Sayadaw U Tejaniya. He encourages a form of practice to bring mindfulness to all aspects of life, which includes encouraging discussion.
 [^2]: Worth noting that he was about 40 years older than me.
