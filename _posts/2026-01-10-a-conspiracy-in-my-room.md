@@ -8,7 +8,7 @@ published: true
 ---
 Carrying my mattress pad in hand, I opened the door to my room at the monastery. The essentials greeted me: an empty frame for my pad, a small desk, and another bed for my roommate. Except my bedframe wasn't empty. Various bottles and knick-knacks were strewn across where my mattress was meant to go. And the other bed was fully occupied by an older man lying supine, typing away at a laptop on his belly. I had already known this was going to be different from previous retreats I had done, which were largely in silence with minimal stimulation[^1]. So sharing a room meant having a more substantial relationship than just another body sleeping in the same space. The scene in front of me was still a bit of a shock and more chaotic than I anticipated.
 
-We began chatting and quickly found common ground—we shared first names and both had roots in the Bay Area. We talked about meditation practice, our previous experience, what brought us to the center. For me, that meant my time mostly practicing in California. He gave me a fuller backstory of his life[^2]  and his journey with several teachers and monasteries across Asia. It was clear he was looking for a guru more than just meditation guidance.
+We began chatting and quickly found common ground—we shared first names and both had roots in the Bay Area. We talked about meditation practice, our previous experience, what brought us to the center. For me, that meant my time mostly practicing in California. He gave me a fuller backstory of his life[^2] and his journey with several teachers and monasteries across Asia. It was clear he was looking for a guru more than just meditation guidance.
 
 One of his teachers had written down a date and told him that was the day he would die. He wanted to go back to the teacher the day after the fateful date to prove him wrong. He started to laugh when describing it and then abruptly stopped. I could tell he didn't think it was entirely implausible. He described following another teacher who he believed had traveled to astral planes and virtually to space. I have seen how meditation can create fairly different mental states, so I didn't think too deeply about his beliefs even if I was skeptical. I chalked them up to his way of grappling with the mysteriousness of consciousness.
 
@@ -38,7 +38,7 @@ This was the setting I found myself practicing meditation at the monastery. I tr
 
 Conversely there is how to listen. With my roommate, our room setup was supportive of this. I would sit cross-legged on my bed when our discussions took place. So I was able to better be with my body and notice my reactivity when we talked. I found when he came after me personally, I was much more reactive. And this came across in my body, I could feel the heat and pressure in my chest pulsing. This was very valuable relational practice. It helped that the stakes were pretty low – this wasn't someone close and while he would often make it personal, it wasn't an argument with lasting effects. So practicing in this setting gave me the space to see my reactivity.
 
-I often get less caught up in arguments now. I try to notice and be intentional with what I say. Listening with the whole body is very useful too. This is supportive of staying more engaged in conversation and less caught in thinking of what next to say.
+I often get less caught up in arguments now. I try to notice and be intentional with what I say. Listening with the whole body is very useful too. This helps me stay more engaged in conversation and less caught in thinking of what next to say.
 
 <br>
 
@@ -56,4 +56,4 @@ This morning has stuck with me, and I have to credit my roommate for fueling it 
 [^2]: Worth noting that he was about 40 years older than me.
 [^3]: See [HAARP conspiracy theories](https://en.wikipedia.org/wiki/High-frequency_Active_Auroral_Research_Program#Conspiracy_theories) on Wikipedia.
 [^4]: One of the core teachings in Buddhism is the Eightfold path, outlining how a wise person should live. Right speech is included as one of these eight practices. There are 3 main aspects to Right Speech: is it kind, is it true, is it necessary.
-[^5]: A monastery like this one runs entirely on donations. There are different ways to contribute, and one is to donate a meal. The logistics are such that its a monetary donation, it's not feasible to physically donate the meal (whereas this might be possible in another setting).
+[^5]: A monastery like this one runs entirely on donations. There are different ways to contribute, and one is to donate a meal. The logistics are such that it's a monetary donation, it's not feasible to physically donate the meal (whereas this might be possible in another setting).
