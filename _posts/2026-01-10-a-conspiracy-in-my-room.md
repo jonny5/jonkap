@@ -6,7 +6,7 @@ section: Writing
 categories: conspiracy, right speech
 published: true
 ---
-Carrying my mattress pad in hand, I opened the door to my room at the monastery. The essentials greeted me: an empty frame for my pad, a small desk, and another bed for my roommate. Except my bedframe wasn't empty. Various bottles and knick-knacks were strewn across where my mattress was meant to go. And the other bed was fully occupied by an older man lying supine, typing away at a laptop on his belly. I had already known this was going to be different from previous retreats I had done, which were largely in silence with minimal stimulation[^1]. So sharing a room meant having a more substantial relationship than just another body sleeping in the same space. The scene in front of me was still a bit of a shock and more chaotic than I anticipated.
+Carrying my mattress pad in hand, I opened the door to my room at the monastery. The essentials greeted me: an empty frame for my pad, a small desk, and another bed for my roommate. Except my bedframe wasn't empty. Various bottles and knick-knacks were strewn across where my mattress was meant to go. And the other bed was fully occupied by an older man lying supine, typing away at a laptop on his belly. I had already known this was going to be different from previous retreats I had done, which were largely in silence with minimal stimulation[^1]. Here, discussion was encouraged. So sharing a room meant having a more substantial relationship than just another body sleeping in the same space. The scene in front of me was still a bit of a shock and more chaotic than I anticipated.
 
 We began chatting and quickly found common ground—we shared first names and both had roots in the Bay Area. We talked about meditation practice, our previous experience, what brought us to the center. For me, that meant my time mostly practicing in California. He gave me a fuller backstory of his life[^2] and his journey with several teachers and monasteries across Asia. It was clear he was looking for a guru more than just meditation guidance.
 
@@ -52,7 +52,7 @@ The most substantive support I gave was during the meal itself. I was tasked wit
 
 This morning has stuck with me, and I have to credit my roommate for fueling it with his generosity. While I couldn't connect with him in the realm of speech – there is another part of the Eightfold Path that is Right Action. And for that morning we were able to practice that together.
 
-[^1]: I was at Shwee Oo Min Monastery in Burma, led by Sayadaw U Tejaniya. He encourages a form of practice to bring mindfulness to all aspects of life, which includes encouraging discussion.
+[^1]: I was at Shwee Oo Min Monastery in Burma, led by Sayadaw U Tejaniya. He encourages a form of practice to bring mindfulness to all aspects of life, resulting in a much looser schedule and open ended form of practice.
 [^2]: Worth noting that he was about 40 years older than me.
 [^3]: See [HAARP conspiracy theories](https://en.wikipedia.org/wiki/High-frequency_Active_Auroral_Research_Program#Conspiracy_theories) on Wikipedia.
 [^4]: One of the core teachings in Buddhism is the Eightfold path, outlining how a wise person should live. Right speech is included as one of these eight practices. There are 3 main aspects to Right Speech: is it kind, is it true, is it necessary.
