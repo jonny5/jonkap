@@ -8,9 +8,9 @@ categories: elkenmist
 
 Equanimity and chicks
 
-Failing to catch an escaped chick humbled me. 
+Being outmaneuvered by a chick humbled me. My task on the farm was relatively simple: keeping a group of cooped up chicks fed and hydrated. I had just discovered a secret, more difficult task. Keeping them contained. 
 
-
+On one morning, with my mind still assembling itself from sleep, I trudged out into the foggy air. I lifted the gate off the enclosure only to find that the enclosure hadn't fully done it's job. Two chicks were just on the other side. I kept to my first task and tended to the enclosed chick's diets. I hoped the appeal of food would entice the escaped chicks inside. This wasn't necessary. They and I were totally aligned on the idea of them getting inside. They were making lots of noises, and running in circles around the coop trying to get in, squawking through the chicken wire. There are many times with non human beings I have wanted to just explain to them their predicament and we could work toward a reasonable conclusion. Instead, I knew the reality. The voice of Werner Herzog from this video was playing over and over in my head:
 
 <iframe
   width="600"
@@ -23,19 +23,37 @@ Failing to catch an escaped chick humbled me.
   allowfullscreen
 ></iframe>
 
-I woke up one morning to find two chicks outside of their coop. I was in charge of them for a couple days. The task was pretty simple, to keep them fed and hydrated. The third task (which I had just discovered) was keeping them contained.
+
+
+They had somehow escaped underneath, but the only way I could get them back in was from above. So I grabbed a net to try to wrangle them. We danced around the enclosure for a while, like playing tag. Whichever side of the enclosure I went on, they chose the opposite. Luckily, since they did want to get inside they didn't stray too far away. 
+
+I came up with a strategy to stop them. The enclosure abutted a wall, but there was a more than chick-sized gap between the wall and the coop. I did the natural thing and built a barrier to prevent our ring around the rosy dance. I shouldn't have underestimated their skills, they used their minimal flying ability to enmesh themself in my barrier. Almost getting themselves fully ensnared in the process. I tried putting a little food out to distract them. Hoping that they would be more focused on that then the large being lumbering behind them. No luck. Any movement on my end sent them darting back to that gap.
+
+With enough slow movement, followed by a quick swoop of the net, I was able to snag one. Once the chick was ensnared I lifted it very gently, not wanting to injure it or cause it stress. This was a mistake. As soon I lifted the net, the chick flew out. Pressing reset on the game, we started up our dance again.
+
+I just needed the the right, decisive action. It took me some practice. A few more trips around the coop and I finally I got the first one, using more force than I was accostomed. The second followed shortly after. They definitely didn't love the net, and it required me using my hand to gently hold them and release them into their enclosure. Once they were inside, they happily joined ther kin. They blended in totally, no sign of stress of discomfort that I could see. My body relaxed and I felt a certain satisfaction completing the simple task.
+
+The next day, when it happened again, I employed a smarter strategy. I informed the professionals (one of the folks who live at the farm plus his son) and the duo were much more effective. They also addressed the more fundamental problem of suring up the enclosure.
+
+----
+
+One of the insights of the Buddha is that he taught what is called "The Middle Way". He had tried intense ascetic monastic practices, starving himself and over exerting (footnote on Tibetan sculptures) and had also seen the ways that regular people were suffering. He taught that there is a path in between these two. 
+
+This balance shows up in many aspects of the teaching. One is in "Right Effort" – practicing and living in a way that finds the balance between over exertion and over relaxation.
+
+My swoop of the net started with the wrong type of effort. I was working too hard to be gentle without the requisite force to actually achieve the task.
+
+This balance shows up clearly in meditation, where there can be a tendency to strive and exert and make something happen. Wise effort means tempering this with relaxing the mind. 
+
+It's also helpful to notice reactivity. Werner Herzog's voice in my head wasn't doing me any favors, I was overthinking the fact that I couldn't outsmart a chick. Instead, had I just focused on taking the appropriate, patient action – I could have saved myself a bit of grief.
 
 
 
-What made me feel particularly pathetic was that the escaped chicks and I had the same intention to get them back with the other chicks. Since I couldn't just explain this to them, I endlessly chased them around their enclosure. The enclosure was abutted against a building. There was just enough gap between the building and enclosure for the chicks to hide there. I tried blocking it off and this only led them to nearly get themselves trapped in my makeshift wall. When I finally did catch them, it involved a combination of patience and agility with a net. 
 
-The first few times I was too cautious, and as I tried to net them gently they simply ran away. So it finally took the right combination of agility and patience to complete the task.
 
-When it happened again though, the better strategy was to have more than one person involved. So I left it to the professionals (the folks who live at the farm).
 
----- 
 
-Equanimity is a core concept in Buddhism that may not be as familiar outside of it. An image used to describe it is a steady ship in a turbulent ocean. 
+
 
 
 

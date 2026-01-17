@@ -10,7 +10,6 @@ categories: elkenmist
     width: 100%;
     margin: 0 auto; /* This centers the container if it's narrower than its parent */
   }
-
   .video-container video {
     width: 100%;
     height: auto;
@@ -18,6 +17,7 @@ categories: elkenmist
     display: block; /* This removes any unwanted space below the video */
   }
 </style>
+
 <div class="video-container">
   <video autoplay muted playsinline defaultMuted preload="auto" loop id="myVideo">
     <source src="assets/videos/elkwalkingshortsmall2.mp4" type="video/mp4">

@@ -67,6 +67,7 @@ permalink: /books/
   <li>Invisible Rulers by Renee DiResta</li>
   <li>Rendezvous with Rama by Arthur C. Clarke</li>
   <li>Everything is Tuberculosis by John Green</li>
+  <li>Glory Days by Simon Rich</li>
 </ul>
 
 2024:
@@ -127,6 +128,10 @@ permalink: /books/
   <li>Islam and the Future of Tolerance by Sam Harris</li>
   <li><strong>Last Chance to See by Douglas Adams</strong></li>
   <li>The Psychopath Test by Jon Ronson</li>
+  <li>Bird by Bird by Anne Lamott</li>
+  <li>Barbarians at the Gate by Bryan Burrough</li>
+  <li>The Undoing Project by Michael Lewis</li>
+  <li>Empire of Pain by Patrick Radden Keefe</li>
 </ul>
 
 <h2 id="memoir-and-biography">Memoir and Biography</h2>
@@ -146,6 +151,7 @@ permalink: /books/
   <li>Surely You're Joking, Mr. Feynman! by Richard Feynman</li>
   <li>Everything Is Horrible and Wonderful by Stephanie Wittels Wachs</li>
   <li>The Disaster Artist: My Life Inside the Room, the Greatest Bad Movie Ever Made by Greg Sestero</li>
+  <li>Travels with Charley by John Steinbeck</li>
 </ul>
 
 <h2 id="meditation-and-mindfulness">Meditation and Mindfulness</h2>
@@ -255,6 +261,7 @@ permalink: /books/
   <li>Unsong by Scott Alexander</li>
   <li>Point B by Drew Magary</li>
   <li>Miracle Workers by Simon Rich</li>
+  <li>Parable of the Sower by Octavia E Butler</li>
 </ul>
 
 <h2 id="various-fiction">Various Fiction</h2>
