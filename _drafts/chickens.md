@@ -33,21 +33,17 @@ With enough slow movement, followed by a quick swoop of the net, I was able to s
 
 I just needed the the right, decisive action. It took me some practice. A few more trips around the coop and I finally I got the first one, using more force than I was accostomed. The second followed shortly after. They definitely didn't love the net, and it required me using my hand to gently hold them and release them into their enclosure. Once they were inside, they happily joined ther kin. They blended in totally, no sign of stress of discomfort that I could see. My body relaxed and I felt a certain satisfaction completing the simple task.
 
-The next day, when it happened again, I employed a smarter strategy. I informed the professionals (one of the folks who live at the farm plus his son) and the duo were much more effective. They also addressed the more fundamental problem of suring up the enclosure.
+
 
 ----
 
-One of the insights of the Buddha is that he taught what is called "The Middle Way". He had tried intense ascetic monastic practices, starving himself and over exerting (footnote on Tibetan sculptures) and had also seen the ways that regular people were suffering. He taught that there is a path in between these two. 
+One of the teachings of the Buddha is in "Right Effort" – practicing and living in a way that finds the balance between over exertion and over relaxation. My swoop of the net started with the wrong type of effort. I was working too hard to be gentle without the requisite force to actually achieve the task.
 
-This balance shows up in many aspects of the teaching. One is in "Right Effort" – practicing and living in a way that finds the balance between over exertion and over relaxation.
-
-My swoop of the net started with the wrong type of effort. I was working too hard to be gentle without the requisite force to actually achieve the task.
-
-This balance shows up clearly in meditation, where there can be a tendency to strive and exert and make something happen. Wise effort means tempering this with relaxing the mind. 
+This balance shows up most clearly in meditation, where there can be a tendency to strive and exert and make something happen. Wise effort means tempering this with relaxing the mind. 
 
 It's also helpful to notice reactivity. Werner Herzog's voice in my head wasn't doing me any favors, I was overthinking the fact that I couldn't outsmart a chick. Instead, had I just focused on taking the appropriate, patient action – I could have saved myself a bit of grief.
 
-
+The next day, when it happened again, I employed a smarter strategy. I informed the professionals (one of the folks who live at the farm plus his son) and the duo were much more effective. They also addressed the more fundamental problem of suring up the enclosure. So there is Right Effort, and then there is also wisdom. Sometimes that means not just relying on yourself to independently solve the problem.
 
 
 
