@@ -28,7 +28,4 @@ Mentally, I started off from a single minded, unskillful place. Werner Herzog's 
 
 Paying attention can reveal whether or not I am applying the proper effort to a task. It can be most obvious in meditation, where the mind is allowed to be quieter. There is no concrete task to achieve, so it's easier to see if the mind is trying to work too hard to stay focused or relaxing too much and drifting.  
 
-The chicks didn't need to be intelligent to teach me a valuable lesson on Right Effort. They also proved resilient, escaping the next day. I learned another important lesson: when to quit. I enlisted the professionals (a man who lives at the farm and his son) to captured the chicks using the power of two. They also addressed the more fundamental problem of shoring up the enclosure. One day of dancing was enough.
-
-
-
+It didn't take intelligence for the chicks to teach me a valuable lesson on Right Effort. The chicks also proved resilient, escaping the next day. I learned another important lesson: when to quit. I enlisted the professionals (a man who lives at the farm and his son) to capture the chicks using the power of two. They also addressed the more fundamental problem of shoring up the enclosure. One day of dancing was enough.
