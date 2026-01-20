@@ -21,7 +21,12 @@ I stopped trying to outsmart them as it did not affect them in the slightest and
 
 I just needed the right, decisive action and it took me some practice. A few more trips around the coop and I finally got the first one, using more force than I was accustomed. The chick definitely didn't love the net, and it required me using my hand to gently hold it and release them into their enclosure. The second followed shortly after. Once they were inside, they happily joined their kin. They blended in totally, no sign of stress or discomfort that I could see.
 
-----
+<br>
+
+---
+
+<br>
+
 
 One of the teachings of the Buddha is in "Right Effort" – practicing and living in a way that finds the balance between over exertion and over relaxation. This can show up in all kinds of ways.
 
