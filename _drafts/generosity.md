@@ -1,10 +1,12 @@
 ---
 layout: post
-title: Generosity as a practice
+title: Generosity as a Practice
 date: 2025-05-14 08:46:35 -0700
 section: Meditation
 categories: conspiracy, right speech
 ---
+
+The Taxi Driver
 
 I held out all my remaining kyat[^1] for my taxi driver. This would amount to a generous tip, about the same as the ride itself. I had done this in other countries, as a way to combine generosity and practicality. If I had planned well enough and only left myself with a bit of cash left, this was a nice way of ending my time in a country and giving to the taxi drivers, whom I would not envy for the chaos of driving in many of the world's large cities.
 
@@ -46,18 +48,14 @@ Generosity is a core teaching of the Buddha, considered one of the 7 perfections
 
 The logistics (at the time I went) were that I could get a 1 month tourist visa. I had debated how long to spend at the monastery and how long to spend traveling, so I split it about in the middle. This turned out to be wise, as I learned as much from the people I met and their generosity as I did later at the monastery.
 
-The key aspect was that in each of these interactions the generosity seemed to flow naturally it was embodied in my driver, in Ashin and in Sane. They were not forcing it and made me feel very welcome. This is often not the case as a tourist[^2] . I don't begrudge being seen as a source of income to local people when that is the case, as that is part of the nature of being a tourist. However, it made it all the more refreshing and heart warming to feel the flip side of that, particularly since it was the end of the trip.
+The key aspect was that in each of these interactions the generosity seemed to flow naturally: from the taxi driver, Ashin, and Sane. They were not forcing it and made me feel very welcome. This is often not the case as a tourist[^2] . I don't begrudge being seen as a source of income to local people when that is the case, as that is part of the nature of being a tourist. However, it made it all the more refreshing and heart warming to feel the flip side of that, particularly since it was the end of the trip.
 
-
-
-
+They all embodied generosity both as trait and as a practice. 
 
 
 
 
 
 [^1] Money in Myanmar/Burma. Both the names Myanmar and Burma are used. Burma comes from colonial era, Myanmar comes from the military. Given the current situation and the people from the country being Burmese I'll use Burma.
-
-
 
 [^2] I may write about my struggles with the flipside in another piece.
