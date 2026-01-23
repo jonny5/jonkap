@@ -6,63 +6,58 @@ section: Meditation
 categories: conspiracy, right speech
 ---
 
+I held out all my remaining kyat[^1] for my taxi driver. This would amount to a generous tip, about the same as the ride itself. I had done this in other countries, as a way to combine generosity and practicality. If I had planned well enough and only left myself with a bit of cash left, this was a nice way of ending my time in a country and giving to the taxi drivers, whom I would not envy for the chaos of driving in many of the world's large cities.
 
-Of the many forms of suffering happening in the world, one that my mind goes to frequently is the people of Burma*.
-Starting with the coup in 2021 and more recently with a serious earthquake in 2025. I am quite fond of the people I met
-there (and selfishly would like to be able to visit again).
+This driver was particularly deserving. I had realized a few minutes in to the ride to the airport that I had forgot to return my room key to the monastery. I asked the driver if he would be going to back to the monastery soon, and he was more than happy to help me out. Rather than be annoyed at my request, he smiled and seemed delighted for the good karma of doing this deed.
 
-Being an obvious tourist, I have seen myself transformed into a walking neon dollar sign. While totally understandable,
-it often makes for a challenging experience. The combination of haggling, potential scams and the inability to feel like
-even giving some money will make much of a difference all made me almost change my travel plans. This is all to lay the
-groundwork for the contrast of many of the people I met in Burma, where I rarely felt this way. Generosity was a core
-guiding principle of many of my interactions and I was very touched seeing it in practice.
+So it felt particularly appropriate to give him this large tip. He did not take the stack of bills when I tried handing them to him. Instead, he fanned them out. I was a little put off, not knowing what he was doing. It quickly became clear, he was assessing the amount and took what he felt was an appropriate tip. He portioned himself a reasonable tip, still leaving me with some bills. He seemed happier when I had asked him for a favor (returning the key) than he was getting the tip.
 
-As I gathered my belongings from my taxi, ending a nearly 3 month trip, I held out all my remaining cash for the driver
-– planning on giving him a generous tip. I've done this in other countries, simplifying my exchange with a small act of
-generosity. This taxi driver in particular was extra deserving. I had forgotten to return my room key from the monastery
-where he picked me up. He was kind enough to say he would return it.
 
-As I was holding out the cash, he took a look and decided what was a reasonable tip (it was much less than I offered). I
-gave one verbal nudge that it was all for him and he shook his head. When I had asked him to take the key back, that
-seemed to bring him more joy than taking a tip. But now his generosity has lasted in me, more than anything I did for
-him.
-
-From getting my pants fixed and repairing a flat bicycle tire, normal transactions became real acts of generosity by the
-service provider.
 
 The Young Monk
 
-A long series of steps leads to a beautiful outlook called Mandalay Hill. I went there for that view at sunset. I didn't
-know that the more meaningful thing would be in the other direction away from the view. Being a popular tourist spot, it
-is also a place that locals would travel to practice english with tourists. While the view was impressive, talking with
-local folks was more compelling. And one group in particular stood out, a few young monks with a group of students.
+I arrived in Mandalay without much of a plan. Luckily, I had made a friend on the trip and she knew of one of the prime things to do there – climb the steps of Mandalay Hill and see the sunset. It it is a nice, steady climb up many steps, through pagodas and ultimately to a beautiful view overlooking the whole city and river, with a pastel sunset. 
 
-The monk invited us to his temple. He took it over.
+What turned out to be more meaningful was in the opposite direction, away from the view. We had happened to come to the top of the hill on a popular day for locals. While we were there as tourists, locals were there to practice other languages (particularly English). They were very kind about it, humble about their own limitations (even when they were quite good) and it allowed for more regular conversation. There were a bunch of different groups of all ages. Most notably, a group of several young monks and a class of students they were teaching. My friend and I split off, taking questions and trying to engage with them. The whole way down we talked with the monks. It was a sweet interaction, but also amidst the sun setting and the amount of people on the hill it was a lot all at once.
 
-We were split into different groups of students and they asked us questions as a way to practice english. I felt kind of
-like a celebrity being interviewed. When they asked me what music I liked and they were familiar, they were happy that
-we shared the connection.
+I learned that the monk named Ashin Kosalla had taken over a monastery that needed leadership, and in the process started teaching students there in a classroom that was on the property. He invited us to visit and help the students practice some English, and we took him up on the offer a few days later.
 
-I was very inspired by the dedication to teaching and to practice this monk had taken. He embodied living a life of
-service.
+He was generously insistent on picking us up, and so he found us at our hostel (with his friend who drives, monks do not drive) and brought us to the classroom. We talked a bit with the whole class, and then again split off into two groups. The students practiced a bit of their english asking us questions and I did my best to answer clearly. It ended up being a bit more like an interview, and I felt kind of like a celebrity. A specific question that I remember is around what music I liked. When they had heard of the artist or liked them too they audibly approved. There is something beautiful about global culture in this way, that there was something natural we could bond over.
 
-The banh mi
+After the class, he gave us a tour of the monastery and explained how he had taken on this role of managing it. He was quite young and it seemed like a lot of responsibility. His dedication to service and to helping students learn was really inspiring. I know I would have a lot of fear of the undertaking. He treated us to food and tea and was a very gracious host. This was another instance of him doing me a big favor, allowing me to connect a more deeply than I normally would in a tourist setting. And he was gracious for having us come visit when it was him doing the favor.
 
-The full arc of meeting Sane started on the bus (seat number #12 link). I was the only non Burmese speaker on the bus.
-We stopped for food halfway through at a semi outdoor cafe where I wouldn't have normally gotten anything. Sane offered
-to have me sit with her and her friends and ordered me some food.
+He kept me updated that he was still teaching years later, providing students with a valuable outlet even amidst the political strife in Burma.
 
-She offered to hold my seatmate's baby while she got her luggage. And when we were leaving she explained my options to
-get to the hotel and helped me get a cab.
 
-She then showed me around a bit and took me to an area with a nice view. She insisted that she was hosting me and wanted
-to get me something, so she got me a drink and herself a banh mi. She was very excited for the banh mi. A very young kid
-came up to us and asked for food, she didn't even hesitate giving the rest of it to him.
 
-The final act was we walked by the trash can where the kid had left some of the sandwich and the wrapper and she threw
-it away.
+The Banh Mi
 
-This whole interaction really has stuck with me and embodies the full generosity that is possible to have.
+On the bus to Yangon (see Seat #12) I was the only obvious foreigner (non Burmese speaker). Halfway through the long bus ride, it stopped for food at a cafe. I had prepared for the ride and didn't intend on eating anything, having packed some protein bars and snacks. 
 
-* Both the names Myanmar and Burma are used. Burma comes from colonial era, Myanmar comes from the military so I could .
-Given the current situation and calling the people Burmese I'll use Burma.
+A young woman named Sane waved me over to a table next to her and her friends. She spoke good English, and ordered me something vegetarian on the menu, something that would not have been doable on my own. When we disembarked in Yangon, she offered to hold my seatmate's newborn as she gathered her belongings. And when we got off she helped me amidst the chaos, giving me the options of how to get to my hotel. I settled on a taxi and she communicated with the driver for me.
+
+I was mostly intending on just resting in Yangon, this was a bit of a transition. I had spent 2 months traveling and would end my trip at a monastery after this. Sane offered to show me around a bit, so we met in the central area and took transit to a shopping mall. We walked around a bit and she was insistent as the guide and city host that she would get me something. I settled on a drink, and she got herself a banh mi. She had really hyped up this banh mi, saying it was her favorite spot for food. We walked out to the water and found a nice place to sit. We had a nice conversation, as she ate her banh mi and I sipped my drink. 
+
+A young boy came by, asking for food. Without hesitating, she gave him half her sandwich. I felt like there wasn't even any extra thought, the decision came naturally to her. When we got up to walk around some more, the boy had left the ends of the sandwich and the wrapper on the ground, not throwing it away. Again she just picked it up and threw it out without any reactivity, no feeling of ungratefulness or negativity toward the kid.
+
+
+
+Generosity is a core teaching of the Buddha, considered one of the 7 perfections (paramis). Nowhere in my months of traveling did I feel it's presence more vividly than in the way I was treated in Burma. 
+
+The logistics (at the time I went) were that I could get a 1 month tourist visa. I had debated how long to spend at the monastery and how long to spend traveling, so I split it about in the middle. This turned out to be wise, as I learned as much from the people I met and their generosity as I did later at the monastery.
+
+The key aspect was that in each of these interactions the generosity seemed to flow naturally it was embodied in my driver, in Ashin and in Sane. They were not forcing it and made me feel very welcome. This is often not the case as a tourist[^2] . I don't begrudge being seen as a source of income to local people when that is the case, as that is part of the nature of being a tourist. However, it made it all the more refreshing and heart warming to feel the flip side of that, particularly since it was the end of the trip.
+
+
+
+
+
+
+
+
+
+[^1] Money in Myanmar/Burma. Both the names Myanmar and Burma are used. Burma comes from colonial era, Myanmar comes from the military. Given the current situation and the people from the country being Burmese I'll use Burma.
+
+
+
+[^2] I may write about my struggles with the flipside in another piece.
