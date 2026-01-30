@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Generosity as a Trait and Practice
+title: A Culture of Generosity
 date: 2026-01-29 08:46:35 -0700
 section: Writing
 categories: paramis, generosity
