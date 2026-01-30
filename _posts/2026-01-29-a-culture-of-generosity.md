@@ -28,6 +28,14 @@ After the class, Ashin gave us a tour of the monastery and explained how he had 
 
 He kept me updated that he was still teaching years later, providing students with a valuable outlet even amidst the political strife in Burma.
 
+![Doing my best to listen to everyone](/assets/images/Listening.jpg)
+Trying to listen to everyone
+{: .caption}
+
+![The full class](/assets/images/ClassroomImage.jpg)
+The full class
+{: .caption}
+
 ## The Banh Mi
 
 On the bus to Yangon (see Seat #12) I stuck out starkly as a non Burmese rider.  The bus ride was a long journey, so midway through there was a stop for food. I prepared myself well enough with snacks, not knowing much about the trip.

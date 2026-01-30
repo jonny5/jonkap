@@ -328,6 +328,19 @@ sup a[href^="#fn"] {
   top: -0.1em;
 }
 
+/* ========================================
+   IMAGE CAPTIONS
+   ======================================== */
+
+.caption {
+  text-align: center;
+  font-style: italic;
+  color: #aaa;
+  margin-top: -0.5em;
+  margin-bottom: 1.5em;
+  font-size: 0.9em;
+}
+
 .rss-subscribe {
   margin-top: 2em;
   text-align: right;
