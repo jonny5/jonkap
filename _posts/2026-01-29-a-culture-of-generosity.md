@@ -54,4 +54,4 @@ Living a life that is dedicated to generosity and in service of others can be ch
 
 [^2]: I couldn't imagine driving in most of the world's large cities. The aggression and awareness needed is profound. So I always felt like it was fitting to give a large tip to these drivers who I was reliant on to get me through the madness.
 
-[^3]: I had a 1 month tourist visa for Burma. This was in December 2019, currently not advised to travel there.
+[^3]: I had a 1 month tourist visa for Burma, this was before the political coup (as of January 2026 it is not advised ot travel there from the US).
