@@ -28,8 +28,8 @@ After the class, Ashin gave us a tour of the monastery and explained how he had 
 
 He kept me updated that he was still teaching years later, providing students with a valuable outlet even amidst the political strife in Burma.
 
-![Doing my best to listen to everyone](/assets/images/Listening.jpg)
-Trying to listen to everyone
+![Trying to listen intently](/assets/images/Listening.jpg)
+Trying to listen intently
 {: .caption}
 
 ![The full class](/assets/images/ClassroomImage.jpg)
