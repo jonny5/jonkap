@@ -51,6 +51,7 @@ permalink: /books/
 2025:
 
 <ul>
+  <li>The Ghost Map by Steven Johnson</li>
   <li>Nightfall by Isaac Asimov</li>
   <li>Upstream by Mary Oliver</li>
   <li>A Distant Mirror (partial) by Barbara W. Tuchman</li>
