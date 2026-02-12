@@ -71,21 +71,6 @@ permalink: /books/
   <li>Glory Days by Simon Rich</li>
 </ul>
 
-2024:
-
-<ul>
-  <li>Parable of the Sower by Octavia E Butler</li>
-  <li>Bird by Bird by Anne Lamott</li>
-  <li>Barbarians at the Gate by Bryan Burrough</li>
-  <li>Travels with Charley by John Steinbeck</li>
-  <li>The Undoing Project by Michael Lewis</li>
-  <li>The Wise Man's Fear by Patrick Rothfuss</li>
-  <li>The Name of the Wind by Patrick Rothfuss</li>
-  <li>Empire of Pain by Patrick Radden Keefe</li>
-  <li>Under the Banner of Heaven by Jon Krakauer</li>
-  <li>Say Nothing by Patrick Radden Keefe</li>
-</ul>
-
 <h2 id="non-fiction-and-popular-science">Non-Fiction and Popular Science</h2>
 <ul>
   <li>The Devil in the White City by Erik Larson</li>
