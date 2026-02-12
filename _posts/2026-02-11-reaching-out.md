@@ -5,18 +5,17 @@ date: 2026-02-11
 section: Poetry
 ---
 <pre class="poem">
-Separate lives,
+Separate lives
 each in their own world.
-Arms reaching out
-blindly, for nourishment.
-Growing closer,
+Arms reaching out blindly
+for nourishment
+growing closer
 until they found each other.
 
 A tumultuous night together
-turned closeness into connection.
-– they became inseparable. 
-
-Through each storm,
+turned closeness into connection
+– they became inseparable.
+Through each storm
 their bond solidified,
 their fates intertwined.
 
