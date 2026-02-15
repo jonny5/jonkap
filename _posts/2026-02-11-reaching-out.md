@@ -8,7 +8,7 @@ section: Poetry
 Separate lives
 each in their own world.
 Arms reaching out blindly
-for nourishment
+for nourishment,
 growing closer
 until they found each other.
 
