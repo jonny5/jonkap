@@ -5,16 +5,14 @@ date: 2026-02-11
 section: Poetry
 ---
 <pre class="poem">
-Separate lives
-each in their own world.
 Arms reaching out blindly
-for nourishment,
-growing closer
+for nourishment.
+Growing closer
 until they found each other.
-
 A tumultuous night together
 turned closeness into connection
 – they became inseparable.
+
 Through each storm
 their bond solidified,
 their fates intertwined.
