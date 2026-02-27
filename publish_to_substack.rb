@@ -125,6 +125,10 @@ class SubstackPublisher
   end
 
   def clean_html(content)
+    # Convert relative URLs to absolute (internal links and images point to jonkap.com)
+    content = content.gsub(/href="\//, 'href="https://jonkap.com/')
+    content = content.gsub(/src="\//, 'src="https://jonkap.com/')
+
     # Remove unnecessary attributes but keep essential ones
     content = content.gsub(/ id="[^"]*"/, '')
     content = content.gsub(/ role="[^"]*"/, '')
