@@ -28,6 +28,9 @@ url: "https://jonkap.com" # the base hostname & protocol for your site, e.g. htt
 twitter_username: jonwiththewind
 github_username: jonny5
 permalink: /:title:output_ext
+
+# Analytics
+goatcounter: jonkap
 minima:
   skin: dark
 # Build settings
