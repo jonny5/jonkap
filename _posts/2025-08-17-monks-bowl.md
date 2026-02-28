@@ -28,7 +28,7 @@ looks over to the remaining food:
 
 He begins again.
 
-A spoon moves,
+A spoon moves quickly,
 All the rice
 All the quinoa
 fill the bowl
