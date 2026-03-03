@@ -146,7 +146,7 @@ class SubstackPublisher
     )
 
     # Remove backlinks
-    content = content.gsub(/<a[^>]*class="reversefootnote"[^>]*>[^<]*<\/a>/, '')
+    content = content.gsub(/<a[^>]*class="reversefootnote"[^>]*>.*?<\/a>/m, '')
 
     # Convert footnotes div to simple Notes section
     content = content.gsub(

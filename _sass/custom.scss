@@ -81,8 +81,11 @@ sup a[href^="#fn"] {
   &:hover,
   &.popup-open {
     color: #fff;
-    box-shadow: 2px 4px 0 4px #1a1a1a, -2px 4px 0 4px #1a1a1a,
-      2px 4px 0 5px #888, -2px 4px 0 5px #888;
+    box-shadow:
+      2px 4px 0 4px #1a1a1a,
+      -2px 4px 0 4px #1a1a1a,
+      2px 4px 0 5px #888,
+      -2px 4px 0 5px #888;
   }
 }
 
@@ -124,7 +127,9 @@ sup a[href^="#fn"] {
   /* Animation */
   opacity: 0;
   transform: translateY(-4px);
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
 
   &.visible {
     opacity: 1;
@@ -340,6 +345,7 @@ sup a[href^="#fn"] {
   margin-bottom: 1.5em;
   font-size: 0.9em;
 }
+
 
 .rss-subscribe {
   margin-top: 2em;

@@ -38,7 +38,7 @@ The full class
 
 ## The Banh Mi
 
-On the bus to Yangon (see Seat #12) I stuck out starkly as a non Burmese rider.  The bus ride was a long journey, so midway through there was a stop for food. I prepared myself well enough with snacks, not knowing much about the trip.
+On the bus to Yangon (see [Seat #12](/seat-number-12)) I stuck out starkly as a non Burmese rider.  The bus ride was a long journey, so midway through there was a stop for food. I prepared myself well enough with snacks, not knowing much about the trip.
 
 A young woman named Sane waved me over to a table with her and her friends. She spoke good English and ordered me something vegetarian on the menu – a task I could not have undertaken on my own.  As we were disembarking, she offered to hold my seatmate's newborn as she gathered her belongings. And arriving on the streets of Yangon, she helped me navigate the chaos, laying out all the options of how to get to my hotel. I settled on a taxi and she communicated with the driver to ensure I would get there safely.
 
@@ -62,4 +62,4 @@ Living a life that is dedicated to generosity and in service of others can be ch
 
 [^2]: I couldn't imagine driving in most of the world's large cities. The aggression and awareness needed is profound. So I always felt like it was fitting to give a large tip to these drivers who I was reliant on to get me through the madness.
 
-[^3]: I had a 1 month tourist visa for Burma, this was before the political coup (as of January 2026 it is not advised ot travel there from the US).
+[^3]: I had a 1 month tourist visa for Burma, this was before the political coup (as of January 2026 it is not advised to travel there from the US).

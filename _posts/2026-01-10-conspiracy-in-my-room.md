@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Conspiracy in My Room
+title: Conspiracy in My Room
 date: 2026-01-10 08:46:35 -0700
 section: Writing
 categories: conspiracy, right speech
