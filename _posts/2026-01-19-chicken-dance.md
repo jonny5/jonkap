@@ -9,7 +9,7 @@ published: true
 
 Being outmaneuvered by a chick humbled me. My task on the farm was relatively simple: keeping a group of cooped up chicks fed and hydrated. I had just discovered a secret, more difficult task: keeping them contained.
 
-One morning, with my mind still assembling itself from sleep, I trudged out into the foggy air. I lifted the gate of the chick's enclosure, to discover it had not fully done its job of enclosing: two chicks were just outside of it. I kept to my first task and tended to the enclosed chicks' food and water. I hoped the appeal of breakfast would entice the escaped chicks to rejoin their brethren.
+One morning, with my mind still assembling itself from sleep, I trudged out into the foggy air. I lifted the gate of the chicks' enclosure, to discover it had not fully done its job of enclosing: two chicks were just outside of it. I kept to my first task and tended to the enclosed chicks' food and water. I hoped the appeal of breakfast would entice the escaped chicks to rejoin their brethren.
 
 I realized quickly that they were totally aligned with me on getting back inside. They sprinted laps around the coop, trying to get in, exchanging squawks with their contained kin. The problem was that the chicks had somehow escaped from under the structure and didn't seem to have any interest or capacity to return that way. So the only way back in was with my help, with a net, and from above.
 
