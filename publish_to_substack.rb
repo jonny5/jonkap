@@ -12,6 +12,7 @@ require 'cgi'
 
 class SubstackPublisher
   FEED_PATH = '_site/feed.xml'
+  SITE_URL = 'https://jonkap.com'
 
   def initialize
     @posts = []
@@ -50,6 +51,8 @@ class SubstackPublisher
 
     doc.elements.each('feed/entry') do |entry|
       link = entry.elements['link'].attributes['href']
+      # Normalize localhost URLs to production
+      link = link.gsub(%r{https?://localhost:\d+}, SITE_URL)
       # Extract slug from URL (e.g., "https://jonkap.com/monks-bowl.html" -> "monks-bowl")
       slug = link.split('/').last.sub(/\.html$/, '')
 
@@ -115,8 +118,8 @@ class SubstackPublisher
     # Clean up HTML for Substack
     content = clean_html(content)
 
-    # Convert footnotes to simpler format
-    content = convert_footnotes(content)
+    # Extract and remove footnotes (will be printed to terminal for manual entry)
+    content, @footnotes = extract_footnotes(content)
 
     # Add canonical attribution
     content += "\n\n<hr>\n\n<p><em>Originally published at <a href=\"#{post[:link]}\">#{post[:link]}</a></em></p>"
@@ -125,9 +128,12 @@ class SubstackPublisher
   end
 
   def clean_html(content)
+    # Replace localhost URLs with production URL (happens when feed is built during jekyll serve)
+    content = content.gsub(%r{https?://localhost:\d+}, SITE_URL)
+
     # Convert relative URLs to absolute (internal links and images point to jonkap.com)
-    content = content.gsub(/href="\//, 'href="https://jonkap.com/')
-    content = content.gsub(/src="\//, 'src="https://jonkap.com/')
+    content = content.gsub(/href="\//, "href=\"#{SITE_URL}/")
+    content = content.gsub(/src="\//, "src=\"#{SITE_URL}/")
 
     # Remove unnecessary attributes but keep essential ones
     content = content.gsub(/ id="[^"]*"/, '')
@@ -138,37 +144,61 @@ class SubstackPublisher
     content
   end
 
-  def convert_footnotes(content)
-    # Convert footnote references: <sup...><a class="footnote"...>1</a></sup> -> [1]
+  def extract_footnotes(content)
+    footnotes = {}
+
+    # Extract footnote texts from the footnotes div
+    if content =~ /<div[^>]*class="footnotes"[^>]*>(.*?)<\/div>/m
+      footnotes_html = $1
+      # Match each list item: <li>...content...</li>
+      footnotes_html.scan(/<li>(.*?)<\/li>/m).each_with_index do |match, i|
+        text = match[0]
+        # Strip HTML tags to get plain text, remove backlink arrows
+        text = text.gsub(/<a[^>]*class="reversefootnote"[^>]*>.*?<\/a>/m, '')
+        # Remove any remaining backlink anchors (href="#fnref:...")
+        text = text.gsub(/<a[^>]*href="#fnref:[^"]*"[^>]*>.*?<\/a>/m, '')
+        # Convert links to "text (url)" format before stripping HTML
+        text = text.gsub(/<a[^>]*href="([^"]*)"[^>]*>(.*?)<\/a>/m, '\2 (\1)')
+        text = text.gsub(/<\/?[^>]+>/, '').gsub(/\s*↩\s*/, '').strip
+        footnotes[i + 1] = text
+      end
+    end
+
+    # Remove the entire footnotes section from content
+    content = content.gsub(/<div[^>]*class="footnotes"[^>]*>.*?<\/div>/m, '')
+
+    # Replace footnote references with placeholder markers: [1], [2], etc.
     content = content.gsub(
       /<sup[^>]*><a[^>]*class="footnote"[^>]*>(\d+)<\/a><\/sup>/,
-      '[\1]'
-    )
-
-    # Remove backlinks
-    content = content.gsub(/<a[^>]*class="reversefootnote"[^>]*>.*?<\/a>/m, '')
-
-    # Convert footnotes div to simple Notes section
-    content = content.gsub(
-      /<div[^>]*class="footnotes"[^>]*>(.*?)<\/div>/m,
-      '<hr><h3>Notes</h3>\1'
+      '[FN\1]'
     )
 
     # Clean up remaining footnote classes
     content = content.gsub(/ class="footnote[^"]*"/, '')
 
-    content
+    [content, footnotes]
   end
 
   def copy_to_clipboard(content)
-    IO.popen('pbcopy', 'w') { |io| io.write(content) }
+    # Use osascript to copy as text/html so Substack pastes as rich text
+    escaped = content.gsub('\\', '\\\\\\\\').gsub('"', '\\"')
+    system('osascript', '-e', "set the clipboard to «data HTML#{content.unpack1('H*')}»")
   end
 
   def show_confirmation(post)
     puts "\n✓ Copied \"#{post[:title]}\" to clipboard"
     puts "\nCanonical URL (set in Substack post settings):"
     puts "  #{post[:link]}"
-    puts "\nPaste into Substack editor and publish!"
+
+    if @footnotes && !@footnotes.empty?
+      puts "\n── Footnotes (add manually via /footnote in Substack editor) ──"
+      puts "Look for [FN1], [FN2], etc. markers in the pasted text.\n\n"
+      @footnotes.each do |num, text|
+        puts "  [#{num}] #{text}\n\n"
+      end
+    end
+
+    puts "Paste into Substack editor and publish!"
   end
 end
 

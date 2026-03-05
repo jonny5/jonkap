@@ -167,6 +167,7 @@ permalink: /books/
   <li>Act of Oblivion by Robert Harris</li>
   <li>An Officer and a Spy by Robert Harris</li>
   <li>The Republic of Pirates by Colin Woodard</li>
+  <li>The Spy and the Traitor by Ben Macintyre</li>
 </ul>
 
 <h2 id="humor-and-essays">Humor and Essays</h2>

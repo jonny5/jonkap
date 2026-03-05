@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Chicken Dance
-date: 2026-01-19 08:46:35 -0700
+date: 2026-02-19 08:46:35 -0700
 section: Writing
 categories: elkenmist
 published: true
