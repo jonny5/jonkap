@@ -8,13 +8,44 @@ permalink: /books/
   finished them. I bolded a few I read more recently/enjoy discussing.
 </p>
 
+<h2 id="recently-read">Recently Read</h2>
+
+<h3 id="2026">2026</h3>
+
+<ul>
+  <li>Dungeon Crawler Carl series by Matt Dinniman</li>
+  <li>Football by Chuck Klosterman</li>
+</ul>
+
+<h3 id="2025">2025</h3>
+
+<ul>
+  <li>The Ghost Map by Steven Johnson</li>
+  <li>Nightfall by Isaac Asimov</li>
+  <li>Upstream by Mary Oliver</li>
+  <li>A Distant Mirror (partial) by Barbara W. Tuchman</li>
+  <li>The Lies of Locke Lamora by Scott Lynch</li>
+  <li>The Anthropocene Reviewed by John Green</li>
+  <li>Mania of Subjugation by Dan Carlin</li>
+  <li>George Smiley radio dramas by John le Carré</li>
+  <li>Smiley's People by John le Carré</li>
+  <li>Abundance by Ezra Klein and Derek Thompson</li>
+  <li>Imperium (Cicero #1) by Robert Harris</li>
+  <li>Conspirata (Cicero #2) by Robert Harris</li>
+  <li>Dictator (Cicero #3) by Robert Harris</li>
+  <li>Careless People by Sarah Wynn-Williams</li>
+  <li>Invisible Rulers by Renee DiResta</li>
+  <li>Rendezvous with Rama by Arthur C. Clarke</li>
+  <li>Everything is Tuberculosis by John Green</li>
+  <li>Glory Days by Simon Rich</li>
+</ul>
+
+<h2 id="all-books-by-category">All Books by Category</h2>
+
 <div class="toc">
   <div class="toc-item toc-level-1">
     <span class="toc-toggle"> Categories </span>
     <div class="toc-content">
-      <div class="toc-item toc-level-2">
-        <a href="#currently-and-recently-read">Currently and recently read</a>
-      </div>
       <div class="toc-item toc-level-2">
         <a href="#non-fiction-and-popular-science">Non-Fiction and Popular Science</a>
       </div>
@@ -46,32 +77,7 @@ permalink: /books/
   </div>
 </div>
 
-<h2 id="currently-and-recently-read">Currently and recently read</h2>
-
-2025:
-
-<ul>
-  <li>The Ghost Map by Steven Johnson</li>
-  <li>Nightfall by Isaac Asimov</li>
-  <li>Upstream by Mary Oliver</li>
-  <li>A Distant Mirror (partial) by Barbara W. Tuchman</li>
-  <li>The Lies of Locke Lamora by Scott Lynch</li>
-  <li>The Anthropocene Reviewed by John Green</li>
-  <li>Mania of Subjugation by Dan Carlin</li>
-  <li>George Smiley radio dramas by John le Carré</li>
-  <li>Smiley's People by John le Carré</li>
-  <li>Abundance by Ezra Klein and Derek Thompson</li>
-  <li>Imperium (Cicero #1) by Robert Harris</li>
-  <li>Conspirata (Cicero #2) by Robert Harris</li>
-  <li>Dictator (Cicero #3) by Robert Harris</li>
-  <li>Careless People by Sarah Wynn-Williams</li>
-  <li>Invisible Rulers by Renee DiResta</li>
-  <li>Rendezvous with Rama by Arthur C. Clarke</li>
-  <li>Everything is Tuberculosis by John Green</li>
-  <li>Glory Days by Simon Rich</li>
-</ul>
-
-<h2 id="non-fiction-and-popular-science">Non-Fiction and Popular Science</h2>
+<h3 id="non-fiction-and-popular-science">Non-Fiction and Popular Science</h3>
 <ul>
   <li>The Devil in the White City by Erik Larson</li>
   <li>Killers of the Flower Moon by David Grann</li>
@@ -120,7 +126,7 @@ permalink: /books/
   <li>Empire of Pain by Patrick Radden Keefe</li>
 </ul>
 
-<h2 id="memoir-and-biography">Memoir and Biography</h2>
+<h3 id="memoir-and-biography">Memoir and Biography</h3>
 <ul>
   <li>A Life in Parts by Bryan Cranston</li>
   <li>Comedy Comedy Comedy Drama by Bob Odenkirk</li>
@@ -140,7 +146,7 @@ permalink: /books/
   <li>Travels with Charley by John Steinbeck</li>
 </ul>
 
-<h2 id="meditation-and-mindfulness">Meditation and Mindfulness</h2>
+<h3 id="meditation-and-mindfulness">Meditation and Mindfulness</h3>
 <ul>
   <li>The Art of Living by Thích Nhất Hạnh</li>
   <li>A Guide to the Good Life by William B. Irvine</li>
@@ -161,7 +167,7 @@ permalink: /books/
   <li><strong>Still, Flowing Water: Eight Dhamma Talks by Ajahn Chah</strong></li>
 </ul>
 
-<h2 id="history">History</h2>
+<h3 id="history">History</h3>
 <ul>
   <li>Say Nothing by Patrick Radden Keefe</li>
   <li>Act of Oblivion by Robert Harris</li>
@@ -170,7 +176,7 @@ permalink: /books/
   <li>The Spy and the Traitor by Ben Macintyre</li>
 </ul>
 
-<h2 id="humor-and-essays">Humor and Essays</h2>
+<h3 id="humor-and-essays">Humor and Essays</h3>
 <ul>
   <li><strong>Someone Who Will Love You in All Your Damaged Glory by Raphael Bob-Waksberg</strong></li>
   <li><strong>Medallion Status by John Hodgman</strong></li>
@@ -183,20 +189,20 @@ permalink: /books/
   <li>Hits and Misses by Simon Rich</li>
 </ul>
 
-<h2 id="mythology">Mythology</h2>
+<h3 id="mythology">Mythology</h3>
 <ul>
   <li>Heroes by Stephen Fry</li>
   <li>Mythos by Stephen Fry</li>
 </ul>
 
-<h2 id="philosophy-and-psychology">Philosophy and Psychology</h2>
+<h3 id="philosophy-and-psychology">Philosophy and Psychology</h3>
 <ul>
   <li>Man's Search for Meaning by Viktor E. Frankl</li>
   <li>The Examined Life by Stephen Grosz</li>
   <li>Free Will by Sam Harris</li>
 </ul>
 
-<h2 id="science-fictionfantasy">Science Fiction/Fantasy</h2>
+<h3 id="science-fictionfantasy">Science Fiction/Fantasy</h3>
 <ul>
   <li>The Martian by Andy Weir</li>
   <li>Artemis by Andy Weir</li>
@@ -251,7 +257,7 @@ permalink: /books/
   <li>Parable of the Sower by Octavia E Butler</li>
 </ul>
 
-<h2 id="various-fiction">Various Fiction</h2>
+<h3 id="various-fiction">Various Fiction</h3>
 <ul>
   <li>The Book Thief by Markus Zusak</li>
   <li>The Wind-Up Bird Chronicle by Haruki Murakami</li>
