@@ -1,26 +1,28 @@
 Death and Life in Varanasi
 
-I headed to the Manikarnika Ghat, not really knowing what to expect. As I neared the building, a young man approached me trying to act as my guide.  I clearly stuck out as a tourist. I told him it was not needed while maintaining some friendliness. I struggle with this, the balance of being kind and also not being seen as easy prey for a scam. He told me he would wait for me, I told him I don't know my plan, please don't.
+Walking with some conviction was not enough to prevent me from sticking out clearly as a tourist. I was in Varanasi, and had learned in the days before that I could not fade into the obscurity of a large city like I had elsewhere. 
 
-I was curious to observe the proceeding more closely, while not knowing the proper etiquette. A man who made himself look official greeted me. He told me he would show me a proper place to observe without interrupting. To this guide, I obliged as an outsider. He explained to me the particular wood they used, how there were many people nearby on death's door, waiting to be honored by this proceeding.
+I was heading to the burning ghat of Manikarnika, and though I knew the way I wasn't sure the exact way to approach it. My slighest hesitation as his queue, a young man wanted my attention. I struggle with the balance of being kind and not wanting to either be prey to a scam or a potential waste of time as a customer. The young man told me about his family's silks, and how I could check them out right by the ghat. I tried to kindly refuse. He told me he would wait for me when I was done with the ghat to tell me more.
 
-We climbed the steps up the structure, it's age and significance clear. We found ourselves in an open air but roofed floor. There were many platforms, with fires coming from most. I knew that these were bodies, but they way they were covered and presented provided some distance. It was when I saw men carrying fresh ones that the scene became more alive. The caste system was in full effect: some bodies were ornately wrapped as the went on the pyre, others were just covered in cloth. They all burned just the same.
+Momentarily solo, I approached the large steps up to the ghat. I both wanted to observe the ritual and not commit any faux paux during it. The burning ghats are where in the Hindu religion bodies are ritually burned, and I was now at one of the largest and most sacred sites for doing so.
 
-I found myself drawn to observing a particular body. An older man, lightly wrapped, but without much fanfare and without anyone (that I could see) there for this ritutal.
+Another man who looked a bit more official (and older) greeted me. Here, as an outsider, a guide seemed appropriate. He told me he was a guide for the ghat and started to explain the history of them, the way the burning is performed, the wood used, and all the logistics. And importantly how there were many people nearby on death's door, waiting to be honored by this proceeding.
 
-I sat there quietly, meditating. Smoke would come toward me and I'd close my eyes until it passed, continuing to sit and reflect. The smoke being from bodies did unsettle me a bit, but it felt like another thing to sit with. After a few minutes we headed back down.
+We climbed the steps up the structure, it's age and significance clear. We found ourselves on a large platform, covered from above and open on all sides. All around the platform were small raised structures fires coming from most. I knew that these were bodies, yet they were covered in a way that brought some distance. The visceral reality of the scene came with a new body, ready for one of the empty spots. First thing I noticed was the weight, the work involved in the transport. This particular body felt more human, by virtue of being less covered. The caste system was in full effect: many bodies were ornately wrapped as they went on the pyre, others like this man were just covered in cloth. They all burned just the same.
 
-I had expected to give the guide something for his time, but hadn't realized the extent of it. He took me to his "boss" and explained how in order to support the wood for the lower caste people, they needed a lot of money. Luckily I wasn't carrying much on me. In the moment it felt a little off. I wasn't sure enough to totally dismiss them as I had the younger guide earlier. I gave them the equivalent of about $20, which felt partly justified for the guy showing me around. They were adamant that this was insufficient and wanted more like 10 times the amount. At this point it did feel off and I left and left them upset, their frustration lingering with me.
+While some of the pyres were surrounded by many people (I imagine family and friends), this man was left to burn alone. I sat there quietly, meditating. Smoke would come toward me and I'd close my eyes until it passed, continuing to sit and reflect. I tried to not think too hard about the origins of that smoke. I had wanted to sit there for a while, but the smoke became a lot. I sat with it a bit longer until I could tell my guide was getting anxious and so we left down the stairs.
 
-Due to this, I wanted to avoid the young boy I first encountered who was insistent on showing me his family's silk shop, so I tried to take a different route back to my hostel. 
+The observation complete, I was ready to get on my way. I had expected to compensate my guide, not realizing the extent of it. Rather than just asking me for a tip or me giving him something, he took me to a small street around the corner where his "boss" was waiting. They explained how to support the buying of wood for the lower caste people, they needed a LOT of money. I wasn't carrying much on me. And sensed something was slightly off when I offered around 15 dollars and they were very upset. This wasn't like, "we appreciate your tip but would really like more", it was proper guilting and shaming. It did work on me, but only slightly. I gave them the equivalent of 20 dollars. They wanted more like 200.
 
-He must've been keeping an eye on me, because when I emerged from a dense series of streets and back in the area of the ghat he was there waiting for me.
+The frustration with the affair lingered me with as I left. The money was not substantial, more than a guide would reasonably cost, but not an outrageous expense. In my frustrated state I remembered the young boy who insisted on waiting for me and wanted to avoid another similar interaction.
+
+I took a more circuitous route back around the ghat. Nevertheless, the boy must have been keeping an eye on me. Because when I emerged from a dense tangle of streets back toward the ghat, there he was. Waiting for me.
 
 
 
 Maransati and Death Contemplation
 
-I wasn't visting the ghat out of a sense of morbid curiousity. I had wanted to use it in a small way to practice the Buddha's teaching of Maransati (or contemplation of death). The Buddha gives explicit ways of practicing this, of meditating on bodies in various states of decomposition. I hadn't practiced with this very explicitly before, mostly I was familiar with the Five Rememberances:
+I had a clear intention of visiting the burning ghats, not just a morbid curiosity. That intention was to practice with the Buddhist idea of Maranasati (contemplation of death). The Buddha gives explicit ways of practicing this, of meditating on bodies in various states of decomposition. I hadn't practiced with this very explicitly before, mostly I was familiar with the Five Rememberances:
 
 1. I am of the nature to age, I cannot avoid aging
 
@@ -32,15 +34,26 @@ I wasn't visting the ghat out of a sense of morbid curiousity. I had wanted to u
 
 5. I am the owner of my actions, heir to my actions
 
-With these thoughts in mind, I was open to the experience of seeing the ritual of death without as much tension. The only dead bodies I had observed in my life were family members who had just passed where my emotions were much higher and this context seemed to be a good avenue.
+This contemplation was my intention of viewing the scene. My only experience with dead bodies had been those belonging to family members. For understandable reasons in those moments I was not in an emotional headspace to reflect on death wisely.
 
-Seeing bodies treated with both dignity but also just a certain amount of logistical practicality was....TBD
+For a few moments, there was profundity. Seeing that one man's body, the image of his hair and parts of his flesh visible as the fire was lit under him. There was something deeply sad about the constrast of his end to many of those around him. The sadness came through, as did some peace. There was value in seeing the body as just a body, and all the logistics involved helped with that. The amount of work going in to transport them, to burn them. And being able to do so with just the shared human connection of knowing it was another person, without knowing any details of their life.
 
-I had found myself drawn to the lower caste man. Partly because he was actually partially visible (not fully shrouded) so that there was some human connection there. It was also clear that he was not treated as gently and didn't seem to have anyone around. I think this emotional truth paired with feeling some human connection to seeing his somewhat disheveled appearance provided the right amount of emotional connection for me to feel for his imagined life, and also have some distance knowing nothing of his life.
+The scene has lived with me. If I am being honest, the experience was short lived. The smoke became overwhelming, my guide was impatient. I did not get deeply into a contemplation of the Buddha's teachings on the body and it's impermanence.
 
-There was a profundity to the experience. But if I am being honest, it was short lived. The smoke became overwhelming, my guide was impatient. I did not get deeply into a contemplation of the impermanence of the body. Rather than reflecting just on the impermanence of the body, I got a lesson in the impermanence of experience more generally. 
+What followed was what lingered with me just as much that day, a lesson in the impermanence of everything. I learned shortly after that the guide was running a definite scam, that no money he was collecting was going toward the ritual or to support the funeral rites of men such as the one I observed. At the time I wasn't totally sure, but their approach to asking me for money felt very off from the ritual. And this disconnect compounded my frustration.
 
-My interaction with the guide afterward (which I later confirmed was a definite scam) only furthered this. What was being performed as a sacred ritual by many, was surrounded by the very human experiences around them. Me, a visitor, trying to use the ritual to understand myself. And the guide, trying to use it as a source of income.
+What was being performed as a sacred ritual was surrounded by the very human experiences around them. Me, a tourist, trying to use the ritual to understand myself. And the guide, trying to use the ritual as a source of income. 
 
-At the time seeing the young boy reappear in my frustrated state was kind of overwhelming level of feeling like the source of scams. But with reflection it's just another reminder of how short-lived any experience is.
 
+
+**this section is rough**
+
+The young boy reappearing only further added to this exhaustion and frustration. Luckily I had enough presence of mind for my frustration to be directed more broadly (and not directly toward him). I felt bad for him and that he was still waiting for me (this is probably a reliable tourist strategy). 
+
+The way human emotions can be manipulated in this way is both sad and somewhat necessary. I didn't want to lose my humanity and become callous, and also didn't want to be taken advantage of.
+
+
+
+***needs a clearer connection of Death Contemplation -> Impermanence**. Don't get overly focused on the young boy story at the end just use that as a cap off. 
+
+ 
