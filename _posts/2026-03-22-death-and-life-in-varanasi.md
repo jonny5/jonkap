@@ -19,7 +19,11 @@ The observation complete, I was ready to get on my way. While I had expected to 
 
 In my agitation I remembered the young boy who insisted on waiting for me. To avoid another interaction, I took a more circuitous route back around the ghat. The boy must have been keeping an eye on my movements. When I emerged from a dense tangle of streets back toward the ghat, he was right there waiting.
 
+<br>
+
 ---
+
+<br>
 
 My intention in visiting the ghat was to practice with the Buddhist idea of Maranasati (contemplation of death). The Buddha gives explicit ways of practicing this, specifically on meditating with bodies in various states of decomposition. My only experience with dead bodies had been those belonging to family members. For understandable reasons in those moments I was not in an emotional headspace to reflect on the nature of death and the body in a wise way[^1].
 
