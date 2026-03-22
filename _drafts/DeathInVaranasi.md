@@ -1,41 +1,27 @@
 Death and Life in Varanasi
 
-I walked with some conviction toward the burning ghat of Manikarnika. My gait did not prevent me from sticking out clearly as a tourist. A slight pause was the cue needed for a young man to grab my attention. He told me about his family's silks and how I could get them nearby. I tried to kindly refuse as I kept on my way.
+I walked with some conviction toward the burning ghat of Manikarnika. My gait did not prevent me from sticking out clearly as a tourist. A slight pause was the cue needed for a boy to grab my attention. He told me about his family's silks and how I could get them nearby. I tried to kindly refuse as I kept on my way.
 
-Momentarily solo, I approached the large steps up to the ghat. **wip** The burning ghats of Varanasi are Hindu cultural ritually burned, and I now found myself in front of one of the largest and most sacred sites for doing so. 
+Momentarily solo, I approached the large steps up to the ghat. The burning ghats of Varanasi are where Hindu cremation rites have been performed for thousands of years, and where manikarnika is considered one of the most sacred. A man who looked somewhat official (and older) introduced himself as a guide. He gave me some history, with emphasis on the special types of wood used and all the people waiting nearby on death's door for their body to be properly treated. We climbed the steps up the sturdy yet weathered structure until we reached the center of the ritual. All around were platforms, smoke coming from most. Some just had remnants of ash, others were fully wrapped with sheets and decorations. 
 
-A man who looked somewhat official (and older) introduced himself as a guide. He gave me some history, with emphasis on the special types of wood used and all the people waiting nearby on death's door for their body to be properly treated. We climbed the steps up the sturdy yet weathered structure until we reached the center of the ritual. All around were platforms, smoke coming from most. Some just had remnants of ash others fully wrapped with sheets and decorations. 
-
-I directed my attention to the arrival of a new body, focused on the work and effort involved in physically transporting it. As it got closer the visceral nature of the proceedings were clear. The body was not fully visible, yet it was visibly human. Only a tattered sheet covered a the remains of the man, leaving parts of him exposed. The caste system was in full effect. The pyres of the ornately wrapped bodies were surrounded by many people (I imagine family a friends), this man was left to burn alone and with less care. The ceremony around each platform may have differed, the bodies burned all the same.
+I directed my attention to the arrival of a new body, focused on the work and effort involved in physically transporting it. As it got closer the visceral nature of the proceedings were clear. The body was not fully visible, yet it was visibly human. Only a tattered sheet covered  the remains of the man, leaving parts of him exposed. The caste system was in full effect. The pyres of the ornately wrapped bodies were surrounded by many people (I imagine family and friends), this man was left to burn alone and with less care. The ceremony around each platform may have differed, the bodies burned all the same.
 
 I sat there quietly, meditating. When smoke came toward me, I'd close my eyes until it passed, continuing to sit and reflect. At times the smoke became very intense. While I was trying to do a proper meditation, my guide did not have the same patience. So after a couple of minutes we made our way back down. 
 
 The observation complete, I was ready to get on my way. While I had expected to compensate my guide for his time, I hadn't realized the extent of it. Rather than just asking me for a tip, he took me to a small street around the corner where his "boss" was waiting. The boss explained how, in order to support the proceedings they needed a LOT of money. I offered a reasonable amount and they were very upset. There wasn't any appreciation, instead they went straight to guilting and shaming. It did have a small effect on me: I bumped up my tip slightly. They were angry it wasn't ten times as much.
 
-In my agitation I remembered the young boy who insisted on waiting for me. To avoiad another interaction, I took a more circuitous route back around the ghat. The boy must have been keeping an eye on my movements. When I emerged from a dense tangle of streets back toward the ghat, he was right there waiting.
+In my agitation I remembered the young boy who insisted on waiting for me. To avoid another interaction, I took a more circuitous route back around the ghat. The boy must have been keeping an eye on my movements. When I emerged from a dense tangle of streets back toward the ghat, he was right there waiting.
 
 Maransati and Death Contemplation
 
-My intention in visiting the ghat was to practice with the Buddhist idea of Maranasati (contemplation of death). The Buddha gives explicit ways of practicing this, specifically on meditating with bodies in various states of decomposition. I hadn't practiced in this way before, mostly I was familiar with the Five Rememberances:
+My intention in visiting the ghat was to practice with the Buddhist idea of Maranasati (contemplation of death). The Buddha gives explicit ways of practicing this, specifically on meditating with bodies in various states of decomposition. My only experience with dead bodies had been those belonging to family members. For understandable reasons in those moments I was not in an emotional headspace to reflect on the nature of death and the body in a wise way[^1].
 
-1. I am of the nature to age, I cannot avoid aging
+For a few moments sitting with the burning body, there was profundity. The image of man's body being lit from below, his hair and parts of his flesh visible, gave me some clarity in seeing a body as just a body once the life in it was no more. Some sadness came through, as did some peace. There was the shared humanity of knowing this body once lived a full life and also the distance of having no details or relationship to that life. If I am being honest, that experience was short lived. The smoke became overwhelming, my guide was impatient. I did not get to sit deeply in contemplation of the Buddha's teachings on the body and its impermanence. 
 
-2. I am of the nature to get sick, I cannot avoid sickness
+What immediately followed provoked a stronger reaction. I intended to get a specific lesson on death, instead I got a lesson in the impermanence of all experience. The time spent in the ghat was equaled by the time spent arguing with my guide and his boss. I learned back at my hostel that the guide was running a definite scam, that no money he was collecting was going toward supporting the funeral rites of men such as the one I observed. 
 
-3. I am of the nature to die, I cannot avoid death
+What was being performed as a sacred ritual was surrounded by the desires of living humans. Me, a tourist, attempting to use the ritual to understand myself in a particular way. And the guide, using it as a source of income. 
 
-4. Everything I hold dear will change, I will be separated from all I love
+The boy approaching me again at the end only further increased my frustration. I ended up being more occupied with my emotional reaction than a deep contemplation into death. Some of this frustration came from setting out with an intention to learn something specific and not having the experience I envisioned. While I had wanted to get a specific learning from the dead, it was the living who had the most to teach me.
 
-5. I am the owner of my actions, heir to my actions
-
-Contemplating in this way was the intention of my visit. My only experience with dead bodies had been those belonging to family members. For understandable reasons in those moments I was not in an emotional headspace to reflect on the nature of death and the body in a wise way.
-
-For a few moments sitting with the burning body, there was profundity. Observing the man's body burn, his hair and parts of his flesh visible as the fire was lit under him still sticks with me. Particularly the clear contrast with the platforms surrounding him. Some sadness came through, as did some peace. There was value in seeing the body as just a body. There was the shared humanity of knowing this body once lived a full life and also the distance of having no details or relationship to that life. 
-
-If I am being honest, the experience was short lived. The smoke became overwhelming, my guide was impatient. I did not get sit deeply in contemplation of the Buddha's teachings on the body and it's impermanence. 
-
-What immediately followed provoked a stronger reaction. I intended to get a specific lesson on death, instead I got a lesson in the impermanence of all experiences. The time spent in the ghat was equaled by the time spent arguing with my guide and his boss. I learned back at my hostel that the guide was running a definite scam, that no money he was collecting was going toward supporting the funeral rites of men such as the one I observed. 
-
-What was being performed as a sacred ritual was surrounded by the desires of living humans. Me, a tourist, attempting to use the ritual to understand myself. And the guide, using it as a source of income. Capping off the experience with the boy waiting for me only further solidified my self perception as a walking dollar sign. I walked away from the day with agitation, and even thought of leaving Varanasi early. 
-
-A good lesson that setting out with an intention to learn something can only go so far. While I had wanted to get a specific learning from the dead, it was the living who could teach me most about my own limitations.
+[^1]: Prior to this, my practice with death contemplation was mostly through the Five Remembrances, which are a more relatable and practical way of thinking about death from the Buddha's teachings. They are: (1) I am of the nature to age, I cannot avoid aging. (2) I am of the nature to get sick, I cannot avoid sickness. (3) I am of the nature to die, I cannot avoid death. (4) Everything I hold dear will change, I will be separated from all I love. (5) I am the owner of my actions, heir to my actions.
