@@ -1,4 +1,11 @@
-Death and Life in Varanasi
+---
+layout: post
+title: "Death and Life in Varanasi"
+date: 2026-03-22
+section: Writing
+categories: "Death and Life in Varanasi"
+
+---
 
 I walked with some conviction toward the burning ghat of Manikarnika. My gait did not prevent me from sticking out clearly as a tourist. A slight pause was the cue needed for a boy to grab my attention. He told me about his family's silks and how I could get them nearby. I tried to kindly refuse as I kept on my way.
 
