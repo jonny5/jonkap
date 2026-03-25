@@ -8,13 +8,13 @@ categories: meditation
 ---
 
 
-Here are a bunch of resources 🙂
+Here are a bunch of resources
 
 Local groups/teachers I like:
 - https://www.bigheartcity.org/ in SF, main teacher is Vinny Ferraro
 - https://sundaysangha.net/ in Berkeley w/ Will Kabat Zinn
 - https://www.insightmeditationcenter.org/ in Redwood City, I like Nikki Mirghafori and Gil Fronsdal
-- SF Dharma Collective - have been thinking of going on a monday
+- SF Dharma Collective - have gone on Monday a couple times
 
 Retreat centers:
 - Spirit Rock
