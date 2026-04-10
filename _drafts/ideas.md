@@ -24,13 +24,11 @@ Meeting with Sayadaw u Tejaniya
 
 Tribute to the dead
 
-- Sheila (don't need to name)
+- Sheila Santacon (don't need to name)
 
 - Harris Wittels
 
 
 
-Death Meditation and getting scammed
 
-- 
 

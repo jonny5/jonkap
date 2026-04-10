@@ -20,6 +20,7 @@ permalink: /books/
 <h3 id="2025">2025</h3>
 
 <ul>
+  <li>Lonesome Dove by Larry McMurtry</li>
   <li>The Ghost Map by Steven Johnson</li>
   <li>Nightfall by Isaac Asimov</li>
   <li>Upstream by Mary Oliver</li>
