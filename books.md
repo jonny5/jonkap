@@ -13,8 +13,15 @@ permalink: /books/
 <h3 id="2026">2026</h3>
 
 <ul>
+  <li>Rogues by Patrick Raden Keefe</li>
+  <li>California Burning by Katherine Blunt</li>
+  <li>Snakehead by Patrick Raden Keefe</li>
+  <li>London Falling by Patrick Raden Keefe</li>
+  <li>Hyperion by Dan Simmons</li>
+  <li>The Fall of Hyperion by Dan Simmons</li>
   <li>Dungeon Crawler Carl series by Matt Dinniman</li>
   <li>Football by Chuck Klosterman</li>
+  <li>James Acaster's Classic Scrapes</li>
 </ul>
 
 <h3 id="2025">2025</h3>
