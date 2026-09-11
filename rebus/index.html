@@ -178,7 +178,10 @@
         color:var(--ink);transition:transform .08s,border-color .15s;-webkit-tap-highlight-color:transparent}
   .tile:hover{border-color:var(--ink)}
   .tile:active{transform:scale(.94)}
-  .tile.used{opacity:.4}
+  /* A tile placed in any blank is out of the pool: a hollow outline keeps its
+     place so the pool does not reshuffle, but there is nothing to tap. */
+  .tile.used{opacity:.28;border-style:dashed;pointer-events:none}
+  .tile.used .art,.tile.used .glyph{visibility:hidden}
   .tile .art{width:var(--tile-art);height:var(--tile-art);display:block;background:#fff;color:#111;
      border-radius:6px;overflow:hidden}
   .tile .art svg{width:100%;height:100%}
@@ -311,7 +314,7 @@
       <li>Each clue leaves a word blank. Work out what it must be, then build it from the tiles
           below. Tap the blank you want to fill — every clue shares the same tiles, so working out
           which tiles belong where is part of the puzzle.</li>
-      <li>Press <b>Enter</b> to check. A tile may be used more than once.</li>
+      <li>Press <b>Enter</b> to check. Each tile can be used once, so every tile has a home.</li>
     </ol>
   </div>
 </div>
@@ -376,9 +379,13 @@ function save() {
 }
 // What identifies this puzzle to the server; id wins because it never moves.
 const ref = () => (PUZZLE.id ? { id: PUZZLE.id } : { date: PUZZLE.date });
+// The title names the theme (Cereal, Disney), which is the one thing the
+// clues are hiding, so it is shown only once every blank is closed.
+const finished = () => Boolean(state) && state.rounds.every((r) => r.blanks.every((b) => b.status !== "open"));
 const heading = () => (PREVIEW ? "Preview · nothing is saved"
   : PUZZLE.number ? "No. " + PUZZLE.number + " · " + prettyDate(PUZZLE.date)
-  : (PUZZLE.title || "Preview"));
+  : "Preview");
+const themeLine = () => (finished() && PUZZLE.title ? PUZZLE.title : "");
 function fresh() {
   return { key: key(), date: PUZZLE.date, round: 0, active: 0,
            rounds: PUZZLE.rounds.map((r, i) => ({
@@ -431,6 +438,15 @@ function advance() {
   return false;
 }
 const blankId = (ri, bi) => "blank" + ri + "-" + bi;
+
+// Every tile currently sitting in a blank, across the whole group.
+function usedTiles() {
+  const used = new Set();
+  for (const r of state.rounds) for (const b of r.blanks) {
+    for (const t of (b.status === "open" ? b.expr : b.answer || [])) used.add(t.word);
+  }
+  return used;
+}
 
 // A tile from the pool. Never captioned: naming the picture is the puzzle.
 function tileEl(word, extraCls) {
@@ -633,7 +649,7 @@ function render() {
   // be pointing at something that cannot take a tap.
   if (active().status !== "open" && openBlanks().length) advance();
   const bs = active();
-  $("metaText").textContent = heading();
+  $("metaText").textContent = heading() + (themeLine() ? "  ·  " + themeLine() : "");
   const everyBlank = allSlots().map((s) => s.b);
   const tries = everyBlank.reduce((n, b) => n + b.tries, 0);
   $("tries").textContent = tries ? tries + (tries === 1 ? " guess" : " guesses") : "";
@@ -641,8 +657,10 @@ function render() {
   fitPhrase();
   renderReveals();
 
-  // Tiles are the shared pool; only the blank being filled greys its own out.
-  const inUse = new Set(bs.status === "open" ? bs.expr.map((t) => t.word) : []);
+  // Tiles are the shared pool and each is ONE physical tile: placed in any
+  // blank -- half-built or already answered -- it is gone from the pool. That
+  // is what makes the group solvable by elimination: every tile has a home.
+  const inUse = usedTiles();
   const icons = $("icons"); icons.innerHTML = "";
   PUZZLE.pool.icons.forEach((t) => {
     const b = tileEl(t.word, inUse.has(t.word) ? "used" : "");
@@ -675,6 +693,7 @@ function render() {
 function place(word) {
   const bs = active();
   if (bs.status !== "open" || busy) return;
+  if (usedTiles().has(word)) { toast("That tile is already in use"); return; }
   if (bs.expr.length >= PUZZLE.maxTiles) { toast("That's enough tiles"); return; }
   // A take-away applies to the tile before it, so it cannot come first.
   const op = bs.expr.length && bs.nextOp === "-" ? "-" : "+";
@@ -775,6 +794,7 @@ function showResults() {
   $("againBtn").hidden = !PREVIEW;
   $("shareBtn").hidden = PREVIEW;   // nothing to share from an unpublished draft
   $("resSub").textContent = (PUZZLE.number && !PREVIEW ? "Rebus " : "") + heading() +
+    (PUZZLE.title ? "  ·  " + PUZZLE.title : "") +
     (asked ? "  ·  " + asked + (asked === 1 ? " reveal" : " reveals") : "");
   $("results").hidden = false;
 }
@@ -870,10 +890,10 @@ async function init() {
   PUZZLE.pool.icons.forEach((t) => tileByWord.set(t.word, t));
   state = load() || fresh();
   demo();
-  $("introDate").textContent = PREVIEW ? (PUZZLE.title || "Preview")
+  $("introDate").textContent = PREVIEW ? "Preview"
     : PUZZLE.date ? prettyDate(PUZZLE.date) : "Unscheduled";
   $("introNo").textContent = PREVIEW ? "nothing is saved"
-    : PUZZLE.number ? "No. " + PUZZLE.number : (PUZZLE.title || "Preview");
+    : PUZZLE.number ? "No. " + PUZZLE.number : "Preview";
   $("intro").hidden = false;
 }
 init();
