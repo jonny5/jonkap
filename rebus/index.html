@@ -22,60 +22,73 @@
   }
   *{box-sizing:border-box}
   html,body{height:100%}
-  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 var(--sans);-webkit-font-smoothing:antialiased}
+  /* The page is one screen: header, the clues, and a dock of tiles and
+     buttons pinned to the bottom. Only the clue area scrolls, so the tiles a
+     player is choosing from and the blank they are filling are never on
+     opposite sides of a scroll. */
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 var(--sans);-webkit-font-smoothing:antialiased;
+       height:100dvh;display:flex;flex-direction:column;overflow:hidden}
   button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
   button:disabled{cursor:default;opacity:.4}
   [hidden]{display:none!important}
 
-  .top{height:56px;border-bottom:1px solid var(--line);display:grid;
+  .top{flex:none;height:52px;border-bottom:1px solid var(--line);display:grid;
        grid-template-columns:1fr auto 1fr;align-items:center;padding:0 12px}
   .top .left{display:flex;gap:4px}
   .top .right{display:flex;gap:4px;justify-content:flex-end}
-  .brand{font:700 26px/1 var(--serif);letter-spacing:-.01em;text-align:center}
+  .brand{font:700 24px/1 var(--serif);letter-spacing:-.01em;text-align:center}
   .ib{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--ink)}
   .ib:hover{background:var(--soft)}
   .ib svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
-  .board{max-width:min(1580px,95vw);margin:0 auto;padding:16px 16px 40px}
+  .board{flex:1;min-height:0;display:flex;flex-direction:column}
+  .clues{flex:1;min-height:0;overflow:auto;width:100%;max-width:1580px;margin:0 auto;
+         padding:10px 16px 14px;-webkit-overflow-scrolling:touch;display:flex;flex-direction:column}
+  /* Spare height goes around the clues, not under them; auto margins give
+     way to 0 when the stack overflows, so a long day still scrolls from the
+     top. */
+  .clues .rounds{margin-top:auto;margin-bottom:auto}
   .meta{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}
   .nav{display:flex;gap:4px;align-items:center}
   .nav a{color:var(--muted);text-decoration:none;padding:2px 7px;border-radius:6px}
   .nav a:hover{background:var(--soft);color:var(--ink)}
   .nav a.off{visibility:hidden}
-  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
-           font-weight:600;text-align:center;margin:22px 0 0}
+  .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+           font-weight:600;text-align:center;margin:10px 0 0}
 
   /* ---- the rebus phrase ---- */
-  /* Reading the pictures IS the puzzle, so they are as large as the sentence
-     allows. Sizes are a base times --fit, and fitPhrase() lowers --fit only as
-     far as it must to keep the whole sentence on one line; below FIT_MIN it
-     stops shrinking and lets the phrase wrap rather than become unreadable. */
-  :root{--art-base:132px; --fit:1;
+  /* Pictures are sized to be READ, not admired: small enough that the whole
+     group of clues and the tile dock share one screen, and any picture opens
+     full size on a tap (see .zoom). Sizes are a base times --fit, and
+     fitPhrase() lowers --fit only as far as it must to keep each sentence on
+     one line and the group above the dock; below FIT_MIN it stops shrinking
+     and lets the clues wrap and scroll rather than become unreadable. */
+  :root{--art-base:104px; --fit:1;
         --art:calc(var(--art-base) * var(--fit));
         --text:calc(var(--art) * .38);
         --art-nest:calc(var(--art) * .76);
         --art-nest2:calc(var(--art) * .6);
         --glyph:calc(var(--art) * .62);
-        --tile:96px; --tile-art:66px; --blank-tile:72px; --blank-art:50px}
-  @media (max-width:700px){:root{--tile:78px; --tile-art:54px; --blank-tile:58px; --blank-art:40px}}
-  @media (max-width:430px){:root{--tile:64px; --tile-art:44px; --blank-tile:48px; --blank-art:33px}}
+        --tile:72px; --tile-art:52px}
+  @media (max-width:700px){:root{--tile:60px; --tile-art:44px}}
+  @media (max-width:430px){:root{--tile:52px; --tile-art:38px}}
   /* Word spacing scales too, so the sentence reads as words rather than a run
      of pictures. */
   .phrase{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;
-          gap:20px calc(26px + 30px * var(--fit));margin:18px 0 4px;min-height:96px}
+          gap:14px calc(18px + 22px * var(--fit));margin:12px 0 4px;min-height:72px}
   /* A day is a group of clues, stacked. With several on screen the base art
      size drops so the whole group fits without scrolling to the tiles. */
   .rounds{display:flex;flex-direction:column}
   /* Clues line up on a common left edge: the blank is not always at the end,
      and a centred stack of unequal sentences reads as a scatter. */
-  .rounds.multi{--art-base:104px}
+  .rounds.multi{--art-base:76px}
   .rounds.multi .phrase{justify-content:flex-start;padding-left:6px}
   .rounds.multi .rlabel{justify-content:flex-start;padding-left:6px}
-  .round{padding:6px 0 10px;border-bottom:1px solid var(--line)}
+  .round{padding:5px 0 8px;border-bottom:1px solid var(--line)}
   .round:last-child{border-bottom:0}
-  .round .phrase{margin:10px 0 2px;min-height:72px}
+  .round .phrase{margin:6px 0 2px;min-height:56px}
   /* the clue whose blank is taking taps */
-  .round.on{background:var(--soft);border-radius:12px;margin:0 -10px;padding-left:10px;padding-right:10px}
+  .round.on{background:var(--soft);border-radius:12px;margin:0 -8px;padding-left:8px;padding-right:8px}
   .round.done{opacity:.72}
   .rlabel{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
           font-weight:600;display:flex;gap:10px;align-items:center;justify-content:center;min-height:16px}
@@ -113,6 +126,9 @@
      that genuinely asks for currentColor (stroke="currentColor") resolves
      against the pinned dark ink instead. Colour emoji ignore fill either way. */
   .u{width:var(--art);height:var(--art);display:grid;place-items:center;color:var(--ink)}
+  /* Any picture in a clue opens at full size on a tap. */
+  .u.zoomable{cursor:zoom-in}
+  .u.zoomable:hover{box-shadow:0 0 0 2px var(--accent)}
   /* Only picture units get the light ground -- .u.g is a letter glyph and must
      keep following the page's ink. */
   .u:not(.g){background:#fff;color:#111;border-radius:6px;overflow:hidden}
@@ -141,26 +157,30 @@
   .grp .grp::before,.grp .grp::after{font-size:calc(var(--art-nest) * .95)}
 
   /* the blank, filled in place */
-  .pw.blank{border-bottom-color:var(--ink);gap:7px;min-height:calc(var(--blank-tile) + 8px)}
+  /* The blank is a picture-sized box, so its contents -- the "?", the letter
+     slots, the tiles tapped into it -- sit on the same line as the pictures
+     either side of it, and its rule is the one underline. */
+  .pw.blank{border-bottom:3px solid var(--ink);gap:calc(4px + 4px * var(--fit));
+            min-height:calc(var(--art) + 10px);align-items:center}
   .pw.blank.done{border-bottom-color:var(--ok)}
   /* With SEVERAL blanks in one phrase the player has to be able to see which
      one their taps are going into, and that the others are waiting rather than
      finished. Only marked when there is more than one -- a lone blank needs no
      "which" and the extra rule would just be noise. */
-  .pw.blank.active{border-bottom-color:var(--accent);border-bottom-width:4px}
+  .pw.blank.active{border-bottom-color:var(--accent)}
   .pw.blank.waiting{cursor:pointer;opacity:.62}
   .pw.blank.waiting:hover{opacity:1}
   .pw.blank.shake{animation:shake .4s}
   @keyframes shake{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}
     30%,50%,70%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
-  .slot{width:calc(var(--art) * .26);height:var(--blank-art);border-bottom:3px solid var(--muted);border-radius:1px}
+  .slot{width:calc(var(--art) * .26);height:calc(var(--art) * .8);border-bottom:3px solid var(--muted);border-radius:1px}
   /* length not revealed yet: one anonymous gap, no letter count given away */
-  .slot.wide{width:130px;display:grid;place-items:center;color:var(--muted);
-             font:600 32px/1 var(--serif);padding-bottom:4px}
-  .solved{font:700 40px/1 var(--serif);letter-spacing:.1em;color:var(--ok);text-transform:uppercase}
+  .slot.wide{width:calc(var(--art) * 1.1);height:var(--art);border-bottom:0;display:grid;place-items:center;
+             color:var(--muted);font:600 calc(var(--art) * .42)/1 var(--serif)}
+  .solved{font:700 calc(var(--art) * .38)/1 var(--serif);letter-spacing:.1em;color:var(--ok);text-transform:uppercase}
 
-  .reveals{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
-  .rv{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;
+  .reveals{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+  .rv{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12.5px;
       color:var(--muted);display:inline-flex;align-items:center;gap:7px;background:var(--bg)}
   .rv:hover{border-color:var(--ink);color:var(--ink)}
   .rv svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;
@@ -169,15 +189,40 @@
   .rv.shown:hover{border-color:var(--ink)}
   .rv b{font-weight:700}
   .rv i{font-style:italic}
-  .feedback{text-align:center;min-height:22px;font-size:13px;color:var(--muted);
-            font-variant:small-caps;letter-spacing:.06em;margin:10px 0 0}
+  .feedback{text-align:center;font-size:13px;color:var(--muted);
+            font-variant:small-caps;letter-spacing:.06em}
+  .feedback:empty{display:none}
+
+  /* ---- the dock ---- */
+  /* Tiles and buttons live in a strip pinned to the bottom of the screen. A
+     player reads the clue above and reaches for tiles below without either
+     leaving the screen; the safe-area inset keeps the buttons above a
+     phone's home bar. */
+  .dock{flex:none;position:relative;z-index:2;border-top:1px solid var(--line);background:var(--bg);
+        padding:8px 16px calc(10px + env(safe-area-inset-bottom));
+        display:flex;flex-direction:column;align-items:center;gap:8px}
+  .dock .status{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;min-height:26px}
+  /* Pictures and sounds share one tray: text tiles already look like text,
+     so headings only spent height. */
+  .tray{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 18px;max-width:1100px}
+  @media (max-width:430px){.btn{padding:0 14px;font-size:13px}}
 
   /* ---- tiles ---- */
-  .tile{position:relative;width:var(--tile);height:var(--tile);border-radius:12px;background:var(--tile);
+  .tile{position:relative;width:var(--tile);height:var(--tile);border-radius:10px;background:var(--tile);
         border:2px solid var(--tile-line);display:flex;align-items:center;justify-content:center;
-        color:var(--ink);transition:transform .08s,border-color .15s;-webkit-tap-highlight-color:transparent}
+        color:var(--ink);transition:transform .12s,border-color .15s;-webkit-tap-highlight-color:transparent;
+        -webkit-touch-callout:none;user-select:none}
   .tile:hover{border-color:var(--ink)}
   .tile:active{transform:scale(.94)}
+  /* A tile is small so the pool fits; with a mouse, resting on one grows it
+     upward out of the dock, over the clues, to a size the drawing can be
+     read at. A transform, so nothing around it shuffles. Touch has
+     press-and-hold instead. */
+  @media (hover:hover){
+    .grid .tile.pic{transform-origin:50% 100%;will-change:transform}
+    .grid .tile.pic:hover{transform:scale(2.2);z-index:5;box-shadow:var(--shadow)}
+    .grid .tile.pic:active{transform:scale(2.1)}
+  }
   /* A tile placed in any blank is out of the pool: a hollow outline keeps its
      place so the pool does not reshuffle, but there is nothing to tap. */
   .tile.used{opacity:.28;border-style:dashed;pointer-events:none}
@@ -187,21 +232,22 @@
   .tile .art svg{width:100%;height:100%}
   .tile .art img{width:100%;height:100%;object-fit:contain}
   .tile .glyph{font:700 calc(var(--tile-art) * .62)/1 var(--serif);letter-spacing:.02em}
-  .tile.text{width:auto;min-width:60px;padding:0 14px;height:calc(var(--tile) * .78)}
-  /* a tile sitting in the blank */
-  .pw.blank .tile{width:var(--blank-tile);height:var(--blank-tile);border-width:1.5px;border-radius:9px}
-  .pw.blank .tile.text{width:auto;min-width:40px;height:var(--blank-tile);padding:0 10px}
-  .pw.blank .tile .art{width:var(--blank-art);height:var(--blank-art)}
-  .pw.blank .tile .glyph{font-size:calc(var(--blank-art) * .62)}
+  .tile.text{width:auto;min-width:48px;padding:0 12px;height:calc(var(--tile) * .78)}
+  /* A tile sitting in the blank takes the size of the pictures around it, so
+     the half-built answer reads as part of the sentence, not as a pool. */
+  .pw.blank .tile{width:var(--art);height:var(--art);border-width:2px;border-radius:8px}
+  .pw.blank .tile.text{width:auto;min-width:calc(var(--art) * .7);height:var(--art);padding:0 calc(var(--art) * .12)}
+  .pw.blank .tile .art{width:calc(var(--art) * .8);height:calc(var(--art) * .8)}
+  .pw.blank .tile .glyph{font-size:calc(var(--art) * .5)}
   .pop{animation:pop .18s}
   @keyframes pop{0%{transform:scale(.8)}60%{transform:scale(1.08)}100%{transform:scale(1)}}
 
-  h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
-     font-weight:600;margin:22px 0 10px;text-align:center}
-  .grid{display:flex;flex-wrap:wrap;justify-content:center;gap:11px}
-  .actions{display:flex;justify-content:center;gap:10px;margin-top:26px;flex-wrap:wrap}
-  .btn{height:48px;padding:0 26px;border-radius:999px;font-weight:600;font-size:15px;
+  .grid{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+  .grid:empty{display:none}
+  .actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+  .btn{height:40px;padding:0 18px;border-radius:999px;font-weight:600;font-size:14px;
        border:1.5px solid var(--ink)}
+  .actions .btn.primary{min-width:110px}
   .btn:hover{background:var(--soft)}
   .btn.primary{background:var(--ink);color:var(--bg)}
   .btn.primary:hover{opacity:.85;background:var(--ink)}
@@ -237,6 +283,13 @@
   .score b{display:block;font:700 34px/1 var(--serif)}
   .score span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
   .center{text-align:center}
+  /* A picture, full size. Never captioned: naming it is the puzzle. */
+  .zoom{position:fixed;inset:0;background:rgba(0,0,0,.55);display:grid;place-items:center;
+        padding:24px;z-index:35;cursor:zoom-out}
+  .zoom .big{--z:min(80vw,70vh,560px);width:var(--z);height:var(--z);background:#fff;color:#111;border-radius:16px;
+             padding:20px;box-shadow:var(--shadow);animation:rise .18s ease-out}
+  .zoom .big svg{width:100%;height:100%}
+  .zoom .big img{width:100%;height:100%;object-fit:contain}
   .toast{position:fixed;top:72px;left:50%;transform:translateX(-50%);background:var(--ink);
          color:var(--bg);padding:12px 18px;border-radius:6px;font-weight:600;font-size:14px;
          opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
@@ -262,27 +315,34 @@
 </header>
 
 <main class="board" id="board" hidden>
-  <div class="meta">
-    <span class="nav"><a id="prevLink" title="Previous">&larr;</a><span id="metaText"></span><a id="nextLink" title="Next">&rarr;</a></span>
-    <span id="tries"></span>
+  <div class="clues" id="clues">
+    <div class="meta">
+      <span class="nav"><a id="prevLink" title="Previous">&larr;</a><span id="metaText"></span><a id="nextLink" title="Next">&rarr;</a></span>
+      <span id="tries"></span>
+    </div>
+    <p class="eyebrow" id="eyebrow">Read the picture sentence</p>
+    <!-- One .round per clue: a day is a GROUP of related phrases sharing the
+         tiles in the dock, and the player sees them all at once. -->
+    <div class="rounds" id="rounds"></div>
   </div>
-  <p class="eyebrow" id="eyebrow">Read the picture sentence</p>
-  <!-- One .round per clue: a day is a GROUP of related phrases sharing the
-       tiles below, and the player sees them all at once. -->
-  <div class="rounds" id="rounds"></div>
-  <div class="reveals" id="reveals"></div>
-  <div class="feedback" id="feedback"></div>
 
-  <h3>Pictures</h3>
-  <div class="grid" id="icons"></div>
-  <h3>Sounds</h3>
-  <div class="grid" id="texts"></div>
-
-  <div class="actions">
-    <button class="btn ghost" id="revealBtn">Reveal</button>
-    <button class="btn ghost" id="minusBtn" title="Take the next picture away instead of adding it">&minus; Take away</button>
-    <button class="btn ghost" id="deleteBtn">Delete</button>
-    <button class="btn primary" id="enterBtn">Enter</button>
+  <!-- Pinned to the bottom: the shared tile pool and the controls, always on
+       screen alongside the clues. -->
+  <div class="dock">
+    <div class="status">
+      <div class="reveals" id="reveals"></div>
+      <div class="feedback" id="feedback"></div>
+    </div>
+    <div class="tray">
+      <div class="grid" id="icons"></div>
+      <div class="grid" id="texts"></div>
+    </div>
+    <div class="actions">
+      <button class="btn ghost" id="revealBtn">Reveal</button>
+      <button class="btn ghost" id="minusBtn" title="Take the next picture away instead of adding it">&minus; Take away</button>
+      <button class="btn ghost" id="deleteBtn">Delete</button>
+      <button class="btn primary" id="enterBtn">Enter</button>
+    </div>
   </div>
 </main>
 
@@ -315,6 +375,7 @@
           below. Tap the blank you want to fill — every clue shares the same tiles, so working out
           which tiles belong where is part of the puzzle.</li>
       <li>Press <b>Enter</b> to check. Each tile can be used once, so every tile has a home.</li>
+      <li>Tap any picture in a clue to see it full size; press and hold a tile to do the same.</li>
     </ol>
   </div>
 </div>
@@ -333,6 +394,8 @@
     <button class="btn" id="againBtn" hidden>Play again</button>
   </div>
 </div>
+
+<div class="zoom" id="zoom" hidden><div class="big" id="zoomArt"></div></div>
 
 <div class="toast" id="toast"></div>
 
@@ -448,13 +511,34 @@ function usedTiles() {
   return used;
 }
 
+// Pictures are drawn small so everything fits on one screen; any of them
+// opens full size here. Never captioned: naming the picture is the puzzle.
+function openZoom(markup) {
+  if (!markup) return;
+  $("zoomArt").innerHTML = markup;
+  $("zoom").hidden = false;
+}
+$("zoom").onclick = () => { $("zoom").hidden = true; };
+
 // A tile from the pool. Never captioned: naming the picture is the puzzle.
+// A tap places it; press and hold (or a mouse hover) shows it large.
+const HOLD_MS = 450;
 function tileEl(word, extraCls) {
   const t = tileByWord.get(word);
   const b = el("button", "tile " + (t ? "pic" : "text") + (extraCls ? " " + extraCls : ""));
   b.dataset.word = word;
   b.setAttribute("aria-label", word);
-  if (t) { const a = el("div", "art"); a.innerHTML = t.markup || ""; b.appendChild(a); }
+  if (t) {
+    const a = el("div", "art"); a.innerHTML = t.markup || ""; b.appendChild(a);
+    let timer = null, held = false;
+    const arm = () => { held = false; clearTimeout(timer); timer = setTimeout(() => { held = true; openZoom(t.markup); }, HOLD_MS); };
+    const disarm = () => clearTimeout(timer);
+    b.addEventListener("pointerdown", arm);
+    ["pointerup", "pointerleave", "pointercancel"].forEach((ev) => b.addEventListener(ev, disarm));
+    // Registered before any onclick, so a hold never also places the tile.
+    b.addEventListener("click", (e) => { if (held) { held = false; e.stopImmediatePropagation(); e.preventDefault(); } });
+    b.addEventListener("contextmenu", (e) => e.preventDefault());
+  }
   else b.appendChild(el("div", "glyph", word));
   return b;
 }
@@ -464,9 +548,13 @@ function tileEl(word, extraCls) {
 // for take-aways like H + (MOUSE − M).
 function unitEl(u) {
   if (u.kind === "group") return unitsInto(el("span", "grp"), u.units);
-  const d = el("div", "u" + (u.kind === "text" ? " g" : ""));
+  const d = el("div", "u" + (u.kind === "text" ? " g" : " zoomable"));
   if (u.kind === "text") d.textContent = u.text;
-  else d.innerHTML = u.markup || "";
+  else {
+    d.innerHTML = u.markup || "";
+    d.title = "Tap to enlarge";
+    d.onclick = (e) => { e.stopPropagation(); openZoom(u.markup); };
+  }
   return d;
 }
 function unitsInto(box, units) {
@@ -624,14 +712,21 @@ function renderReveals() {
 // by --fit, so one number rescales pictures, letters, operators and the space
 // between words together.
 const FIT_MIN = 0.34;   // below this, wrapping beats shrinking
+// Height has its own floor: pictures that small would be unreadable, and the
+// clue area scrolls, so past this point scrolling beats shrinking.
+const FIT_MIN_H = 0.6;
+// And a ceiling: on a big screen the clues grow into the room above the dock
+// rather than leaving it empty, but not so far that a short clue is a mural.
+const FIT_MAX = 1.5;
 // One --fit for the whole group: the clues share a scale so they read as a
-// set, and the longest sentence decides it.
+// set. The longest sentence decides the width fit, then the whole stack is
+// scaled to sit above the dock without a scroll.
 function fitPhrase() {
   const phrases = [...document.querySelectorAll("#rounds .phrase")].filter((p) => p.children.length);
   if (!phrases.length) return;
   const root = document.documentElement;
-  root.style.setProperty("--fit", "1");
-  let scale = 1;
+  root.style.setProperty("--fit", String(FIT_MAX));
+  let scale = FIT_MAX;
   for (const p of phrases) {
     p.classList.add("measuring");
     // scrollWidth with nowrap is what the sentence needs on a single line
@@ -639,9 +734,21 @@ function fitPhrase() {
     const have = p.clientWidth;
     p.classList.remove("measuring");
     // A hair under, so rounding never tips it into a second row
-    if (need && have) scale = Math.min(scale, (have / need) * 0.985);
+    if (need && have) scale = Math.min(scale, (have / need) * 0.985 * FIT_MAX);
   }
-  root.style.setProperty("--fit", String(Math.max(FIT_MIN, scale)));
+  scale = Math.max(FIT_MIN, scale);
+  root.style.setProperty("--fit", String(scale));
+
+  // Now the height. Labels and rules do not scale, so the ratio is only an
+  // estimate; a couple of passes converge, and shrinking never adds a line.
+  const clues = $("clues"), rounds = $("rounds");
+  for (let pass = 0; pass < 3 && scale > FIT_MIN_H; pass++) {
+    const have = clues.clientHeight - (rounds.offsetTop - clues.offsetTop) - 6;
+    const need = rounds.offsetHeight;
+    if (!have || need <= have) break;
+    scale = Math.max(FIT_MIN_H, scale * (have / need) * 0.98);
+    root.style.setProperty("--fit", String(scale));
+  }
 }
 
 function render() {
@@ -838,7 +945,7 @@ $("playBtn").onclick = () => { $("intro").hidden = true; $("board").hidden = fal
 
 document.addEventListener("keydown", (e) => {
   if (e.metaKey || e.ctrlKey || e.altKey) return;
-  if (e.key === "Escape") { document.querySelectorAll(".modal").forEach((m) => { m.hidden = true; }); return; }
+  if (e.key === "Escape") { document.querySelectorAll(".modal").forEach((m) => { m.hidden = true; }); $("zoom").hidden = true; return; }
   if (!state || $("board").hidden) return;
   if (e.key === "Enter") { e.preventDefault(); submit(); }
   else if (e.key === "Backspace") { e.preventDefault(); $("deleteBtn").click(); }
