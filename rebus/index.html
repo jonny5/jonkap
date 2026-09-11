@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rebus</title>
+<style>
+  :root {
+    --bg:#ffffff; --ink:#121212; --muted:#787c7e; --line:#d3d6da; --soft:#f4f4f4;
+    --tile:#ffffff; --tile-line:#d3d6da; --accent:#f7da21; --accent-ink:#121212;
+    --ok:#6aaa64; --bad:#d64545; --shadow:0 4px 23px rgba(0,0,0,.2);
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+    --bg:#121213; --ink:#f8f8f8; --muted:#818384; --line:#3a3a3c; --soft:#1e1e20;
+    --tile:#1a1a1b; --tile-line:#565758; --ok:#538d4e; --shadow:0 4px 23px rgba(0,0,0,.6);
+  }}
+  :root[data-theme=dark]{
+    --bg:#121213; --ink:#f8f8f8; --muted:#818384; --line:#3a3a3c; --soft:#1e1e20;
+    --tile:#1a1a1b; --tile-line:#565758; --ok:#538d4e; --shadow:0 4px 23px rgba(0,0,0,.6);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 var(--sans);-webkit-font-smoothing:antialiased}
+  button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+  button:disabled{cursor:default;opacity:.4}
+  [hidden]{display:none!important}
+
+  .top{height:56px;border-bottom:1px solid var(--line);display:grid;
+       grid-template-columns:1fr auto 1fr;align-items:center;padding:0 12px}
+  .top .left{display:flex;gap:4px}
+  .top .right{display:flex;gap:4px;justify-content:flex-end}
+  .brand{font:700 26px/1 var(--serif);letter-spacing:-.01em;text-align:center}
+  .ib{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--ink)}
+  .ib:hover{background:var(--soft)}
+  .ib svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+  .board{max-width:min(1580px,95vw);margin:0 auto;padding:16px 16px 40px}
+  .meta{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}
+  .nav{display:flex;gap:4px;align-items:center}
+  .nav a{color:var(--muted);text-decoration:none;padding:2px 7px;border-radius:6px}
+  .nav a:hover{background:var(--soft);color:var(--ink)}
+  .nav a.off{visibility:hidden}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+           font-weight:600;text-align:center;margin:22px 0 0}
+
+  /* ---- the rebus phrase ---- */
+  /* Reading the pictures IS the puzzle, so they are as large as the sentence
+     allows. Sizes are a base times --fit, and fitPhrase() lowers --fit only as
+     far as it must to keep the whole sentence on one line; below FIT_MIN it
+     stops shrinking and lets the phrase wrap rather than become unreadable. */
+  :root{--art-base:132px; --fit:1;
+        --art:calc(var(--art-base) * var(--fit));
+        --text:calc(var(--art) * .38);
+        --art-nest:calc(var(--art) * .76);
+        --art-nest2:calc(var(--art) * .6);
+        --glyph:calc(var(--art) * .62);
+        --tile:96px; --tile-art:66px; --blank-tile:72px; --blank-art:50px}
+  @media (max-width:700px){:root{--tile:78px; --tile-art:54px; --blank-tile:58px; --blank-art:40px}}
+  @media (max-width:430px){:root{--tile:64px; --tile-art:44px; --blank-tile:48px; --blank-art:33px}}
+  /* Word spacing scales too, so the sentence reads as words rather than a run
+     of pictures. */
+  .phrase{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;
+          gap:20px calc(26px + 30px * var(--fit));margin:18px 0 4px;min-height:96px}
+  /* A day is a group of clues, stacked. With several on screen the base art
+     size drops so the whole group fits without scrolling to the tiles. */
+  .rounds{display:flex;flex-direction:column}
+  /* Clues line up on a common left edge: the blank is not always at the end,
+     and a centred stack of unequal sentences reads as a scatter. */
+  .rounds.multi{--art-base:104px}
+  .rounds.multi .phrase{justify-content:flex-start;padding-left:6px}
+  .rounds.multi .rlabel{justify-content:flex-start;padding-left:6px}
+  .round{padding:6px 0 10px;border-bottom:1px solid var(--line)}
+  .round:last-child{border-bottom:0}
+  .round .phrase{margin:10px 0 2px;min-height:72px}
+  /* the clue whose blank is taking taps */
+  .round.on{background:var(--soft);border-radius:12px;margin:0 -10px;padding-left:10px;padding-right:10px}
+  .round.done{opacity:.72}
+  .rlabel{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+          font-weight:600;display:flex;gap:10px;align-items:center;justify-content:center;min-height:16px}
+  .rlabel i{font-style:italic;text-transform:none;letter-spacing:0;font-weight:400}
+  /* while measuring the natural one-line width */
+  .phrase.measuring{flex-wrap:nowrap;justify-content:flex-start}
+  .pw{display:inline-flex;align-items:center;gap:calc(4px + 4px * var(--fit));padding-bottom:7px;
+      border-bottom:2px solid transparent;flex:0 0 auto}
+  /* An inline-flex box has no baseline of its own, so the sentence would align
+     picture words by their bottom edge and text words by their baseline. Giving
+     every word the same synthetic baseline puts them on one line. */
+  .pw::after{content:"";display:inline-block;width:0;height:0}
+  .pw.rebus{border-bottom-color:var(--line)}
+  /* Text in the sentence -- plain words and punctuation -- shares one size and
+     one baseline. `--text` is measured from the picture size so the sentence
+     scales as a whole; the extra bottom padding on picture words is what lines
+     a 132px image up with a 45px word, since a glyph box is taller than its
+     visible letters. */
+  .pw.plain{font:600 var(--text)/1 var(--serif);letter-spacing:.03em}
+  /* Punctuation sits INLINE with the word it touches and is CENTRED against it.
+     A baseline is the wrong ruler here: a drawn word is a 130px picture whose
+     synthetic baseline is its bottom edge, so a comma aligned to it dropped to
+     the floor of the sentence, far below the mark's optical home. Centring on
+     the word's own box puts it where it reads as punctuation again. */
+  .pw.punct{font:600 var(--text)/1 var(--serif);align-self:center}
+  .punct-in{font:600 var(--text)/1 var(--serif);color:var(--ink);white-space:pre;
+            align-self:center;line-height:1}
+  /* A word plus the punctuation touching it is ONE item in the sentence, so the
+     wide gap between words never opens up around a comma or a quote. This is a
+     plain wrapper, not a .pw -- nesting .pw inside .pw meant the wrapper picked
+     up the word's own padding, border and centring. */
+  .chunk{display:inline-flex;align-items:center;gap:.06em;flex:0 0 auto}
+  /* Artwork renders as authored, on its own light ground, in every theme.
+     Forcing fill:currentColor turned black line art white in dark mode; art
+     that genuinely asks for currentColor (stroke="currentColor") resolves
+     against the pinned dark ink instead. Colour emoji ignore fill either way. */
+  .u{width:var(--art);height:var(--art);display:grid;place-items:center;color:var(--ink)}
+  /* Only picture units get the light ground -- .u.g is a letter glyph and must
+     keep following the page's ink. */
+  .u:not(.g){background:#fff;color:#111;border-radius:6px;overflow:hidden}
+  .u svg{width:100%;height:100%}
+  .u img{width:100%;height:100%;object-fit:contain}
+  /* A letter takes the same box height as a picture, and is centred in it,
+     so P + [picture] sits on one axis instead of the glyph riding low. */
+  .u.g{width:auto;min-width:22px;height:var(--art);display:grid;place-items:center;
+       font:700 var(--glyph)/1 var(--serif);letter-spacing:.02em}
+  .op{font:600 calc(var(--art) * .22)/1 var(--sans);color:var(--muted);user-select:none}
+  .op.minus{color:var(--bad);font-weight:700}
+  /* A bracketed sub-expression, H + (MOUSE − M), is drawn with real
+     parentheses: they say "these go together" the way a shaded box never
+     quite did. Its pieces stay full size -- a shrunken H next to a full P
+     read as two different alphabets -- and only a group inside a group
+     steps down. */
+  .grp{display:inline-flex;align-items:center;gap:6px;padding:0 2px}
+  .grp::before,.grp::after{font:300 calc(var(--art) * .95)/1 var(--serif);color:var(--muted);
+       padding-bottom:calc(var(--art) * .06)}
+  .grp::before{content:"("}
+  .grp::after{content:")"}
+  .grp .u{width:var(--art);height:var(--art)}
+  .grp .u.g{font-size:var(--glyph)}
+  .grp .grp .u{width:var(--art-nest);height:var(--art-nest)}
+  .grp .grp .u.g{font-size:calc(var(--glyph) * .8)}
+  .grp .grp::before,.grp .grp::after{font-size:calc(var(--art-nest) * .95)}
+
+  /* the blank, filled in place */
+  .pw.blank{border-bottom-color:var(--ink);gap:7px;min-height:calc(var(--blank-tile) + 8px)}
+  .pw.blank.done{border-bottom-color:var(--ok)}
+  /* With SEVERAL blanks in one phrase the player has to be able to see which
+     one their taps are going into, and that the others are waiting rather than
+     finished. Only marked when there is more than one -- a lone blank needs no
+     "which" and the extra rule would just be noise. */
+  .pw.blank.active{border-bottom-color:var(--accent);border-bottom-width:4px}
+  .pw.blank.waiting{cursor:pointer;opacity:.62}
+  .pw.blank.waiting:hover{opacity:1}
+  .pw.blank.shake{animation:shake .4s}
+  @keyframes shake{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}
+    30%,50%,70%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
+  .slot{width:calc(var(--art) * .26);height:var(--blank-art);border-bottom:3px solid var(--muted);border-radius:1px}
+  /* length not revealed yet: one anonymous gap, no letter count given away */
+  .slot.wide{width:130px;display:grid;place-items:center;color:var(--muted);
+             font:600 32px/1 var(--serif);padding-bottom:4px}
+  .solved{font:700 40px/1 var(--serif);letter-spacing:.1em;color:var(--ok);text-transform:uppercase}
+
+  .reveals{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+  .rv{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;
+      color:var(--muted);display:inline-flex;align-items:center;gap:7px;background:var(--bg)}
+  .rv:hover{border-color:var(--ink);color:var(--ink)}
+  .rv svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;
+          stroke-linecap:round;stroke-linejoin:round}
+  .rv.shown{border-color:var(--ink);color:var(--ink);cursor:default;background:var(--soft)}
+  .rv.shown:hover{border-color:var(--ink)}
+  .rv b{font-weight:700}
+  .rv i{font-style:italic}
+  .feedback{text-align:center;min-height:22px;font-size:13px;color:var(--muted);
+            font-variant:small-caps;letter-spacing:.06em;margin:10px 0 0}
+
+  /* ---- tiles ---- */
+  .tile{position:relative;width:var(--tile);height:var(--tile);border-radius:12px;background:var(--tile);
+        border:2px solid var(--tile-line);display:flex;align-items:center;justify-content:center;
+        color:var(--ink);transition:transform .08s,border-color .15s;-webkit-tap-highlight-color:transparent}
+  .tile:hover{border-color:var(--ink)}
+  .tile:active{transform:scale(.94)}
+  .tile.used{opacity:.4}
+  .tile .art{width:var(--tile-art);height:var(--tile-art);display:block;background:#fff;color:#111;
+     border-radius:6px;overflow:hidden}
+  .tile .art svg{width:100%;height:100%}
+  .tile .art img{width:100%;height:100%;object-fit:contain}
+  .tile .glyph{font:700 calc(var(--tile-art) * .62)/1 var(--serif);letter-spacing:.02em}
+  .tile.text{width:auto;min-width:60px;padding:0 14px;height:calc(var(--tile) * .78)}
+  /* a tile sitting in the blank */
+  .pw.blank .tile{width:var(--blank-tile);height:var(--blank-tile);border-width:1.5px;border-radius:9px}
+  .pw.blank .tile.text{width:auto;min-width:40px;height:var(--blank-tile);padding:0 10px}
+  .pw.blank .tile .art{width:var(--blank-art);height:var(--blank-art)}
+  .pw.blank .tile .glyph{font-size:calc(var(--blank-art) * .62)}
+  .pop{animation:pop .18s}
+  @keyframes pop{0%{transform:scale(.8)}60%{transform:scale(1.08)}100%{transform:scale(1)}}
+
+  h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+     font-weight:600;margin:22px 0 10px;text-align:center}
+  .grid{display:flex;flex-wrap:wrap;justify-content:center;gap:11px}
+  .actions{display:flex;justify-content:center;gap:10px;margin-top:26px;flex-wrap:wrap}
+  .btn{height:48px;padding:0 26px;border-radius:999px;font-weight:600;font-size:15px;
+       border:1.5px solid var(--ink)}
+  .btn:hover{background:var(--soft)}
+  .btn.primary{background:var(--ink);color:var(--bg)}
+  .btn.primary:hover{opacity:.85;background:var(--ink)}
+  .btn.ghost{border-color:var(--line);color:var(--muted)}
+  /* armed: the next tile tapped is subtracted rather than added */
+  .btn.armed{border-color:var(--bad);color:var(--bad);background:var(--soft)}
+
+  .overlay{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;
+           justify-content:center;padding:24px;z-index:20}
+  .splash{text-align:center;max-width:400px}
+  .logo{width:96px;height:96px;margin:0 auto 22px;border-radius:22px;background:var(--accent);
+        display:grid;place-items:center;color:var(--accent-ink);font:700 46px/1 var(--serif)}
+  .splash h1{font:700 44px/1 var(--serif);margin:0 0 10px}
+  .splash p{margin:0 0 26px;font-size:17px;line-height:1.5}
+  .splash .date{font-size:14px;color:var(--muted);margin-top:26px}
+  .splash .date b{color:var(--ink);font-weight:600}
+  .splash .btn{min-width:180px}
+
+  .modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;
+         justify-content:center;padding:20px;z-index:30}
+  .sheet{position:relative;background:var(--bg);color:var(--ink);border-radius:14px;max-width:460px;
+         width:100%;padding:30px 28px 26px;box-shadow:var(--shadow);animation:rise .22s ease-out}
+  @keyframes rise{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
+  .sheet h2{font:700 30px/1.1 var(--serif);margin:0 0 6px}
+  .sheet .sub{color:var(--muted);font-size:14px;margin:0 0 18px}
+  .sheet .x{position:absolute;top:12px;right:12px}
+  .rules{margin:0;padding-left:18px;line-height:1.55}
+  .rules li{margin-bottom:7px}
+  .demo{display:flex;align-items:flex-end;gap:14px;justify-content:center;margin:16px 0 20px;flex-wrap:wrap}
+  .squares{display:flex;gap:6px;justify-content:center;margin:18px 0 8px;font-size:34px;line-height:1}
+  .score{display:flex;justify-content:center;gap:34px;margin:16px 0 22px}
+  .score div{text-align:center}
+  .score b{display:block;font:700 34px/1 var(--serif)}
+  .score span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .center{text-align:center}
+  .toast{position:fixed;top:72px;left:50%;transform:translateX(-50%);background:var(--ink);
+         color:var(--bg);padding:12px 18px;border-radius:6px;font-weight:600;font-size:14px;
+         opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
+  .toast.show{opacity:1}
+  .empty{max-width:440px;margin:60px auto;text-align:center;color:var(--muted);line-height:1.7}
+  .empty a{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="left">
+    <button class="ib" id="helpBtn" aria-label="How to play" title="How to play">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.8.4-1.2.9-1.2 1.7v.4"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
+    </button>
+  </div>
+  <div class="brand">Rebus</div>
+  <div class="right">
+    <button class="ib" id="statsBtn" aria-label="Results" title="Results">
+      <svg viewBox="0 0 24 24"><path d="M5 20V11M12 20V4M19 20v-7"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="board" id="board" hidden>
+  <div class="meta">
+    <span class="nav"><a id="prevLink" title="Previous">&larr;</a><span id="metaText"></span><a id="nextLink" title="Next">&rarr;</a></span>
+    <span id="tries"></span>
+  </div>
+  <p class="eyebrow" id="eyebrow">Read the picture sentence</p>
+  <!-- One .round per clue: a day is a GROUP of related phrases sharing the
+       tiles below, and the player sees them all at once. -->
+  <div class="rounds" id="rounds"></div>
+  <div class="reveals" id="reveals"></div>
+  <div class="feedback" id="feedback"></div>
+
+  <h3>Pictures</h3>
+  <div class="grid" id="icons"></div>
+  <h3>Sounds</h3>
+  <div class="grid" id="texts"></div>
+
+  <div class="actions">
+    <button class="btn ghost" id="revealBtn">Reveal</button>
+    <button class="btn ghost" id="minusBtn" title="Take the next picture away instead of adding it">&minus; Take away</button>
+    <button class="btn ghost" id="deleteBtn">Delete</button>
+    <button class="btn primary" id="enterBtn">Enter</button>
+  </div>
+</main>
+
+<div class="empty" id="empty" hidden>
+  <p id="emptyMsg">No puzzle for this day.</p>
+  <p id="emptyNav"></p>
+  <p id="emptyBuild"><a href="/build">Write one in the builder</a></p>
+</div>
+
+<div class="overlay" id="intro" hidden>
+  <div class="splash">
+    <div class="logo">&#8635;</div>
+    <h1>Rebus</h1>
+    <p>Every word of the sentence is drawn as a picture puzzle. Read it, then build the missing word.</p>
+    <button class="btn primary" id="playBtn">Play</button>
+    <div class="date"><b id="introDate"></b><br><span id="introNo"></span></div>
+  </div>
+</div>
+
+<div class="modal" id="help" hidden>
+  <div class="sheet">
+    <button class="ib x" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h2>How to play</h2>
+    <p class="sub">Sound out the pictures. They spell a sentence.</p>
+    <div class="demo" id="demo"></div>
+    <ol class="rules">
+      <li>Each group of pictures and letters is one word. Say the pieces aloud and run them together.</li>
+      <li>Pictures say what they show. Letters say their name, or their sound when they spell the word's edge.</li>
+      <li>Each clue leaves a word blank. Work out what it must be, then build it from the tiles
+          below. Tap the blank you want to fill — every clue shares the same tiles, so working out
+          which tiles belong where is part of the puzzle.</li>
+      <li>Press <b>Enter</b> to check. A tile may be used more than once.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="modal" id="results" hidden>
+  <div class="sheet center">
+    <button class="ib x" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h2 id="resTitle">Results</h2>
+    <p class="sub" id="resSub"></p>
+    <div class="squares" id="squares"></div>
+    <div class="score">
+      <div><b id="resWord">&mdash;</b><span id="resWordLabel">Answer</span></div>
+      <div><b id="resTries">0</b><span>Guesses</span></div>
+    </div>
+    <button class="btn primary" id="shareBtn">Share</button>
+    <button class="btn" id="againBtn" hidden>Play again</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="static-api.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+const params = new URLSearchParams(location.search);
+
+let PUZZLE = null;
+let state = null;
+let busy = false;
+const tileByWord = new Map();
+
+// ---- persistence (versioned: the round shape changed) ----------------------
+// Progress is kept per puzzle, keyed by date for the daily flow.
+//
+// A PREVIEW keeps nothing. `?id=` is how the builder opens a puzzle it is
+// still being written, and a curator reopens it over and over -- so
+// remembering that it was solved would greet them with the answer instead of
+// the puzzle, and there would be no way back short of clearing site data.
+// Reloading a preview always starts it over; the daily game is unaffected.
+const PREVIEW = params.has("id");
+// Where this page lives: /play on the studio, the folder itself when static.
+const PLAY_URL = window.RebusStatic ? location.pathname.replace(/[^/]*$/, "") : "/play";
+// v5: a round now holds one state per BLANK (a phrase may have several), and
+// the half-built expression lives with the blank it belongs to rather than on
+// the round. Older saves have no `blanks` array and are dropped.
+// v6: a day is a GROUP of rounds shown together, and `round`/`active` is a
+// cursor that moves between them; a v5 save always sat on round 0.
+const key = () => "rebus:v6:" + (PUZZLE.date || PUZZLE.id);
+const blankCount = (i) => Math.max(1, (PUZZLE.rounds[i].blankLengths || []).length);
+function load() {
+  if (PREVIEW) return null;
+  try {
+    const s = JSON.parse(localStorage.getItem(key()));
+    if (s && s.key === key() && Array.isArray(s.rounds) && s.rounds.length === PUZZLE.rounds.length &&
+        s.rounds.every((r, i) => Array.isArray(r.blanks) && r.blanks.length === blankCount(i))) return s;
+  } catch (e) {}
+  return null;
+}
+function save() {
+  if (PREVIEW) return;
+  try { localStorage.setItem(key(), JSON.stringify(state)); } catch (e) {}
+}
+// What identifies this puzzle to the server; id wins because it never moves.
+const ref = () => (PUZZLE.id ? { id: PUZZLE.id } : { date: PUZZLE.date });
+const heading = () => (PREVIEW ? "Preview · nothing is saved"
+  : PUZZLE.number ? "No. " + PUZZLE.number + " · " + prettyDate(PUZZLE.date)
+  : (PUZZLE.title || "Preview"));
+function fresh() {
+  return { key: key(), date: PUZZLE.date, round: 0, active: 0,
+           rounds: PUZZLE.rounds.map((r, i) => ({
+             // The category hint is the round's; everything else is per blank.
+             showHint: false,
+             blanks: Array.from({ length: blankCount(i) }, () => ({
+               status: "open", tries: 0, answer: null, word: null,
+               // Each blank keeps its OWN half-built expression, so switching
+               // between them does not throw away work in progress.
+               expr: [], nextOp: "+",
+               // Nothing is given away until asked for
+               showLength: false,
+             })),
+           })) };
+}
+
+// ---- helpers ---------------------------------------------------------------
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
+}
+function prettyDate(iso) {
+  return new Date(iso + "T12:00:00Z").toLocaleDateString(undefined,
+    { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+}
+let toastTimer;
+function toast(msg, ms = 1500) {
+  const t = $("toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), ms);
+}
+// `state.round` / `state.active` is a CURSOR over every blank of every round:
+// the day is one group of clues on one screen, and the tile buttons fill
+// whichever blank the cursor is on.
+const current = () => state.rounds[state.round];
+const active = () => current().blanks[state.active] || current().blanks[0];
+// Every (round, blank) pair in reading order.
+const allSlots = () => state.rounds.flatMap((r, ri) => r.blanks.map((b, bi) => ({ ri, bi, b })));
+const openBlanks = () => allSlots().filter((s) => s.b.status === "open").map((s) => s.b);
+// Move to the next unsolved blank after the cursor, across rounds, wrapping;
+// stay put if none is left.
+function advance() {
+  const slots = allSlots();
+  const at = slots.findIndex((s) => s.ri === state.round && s.bi === state.active);
+  for (let n = 1; n <= slots.length; n++) {
+    const s = slots[(at + n) % slots.length];
+    if (s.b.status === "open") { state.round = s.ri; state.active = s.bi; return true; }
+  }
+  return false;
+}
+const blankId = (ri, bi) => "blank" + ri + "-" + bi;
+
+// A tile from the pool. Never captioned: naming the picture is the puzzle.
+function tileEl(word, extraCls) {
+  const t = tileByWord.get(word);
+  const b = el("button", "tile " + (t ? "pic" : "text") + (extraCls ? " " + extraCls : ""));
+  b.dataset.word = word;
+  b.setAttribute("aria-label", word);
+  if (t) { const a = el("div", "art"); a.innerHTML = t.markup || ""; b.appendChild(a); }
+  else b.appendChild(el("div", "glyph", word));
+  return b;
+}
+
+// ---- render ----------------------------------------------------------------
+// A drawn word is a tree: pictures and glyphs, with bracketed sub-expressions
+// for take-aways like H + (MOUSE − M).
+function unitEl(u) {
+  if (u.kind === "group") return unitsInto(el("span", "grp"), u.units);
+  const d = el("div", "u" + (u.kind === "text" ? " g" : ""));
+  if (u.kind === "text") d.textContent = u.text;
+  else d.innerHTML = u.markup || "";
+  return d;
+}
+function unitsInto(box, units) {
+  units.forEach((u, i) => {
+    if (i) box.appendChild(el("span", "op" + (u.op === "-" ? " minus" : ""), u.op === "-" ? "−" : "+"));
+    box.appendChild(unitEl(u));
+  });
+  return box;
+}
+const rebusGroup = (units) => unitsInto(el("span", "pw rebus"), units);
+
+// The whole group: one block per clue, each with its phrase and its blanks.
+function renderRounds() {
+  const box = $("rounds"); box.innerHTML = "";
+  const multi = PUZZLE.rounds.length > 1;
+  box.classList.toggle("multi", multi);
+  $("eyebrow").textContent = multi ? "Read the picture clues" : "Read the picture sentence";
+  PUZZLE.rounds.forEach((r, ri) => {
+    const rs = state.rounds[ri];
+    const finished = rs.blanks.every((b) => b.status !== "open");
+    const wrap = el("div", "round" + (multi && ri === state.round && !finished ? " on" : "") + (multi && finished ? " done" : ""));
+    if (multi) {
+      const label = el("div", "rlabel", "Clue " + (ri + 1));
+      // The category, once asked for, sits with its clue.
+      if (r.hint && (rs.showHint || finished)) label.appendChild(el("i", null, r.hint));
+      wrap.appendChild(label);
+    }
+    const phrase = el("div", "phrase");
+    wrap.appendChild(phrase);
+    renderPhrase(phrase, r, rs, ri);
+    box.appendChild(wrap);
+  });
+}
+
+function renderPhrase(box, r, rs, ri) {
+
+  // Punctuation rides with the word it touches instead of standing alone in
+  // the sentence's word spacing: a closing mark hugs the word before it, an
+  // opening mark the word after. `chunk` is what actually gets laid out.
+  const chunks = [];
+  for (const w of r.words) {
+    if (w.kind === "punctuation") {
+      const text = w.text || "";
+      const lead = /^["'(\[\u201c\u2018]/.test(text.trim());
+      if (!lead && chunks.length) { chunks[chunks.length - 1].after += text; continue; }
+      chunks.push({ word: null, before: text, after: "" });
+      continue;
+    }
+    const last = chunks[chunks.length - 1];
+    if (last && last.word === null) { last.word = w; continue; }
+    chunks.push({ word: w, before: "", after: "" });
+  }
+
+  for (const c of chunks) {
+    const w = c.word;
+    if (!w) { box.appendChild(el("span", "pw punct", c.before)); continue; }
+    const wrap = el("span", "chunk");
+    if (c.before) wrap.appendChild(el("span", "punct-in", c.before.trim()));
+    const add = (node) => { wrap.appendChild(node); box.appendChild(wrap); };
+    const close = () => { if (c.after) wrap.appendChild(el("span", "punct-in", c.after.trim())); };
+
+    if (w.kind === "plain") { add(el("span", "pw plain", w.word)); close(); continue; }
+    if (w.kind === "rebus") { add(rebusGroup(w.units)); close(); continue; }
+
+    // a blank: filled in place. Several may share one phrase, so each carries
+    // its own state and only the ACTIVE one receives taps.
+    const bi = w.index || 0;
+    const bs = rs.blanks[bi] || rs.blanks[0];
+    const isActive = ri === state.round && bi === state.active && bs.status === "open";
+    const many = allSlots().length > 1;
+    const g = el("span", "pw blank" + (bs.status !== "open" ? " done" : "") +
+                          // Only worth marking when there is a choice to make.
+                          (many ? (isActive ? " active" : bs.status === "open" ? " waiting" : "") : ""));
+    g.id = blankId(ri, bi);
+    // Tapping an unsolved blank -- in any clue -- is how the player moves
+    // between them.
+    if (bs.status === "open" && !isActive) {
+      g.title = "Fill this one next";
+      g.onclick = () => { if (busy) return; state.round = ri; state.active = bi; save(); render(); };
+    }
+    wrap.appendChild(g);
+    box.appendChild(wrap);
+    if (bs.status !== "open" && bs.word) {
+      g.appendChild(el("span", "solved", bs.word));
+    } else if (bs.expr.length) {
+      bs.expr.forEach((tap, i) => {
+        if (i) {
+          // Tap the operator to flip this piece between added and taken away.
+          const op = el("button", "op" + (tap.op === "-" ? " minus" : ""), tap.op === "-" ? "−" : "+");
+          op.title = tap.op === "-" ? "Taken away — tap to add instead" : "Added — tap to take away instead";
+          op.onclick = (e) => { e.stopPropagation(); if (busy) return;
+            state.round = ri; state.active = bi;
+            bs.expr[i] = { ...tap, op: tap.op === "-" ? "+" : "-" }; save(); render(); };
+          g.appendChild(op);
+        }
+        const t = tileEl(tap.word);
+        t.title = "Remove";
+        t.onclick = (e) => { e.stopPropagation(); if (!busy) { state.round = ri; state.active = bi; bs.expr.splice(i, 1); save(); render(); } };
+        g.appendChild(t);
+      });
+    } else if (bs.showLength) {
+      for (let i = 0; i < w.length; i++) g.appendChild(el("span", "slot"));
+    } else {
+      g.appendChild(el("span", "slot wide", "?"));
+    }
+    close();
+  }
+}
+
+// Two things the solver can ask for. They are free for now; the intent is a
+// proper cost once the hint system exists, which is why each is recorded.
+function renderReveals() {
+  const r = PUZZLE.rounds[state.round];
+  const rs = current();
+  const box = $("reveals"); box.innerHTML = "";
+  const eye = () => {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.innerHTML = '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>';
+    return svg;
+  };
+  const chip = (shown, label, value, onReveal) => {
+    const b = el("button", "rv" + (shown ? " shown" : ""));
+    if (shown) {
+      b.appendChild(el("b", null, label));
+      b.appendChild(el("i", null, value));
+      b.disabled = true;
+    } else {
+      b.appendChild(eye());
+      b.appendChild(document.createTextNode(label));
+      b.onclick = onReveal;
+    }
+    box.appendChild(b);
+  };
+
+  // Length is a property of the blank being worked on, so it follows the
+  // cursor; the category hint belongs to the cursor's clue.
+  const bs = active();
+  const len = (r.blankLengths || [])[state.active] || 0;
+  const done = bs.status !== "open";
+  const many = PUZZLE.rounds.length > 1;
+  chip(bs.showLength || done, many ? "Letters (clue " + (state.round + 1) + ")" : "Letters",
+       len + (len === 1 ? " letter" : " letters"),
+       () => { bs.showLength = true; save(); render(); });
+  if (r.hint) {
+    chip(rs.showHint || rs.blanks.every((b) => b.status !== "open"),
+         many ? "Category (clue " + (state.round + 1) + ")" : "Category", r.hint,
+         () => { rs.showHint = true; save(); render(); });
+  }
+}
+
+// Make the sentence as large as it can be while still reading as one line.
+// Measured rather than guessed: a phrase is any length, so a fixed size is
+// either too small for a short one or overflows a long one. Sizes are driven
+// by --fit, so one number rescales pictures, letters, operators and the space
+// between words together.
+const FIT_MIN = 0.34;   // below this, wrapping beats shrinking
+// One --fit for the whole group: the clues share a scale so they read as a
+// set, and the longest sentence decides it.
+function fitPhrase() {
+  const phrases = [...document.querySelectorAll("#rounds .phrase")].filter((p) => p.children.length);
+  if (!phrases.length) return;
+  const root = document.documentElement;
+  root.style.setProperty("--fit", "1");
+  let scale = 1;
+  for (const p of phrases) {
+    p.classList.add("measuring");
+    // scrollWidth with nowrap is what the sentence needs on a single line
+    const need = p.scrollWidth;
+    const have = p.clientWidth;
+    p.classList.remove("measuring");
+    // A hair under, so rounding never tips it into a second row
+    if (need && have) scale = Math.min(scale, (have / need) * 0.985);
+  }
+  root.style.setProperty("--fit", String(Math.max(FIT_MIN, scale)));
+}
+
+function render() {
+  // Never leave the cursor on a finished blank: the tile buttons would then
+  // be pointing at something that cannot take a tap.
+  if (active().status !== "open" && openBlanks().length) advance();
+  const bs = active();
+  $("metaText").textContent = heading();
+  const everyBlank = allSlots().map((s) => s.b);
+  const tries = everyBlank.reduce((n, b) => n + b.tries, 0);
+  $("tries").textContent = tries ? tries + (tries === 1 ? " guess" : " guesses") : "";
+  renderRounds();
+  fitPhrase();
+  renderReveals();
+
+  // Tiles are the shared pool; only the blank being filled greys its own out.
+  const inUse = new Set(bs.status === "open" ? bs.expr.map((t) => t.word) : []);
+  const icons = $("icons"); icons.innerHTML = "";
+  PUZZLE.pool.icons.forEach((t) => {
+    const b = tileEl(t.word, inUse.has(t.word) ? "used" : "");
+    b.onclick = () => place(t.word);
+    icons.appendChild(b);
+  });
+  const texts = $("texts"); texts.innerHTML = "";
+  PUZZLE.pool.texts.forEach((w) => {
+    const b = tileEl(w, inUse.has(w) ? "used" : "");
+    b.onclick = () => place(w);
+    texts.appendChild(b);
+  });
+
+  // "Open" means the cursor's blank; the day is over only when no blank in
+  // any clue is left.
+  const open = bs.status === "open";
+  const dayOpen = openBlanks().length > 0;
+  $("enterBtn").disabled = busy || (open && bs.expr.length < 1);
+  $("deleteBtn").disabled = busy || !open || !bs.expr.length;
+  $("revealBtn").disabled = busy || !open;
+  $("minusBtn").disabled = busy || !open || !bs.expr.length;
+  $("minusBtn").classList.toggle("armed", bs.nextOp === "-");
+  $("enterBtn").textContent = dayOpen ? "Enter" : "Results";
+  if (!dayOpen) $("feedback").textContent = everyBlank.every((b) => b.status === "solved")
+    ? (tries === everyBlank.length ? "Solved first try" : "Solved in " + tries)
+    : "Revealed";
+}
+
+// ---- play ------------------------------------------------------------------
+function place(word) {
+  const bs = active();
+  if (bs.status !== "open" || busy) return;
+  if (bs.expr.length >= PUZZLE.maxTiles) { toast("That's enough tiles"); return; }
+  // A take-away applies to the tile before it, so it cannot come first.
+  const op = bs.expr.length && bs.nextOp === "-" ? "-" : "+";
+  if (bs.nextOp === "-" && !bs.expr.length) toast("Add a picture first, then take one away");
+  bs.expr.push({ word, op });
+  bs.nextOp = "+";           // one tap, then back to adding
+  $("feedback").textContent = "";
+  save(); render();
+  const box = $(blankId(state.round, state.active));
+  const tiles = box ? box.querySelectorAll(".tile") : [];
+  if (tiles.length) tiles[tiles.length - 1].classList.add("pop");
+}
+
+async function post(url, body) {
+  const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  return r.json();
+}
+// The page's only three conversations with the outside world. The studio
+// answers them over HTTP; a static deploy (docs/, built by rebus-export.js)
+// loads static-api.js first, which provides the same three calls from files
+// and a hash list, so nothing else in the page knows which it is talking to.
+const api = window.RebusStatic || {
+  puzzle: async (q) => (await fetch("/api/puzzle" + q)).json(),
+  check: (body) => post("/api/check", body),
+  reveal: (body) => post("/api/reveal", body),
+};
+
+async function submit() {
+  const bs = active();
+  if (!openBlanks().length) { showResults(); return; }
+  if (bs.status !== "open" || !bs.expr.length || busy) return;
+  const ri = state.round, bi = state.active;
+  busy = true; render();
+  try {
+    // `round` and `blank` say which one is being answered; the tiles are
+    // already [{word, op}], which is what check() expects.
+    const out = await api.check({ ...ref(), round: ri, blank: bi, tiles: bs.expr });
+    if (out.error) throw new Error(out.error);
+    bs.tries++;
+    if (out.correct) {
+      bs.status = "solved"; bs.answer = bs.expr.slice(); bs.word = out.word;
+      // Solving one blank is not the end of the day: hand the player straight
+      // to the next open one, in whichever clue, instead of showing results.
+      const more = advance();
+      save(); busy = false; render();
+      toast(bs.tries === 1 ? "Nailed it" : "Got it");
+      if (!more) setTimeout(showResults, 1200);
+      return;
+    }
+    save();
+    const b = $(blankId(ri, bi));
+    if (b) { b.classList.add("shake"); setTimeout(() => b.classList.remove("shake"), 420); }
+    $("feedback").textContent = out.heard ? "sounds like " + out.heard.toLowerCase() : "";
+    toast("Not quite");
+  } catch (e) {
+    toast("Could not check — is the server running?");
+  }
+  busy = false; render();
+}
+
+async function reveal() {
+  const bs = active();
+  if (bs.status !== "open" || busy) return;
+  busy = true; render();
+  try {
+    const out = await api.reveal({ ...ref(), round: state.round, blank: state.active });
+    if (out.error) throw new Error(out.error);
+    bs.status = "revealed"; bs.answer = out.answer.map((p) => ({ word: p.word, op: p.op || "+" })); bs.word = out.word;
+    const more = advance();
+    save(); busy = false; render();
+    if (!more) setTimeout(showResults, 1400);
+    return;
+  } catch (e) { toast("Could not reveal"); }
+  busy = false; render();
+}
+
+// ---- results ---------------------------------------------------------------
+function square(r) {
+  if (r.status === "revealed") return "⬜";
+  if (r.tries <= 1) return "🟩";
+  if (r.tries <= 3) return "🟨";
+  return "🟧";
+}
+// Every blank of every round, in order -- one square each.
+const allBlanks = () => state.rounds.flatMap((r) => r.blanks);
+function showResults() {
+  const blanks = allBlanks();
+  const anyOpen = blanks.some((b) => b.status === "open");
+  $("resTitle").textContent = anyOpen ? "In progress"
+    : blanks.every((b) => b.status === "solved") ? "Well read" : "Revealed";
+  $("squares").textContent = blanks.map((b) => b.status === "open" ? "◻️" : square(b)).join("");
+  const found = blanks.map((b) => b.word).filter(Boolean);
+  $("resWord").textContent = found.join(" · ") || "—";
+  $("resWordLabel").textContent = blanks.length > 1 ? "Answers" : "Answer";
+  $("resTries").textContent = blanks.reduce((n, b) => n + b.tries, 0);
+  const asked = state.rounds.reduce((n, r) =>
+    n + (r.showHint ? 1 : 0) + r.blanks.reduce((m, b) => m + (b.showLength ? 1 : 0), 0), 0);
+  $("againBtn").hidden = !PREVIEW;
+  $("shareBtn").hidden = PREVIEW;   // nothing to share from an unpublished draft
+  $("resSub").textContent = (PUZZLE.number && !PREVIEW ? "Rebus " : "") + heading() +
+    (asked ? "  ·  " + asked + (asked === 1 ? " reveal" : " reveals") : "");
+  $("results").hidden = false;
+}
+// Start the preview over without a reload: the curator is judging the puzzle,
+// not playing it, and will want to run it again after every edit.
+$("againBtn").onclick = () => {
+  state = fresh();
+  $("results").hidden = true;
+  $("feedback").textContent = "";
+  render();
+};
+$("shareBtn").onclick = async () => {
+  const text = "Rebus No. " + PUZZLE.number + "\n" + $("squares").textContent + "\n" + location.origin + PLAY_URL;
+  try { await navigator.clipboard.writeText(text); toast("Copied to clipboard"); }
+  catch (e) { toast("Copy failed"); }
+};
+
+// ---- wiring ----------------------------------------------------------------
+// The fit depends on the window, so re-measure when it changes.
+let fitTimer = null;
+window.addEventListener("resize", () => {
+  clearTimeout(fitTimer);
+  fitTimer = setTimeout(fitPhrase, 120);
+});
+$("enterBtn").onclick = submit;
+$("deleteBtn").onclick = () => { const b = active(); if (b.status === "open") { b.expr.pop(); b.nextOp = "+"; save(); render(); } };
+// Arm the next tap as a take-away. It disarms after one use, so the common
+// case (adding) never needs a mode change.
+$("minusBtn").onclick = () => {
+  const b = active();
+  if (b.status !== "open" || !b.expr.length) return;
+  b.nextOp = b.nextOp === "-" ? "+" : "-";
+  save(); render();
+};
+$("revealBtn").onclick = reveal;
+$("helpBtn").onclick = () => { $("help").hidden = false; };
+$("statsBtn").onclick = () => { if (state) showResults(); };
+document.querySelectorAll("[data-close]").forEach((b) => { b.onclick = () => { b.closest(".modal").hidden = true; }; });
+document.querySelectorAll(".modal").forEach((m) => { m.addEventListener("click", (e) => { if (e.target === m) m.hidden = true; }); });
+$("playBtn").onclick = () => { $("intro").hidden = true; $("board").hidden = false; render(); };
+
+document.addEventListener("keydown", (e) => {
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.key === "Escape") { document.querySelectorAll(".modal").forEach((m) => { m.hidden = true; }); return; }
+  if (!state || $("board").hidden) return;
+  if (e.key === "Enter") { e.preventDefault(); submit(); }
+  else if (e.key === "Backspace") { e.preventDefault(); $("deleteBtn").click(); }
+  else if (e.key === "-" || e.key === "_") { e.preventDefault(); $("minusBtn").click(); }
+  else if (/^[a-zA-Z]$/.test(e.key)) {
+    const w = e.key.toUpperCase();
+    if (PUZZLE.pool.texts.includes(w)) { e.preventDefault(); place(w); }
+  }
+});
+
+// A worked example in the help sheet, taken from this puzzle's own first
+// multi-piece word so the demo always matches what the player is looking at.
+function demo() {
+  const box = $("demo"); box.innerHTML = "";
+  const sample = PUZZLE.rounds.flatMap((r) => r.words).find((w) => w.kind === "rebus" && w.units.length > 1);
+  if (!sample) { box.hidden = true; return; }
+  box.appendChild(rebusGroup(sample.units));
+  box.appendChild(el("span", "pw plain", "?"));
+}
+
+async function init() {
+  try {
+    // ?id= plays any puzzle in the book, scheduled or not (the builder's
+    // preview); ?date= walks the calendar; neither is today.
+    const q = params.get("id") ? "?id=" + encodeURIComponent(params.get("id"))
+      : params.get("date") ? "?date=" + encodeURIComponent(params.get("date")) : "";
+    PUZZLE = await api.puzzle(q);
+    if (PUZZLE.error) throw new Error(PUZZLE.error);
+  } catch (e) {
+    $("empty").hidden = false;
+    $("emptyMsg").textContent = "Could not load a puzzle: " + e.message;
+    return;
+  }
+  if (PUZZLE.empty) {
+    $("empty").hidden = false;
+    $("emptyBuild").hidden = Boolean(window.RebusStatic);
+    $("emptyMsg").textContent = PUZZLE.date ? "No puzzle for " + prettyDate(PUZZLE.date) + "." : "No such puzzle.";
+    const nav = $("emptyNav"); nav.innerHTML = "";
+    if (PUZZLE.prev) { const a = el("a", null, "← " + PUZZLE.prev); a.href = PLAY_URL + "?date=" + PUZZLE.prev; nav.appendChild(a); }
+    if (PUZZLE.prev && PUZZLE.next) nav.appendChild(document.createTextNode("   ·   "));
+    if (PUZZLE.next) { const a = el("a", null, PUZZLE.next + " →"); a.href = PLAY_URL + "?date=" + PUZZLE.next; nav.appendChild(a); }
+    return;
+  }
+  const link = (id, date) => {
+    const a = $(id);
+    if (date) { a.href = PLAY_URL + "?date=" + date; a.classList.remove("off"); } else a.classList.add("off");
+  };
+  link("prevLink", PUZZLE.prev); link("nextLink", PUZZLE.next);
+  PUZZLE.pool.icons.forEach((t) => tileByWord.set(t.word, t));
+  state = load() || fresh();
+  demo();
+  $("introDate").textContent = PREVIEW ? (PUZZLE.title || "Preview")
+    : PUZZLE.date ? prettyDate(PUZZLE.date) : "Unscheduled";
+  $("introNo").textContent = PREVIEW ? "nothing is saved"
+    : PUZZLE.number ? "No. " + PUZZLE.number : (PUZZLE.title || "Preview");
+  $("intro").hidden = false;
+}
+init();
+</script>
+</body>
+</html>
