@@ -50,7 +50,7 @@
       puzzle = await load(base + "puzzles/" + encodeURIComponent(id) + ".json");
       const nav = neighbours(puzzle.date);
       // publicPuzzle's shape, with the private half stripped before the page sees it
-      const { private: _priv, ...pub } = puzzle;
+      const { private: _priv, privateWords: _words, ...pub } = puzzle;
       return { ...pub, number: numberOf(puzzle.date), prev: nav.prev, next: nav.next };
     },
     async check(body) {
@@ -68,6 +68,10 @@
       return { ok: true, correct: false, similarity: 0, heard: "" };
     },
     async reveal(body) {
+      if (body.at != null) {
+        const enc = puzzle && puzzle.privateWords && (puzzle.privateWords[body.round] || {})[body.at];
+        return enc ? { ok: true, word: JSON.parse(atob(enc)) } : { ok: false, error: "not a drawn word" };
+      }
       const blank = puzzle && puzzle.private && (puzzle.private[body.round] || [])[body.blank || 0];
       if (!blank) return { ok: false, error: "no such round" };
       const r = JSON.parse(atob(blank.reveal));

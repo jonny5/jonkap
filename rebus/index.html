@@ -65,17 +65,20 @@
      and lets the clues wrap and scroll rather than become unreadable. */
   :root{--art-base:104px; --fit:1;
         --art:calc(var(--art-base) * var(--fit));
-        --text:calc(var(--art) * .38);
+        /* Letters in a drawing and plain words in the sentence are the same
+           type: one size, one weight, one vertical centre. A giant P next to
+           a small THE read as two different alphabets. */
+        --text:calc(var(--art) * .46);
         --art-nest:calc(var(--art) * .76);
         --art-nest2:calc(var(--art) * .6);
-        --glyph:calc(var(--art) * .62);
+        --glyph:var(--text);
         --tile:72px; --tile-art:52px}
   @media (max-width:700px){:root{--tile:60px; --tile-art:44px}}
   @media (max-width:430px){:root{--tile:52px; --tile-art:38px}}
   /* Word spacing scales too, so the sentence reads as words rather than a run
      of pictures. */
   .phrase{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;
-          gap:14px calc(18px + 22px * var(--fit));margin:12px 0 4px;min-height:72px}
+          gap:14px calc(28px + 34px * var(--fit));margin:12px 0 4px;min-height:72px}
   /* A day is a group of clues, stacked. With several on screen the base art
      size drops so the whole group fits without scrolling to the tiles. */
   .rounds{display:flex;flex-direction:column}
@@ -90,37 +93,42 @@
   /* the clue whose blank is taking taps */
   .round.on{background:var(--soft);border-radius:12px;margin:0 -8px;padding-left:8px;padding-right:8px}
   .round.done{opacity:.72}
+  /* Once the whole day is over the board is the answer key: nothing is waiting,
+     so nothing is dimmed. */
+  .rounds.over .round.done{opacity:1}
   .rlabel{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
           font-weight:600;display:flex;gap:10px;align-items:center;justify-content:center;min-height:16px}
   .rlabel i{font-style:italic;text-transform:none;letter-spacing:0;font-weight:400}
   /* while measuring the natural one-line width */
   .phrase.measuring{flex-wrap:nowrap;justify-content:flex-start}
-  .pw{display:inline-flex;align-items:center;gap:calc(4px + 4px * var(--fit));padding-bottom:7px;
+  .pw{display:inline-flex;align-items:center;gap:calc(3px + 3px * var(--fit));padding-bottom:7px;
       border-bottom:2px solid transparent;flex:0 0 auto}
   /* An inline-flex box has no baseline of its own, so the sentence would align
      picture words by their bottom edge and text words by their baseline. Giving
      every word the same synthetic baseline puts them on one line. */
   .pw::after{content:"";display:inline-block;width:0;height:0}
   .pw.rebus{border-bottom-color:var(--line)}
-  /* Text in the sentence -- plain words and punctuation -- shares one size and
-     one baseline. `--text` is measured from the picture size so the sentence
-     scales as a whole; the extra bottom padding on picture words is what lines
-     a 132px image up with a 45px word, since a glyph box is taller than its
-     visible letters. */
-  .pw.plain{font:600 var(--text)/1 var(--serif);letter-spacing:.03em}
+  /* Text in the sentence -- plain words and punctuation -- shares one size,
+     measured from the picture size so the sentence scales as a whole. A plain word takes a picture-height box and centres in it, exactly as a
+     letter glyph does, so THE and the F of F + [LAKE] share one line. */
+  .pw.plain{font:700 var(--text)/1 var(--serif);letter-spacing:.02em;min-height:calc(var(--art) + 9px)}
   /* Punctuation sits INLINE with the word it touches and is CENTRED against it.
      A baseline is the wrong ruler here: a drawn word is a 130px picture whose
      synthetic baseline is its bottom edge, so a comma aligned to it dropped to
      the floor of the sentence, far below the mark's optical home. Centring on
      the word's own box puts it where it reads as punctuation again. */
-  .pw.punct{font:600 var(--text)/1 var(--serif);align-self:center}
-  .punct-in{font:600 var(--text)/1 var(--serif);color:var(--ink);white-space:pre;
-            align-self:center;line-height:1}
+  .pw.punct{font:700 var(--text)/1 var(--serif);min-height:calc(var(--art) + 9px)}
+  /* Stretched to the word's height and padded like a .pw, so a mark centres on
+     the same line as the text beside it rather than on the underline box. */
+  .punct-in{font:700 var(--text)/1 var(--serif);color:var(--ink);white-space:pre;
+            align-self:stretch;display:flex;align-items:center;padding-bottom:9px}
+  .punct-in.eq{color:var(--muted);font:400 calc(var(--art) * .34)/1 var(--sans);
+               margin:0 calc(var(--art) * .1)}
   /* A word plus the punctuation touching it is ONE item in the sentence, so the
      wide gap between words never opens up around a comma or a quote. This is a
      plain wrapper, not a .pw -- nesting .pw inside .pw meant the wrapper picked
      up the word's own padding, border and centring. */
-  .chunk{display:inline-flex;align-items:center;gap:.06em;flex:0 0 auto}
+  .chunk{display:inline-flex;align-items:center;gap:calc(var(--art) * .03);flex:0 0 auto}
   /* Artwork renders as authored, on its own light ground, in every theme.
      Forcing fill:currentColor turned black line art white in dark mode; art
      that genuinely asks for currentColor (stroke="currentColor") resolves
@@ -136,23 +144,28 @@
   .u img{width:100%;height:100%;object-fit:contain}
   /* A letter takes the same box height as a picture, and is centred in it,
      so P + [picture] sits on one axis instead of the glyph riding low. */
-  .u.g{width:auto;min-width:22px;height:var(--art);display:grid;place-items:center;
+  .u.g{width:auto;min-width:calc(var(--art) * .2);height:var(--art);display:grid;place-items:center;
        font:700 var(--glyph)/1 var(--serif);letter-spacing:.02em}
   .op{font:600 calc(var(--art) * .22)/1 var(--sans);color:var(--muted);user-select:none}
-  .op.minus{color:var(--bad);font-weight:700}
+  /* A take-away is the operation a solver is least expecting, so it is drawn
+     heavier than a plus -- in ink, not an alarm red that read as "wrong".
+    The glyph's metrics vary by font and sat it off-centre, so it is a drawn
+     bar; the "−" text stays for screen readers. */
+  .op.minus{font-size:0;color:transparent;width:calc(var(--art) * .2);height:max(3px, calc(var(--art) * .045));
+            background:var(--ink);border-radius:2px;margin:0 calc(var(--art) * .07)}
   /* A bracketed sub-expression, H + (MOUSE − M), is drawn with real
      parentheses: they say "these go together" the way a shaded box never
      quite did. Its pieces stay full size -- a shrunken H next to a full P
      read as two different alphabets -- and only a group inside a group
      steps down. */
-  .grp{display:inline-flex;align-items:center;gap:6px;padding:0 2px}
+  .grp{display:inline-flex;align-items:center;gap:calc(3px + 3px * var(--fit));padding:0 2px}
   .grp::before,.grp::after{font:300 calc(var(--art) * .95)/1 var(--serif);color:var(--muted);
        padding-bottom:calc(var(--art) * .06)}
   .grp::before{content:"("}
   .grp::after{content:")"}
-  .grp .u{width:var(--art);height:var(--art)}
+  .grp .u:not(.g){width:var(--art);height:var(--art)}
   .grp .u.g{font-size:var(--glyph)}
-  .grp .grp .u{width:var(--art-nest);height:var(--art-nest)}
+  .grp .grp .u:not(.g){width:var(--art-nest);height:var(--art-nest)}
   .grp .grp .u.g{font-size:calc(var(--glyph) * .8)}
   .grp .grp::before,.grp .grp::after{font-size:calc(var(--art-nest) * .95)}
 
@@ -163,6 +176,7 @@
   .pw.blank{border-bottom:3px solid var(--ink);gap:calc(4px + 4px * var(--fit));
             min-height:calc(var(--art) + 10px);align-items:center}
   .pw.blank.done{border-bottom-color:var(--ok)}
+  .pw.blank.done.given{border-bottom-color:var(--muted)}
   /* With SEVERAL blanks in one phrase the player has to be able to see which
      one their taps are going into, and that the others are waiting rather than
      finished. Only marked when there is more than one -- a lone blank needs no
@@ -177,7 +191,58 @@
   /* length not revealed yet: one anonymous gap, no letter count given away */
   .slot.wide{width:calc(var(--art) * 1.1);height:var(--art);border-bottom:0;display:grid;place-items:center;
              color:var(--muted);font:600 calc(var(--art) * .42)/1 var(--serif)}
-  .solved{font:700 calc(var(--art) * .38)/1 var(--serif);letter-spacing:.1em;color:var(--ok);text-transform:uppercase}
+  .solved{font:700 var(--text)/1 var(--serif);letter-spacing:.1em;color:var(--ok);text-transform:uppercase}
+
+  /* ---- names: paid hints and the finished answer key ---- */
+  /* A drawn word opens its hint sheet on a tap. */
+  .pw.rebus.askable{cursor:pointer}
+  .pw.rebus.askable:hover{border-bottom-color:var(--accent)}
+  /* A word's name hangs BELOW its underline without taking layout space, so
+     naming one word never shifts the others off their shared line; the phrase
+     reserves the room once any caption is showing. */
+  .stack{position:relative;display:inline-flex}
+  .cap-word{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:4px;white-space:nowrap;
+            font:700 max(10px, calc(var(--text) * .44))/1 var(--sans);letter-spacing:.12em;color:var(--muted)}
+  .cap-word.ok{color:var(--ok)}
+  .phrase.captioned{padding-bottom:calc(var(--text) * .44 + 8px)}
+  /* A picture's name is a strip across the foot of the picture itself, so it
+     costs no layout at all. */
+  .u.named,.tile.named{position:relative}
+  .cap{position:absolute;left:0;right:0;bottom:0;background:rgba(18,18,18,.82);color:#fff;
+       font:700 max(8px, calc(var(--art) * .11))/1.35 var(--sans);letter-spacing:.06em;text-align:center;
+       text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:1px 2px}
+  .tile .cap{font-size:9px;border-radius:0 0 8px 8px}
+  .pw.blank.done{flex-wrap:nowrap}
+
+  /* the hint sheet for one drawn word */
+  /* The sheet is where a player LOOKS at pictures, so it is wide and they are
+     big; each picture's hint sits right under it rather than in a list below
+     that repeats the picture as a thumbnail. */
+  .sheet.wsheet{max-width:min(900px, 100%);max-height:calc(100dvh - 40px);overflow:auto}
+  .wsheet .draw{--art:min(170px, 21vw);--text:calc(var(--art) * .46);--glyph:var(--text);
+                display:flex;justify-content:center;margin:12px 0 4px;padding-bottom:58px;overflow-x:auto}
+  .wsheet .draw .pw{padding-bottom:0;border-bottom:0}
+  .pick{position:relative;display:inline-flex}
+  .below{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:12px;white-space:nowrap}
+  .below.name{font:700 15px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-top:20px}
+  /* the bank: every picture tile as a card */
+  .bank{display:grid;grid-template-columns:repeat(auto-fill, minmax(min(170px, 38vw), 1fr));gap:22px 18px;margin:14px 0 6px}
+  .card{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .card .pic{width:100%;aspect-ratio:1;background:#fff;color:#111;border-radius:12px;overflow:hidden;
+             padding:8%;cursor:zoom-in}
+  .card .pic svg,.card .pic img{width:100%;height:100%;object-fit:contain;display:block}
+  .card .name{font:700 15px/34px var(--sans);letter-spacing:.1em;text-transform:uppercase}
+  .hintbtn{height:34px;padding:0 14px;border-radius:999px;border:1px solid var(--line);font-size:13px;font-weight:600}
+  .hintbtn:hover{border-color:var(--ink)}
+  .hintbtn .cost{color:var(--muted);font-weight:400;margin-left:6px}
+  .wsheet .wordrow{display:flex;justify-content:center;margin-top:14px}
+  .wsheet .theword{font:700 30px/1 var(--serif);letter-spacing:.08em;color:var(--ok)}
+  /* the tile zoom's own hint */
+  .zoom .zbar{position:fixed;left:50%;bottom:max(28px, env(safe-area-inset-bottom, 0px));transform:translateX(-50%);
+              display:flex;justify-content:center}
+  .zoom .zbar .hintbtn{background:var(--bg);color:var(--ink);height:42px;font-size:15px}
+  .zoom .zname{font:700 26px/1 var(--sans);letter-spacing:.1em;color:#fff;text-transform:uppercase;
+               background:rgba(0,0,0,.6);padding:10px 18px;border-radius:999px}
 
   .reveals{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
   .rv{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12.5px;
@@ -188,6 +253,7 @@
   .rv.shown{border-color:var(--ink);color:var(--ink);cursor:default;background:var(--soft)}
   .rv.shown:hover{border-color:var(--ink)}
   .rv b{font-weight:700}
+  .rv .cost{opacity:.7}
   .rv i{font-style:italic}
   .feedback{text-align:center;font-size:13px;color:var(--muted);
             font-variant:small-caps;letter-spacing:.06em}
@@ -338,7 +404,7 @@
       <div class="grid" id="texts"></div>
     </div>
     <div class="actions">
-      <button class="btn ghost" id="revealBtn">Reveal</button>
+      <button class="btn ghost" id="revealBtn">Give up</button>
       <button class="btn ghost" id="minusBtn" title="Take the next picture away instead of adding it">&minus; Take away</button>
       <button class="btn ghost" id="deleteBtn">Delete</button>
       <button class="btn primary" id="enterBtn">Enter</button>
@@ -375,7 +441,9 @@
           below. Tap the blank you want to fill — every clue shares the same tiles, so working out
           which tiles belong where is part of the puzzle.</li>
       <li>Press <b>Enter</b> to check. Each tile can be used once, so every tile has a home.</li>
-      <li>Tap any picture in a clue to see it full size; press and hold a tile to do the same.</li>
+      <li>Stuck? Tap a clue word to find out what a picture is (−5) or what the whole word is (−10);
+          use <b>Tile hints</b> to name a tile (−5). Letters and Category cost 5 each. Wrong guesses are
+          free. You start on 100; giving up keeps only the share you solved.</li>
     </ol>
   </div>
 </div>
@@ -387,15 +455,28 @@
     <p class="sub" id="resSub"></p>
     <div class="squares" id="squares"></div>
     <div class="score">
+      <div><b id="resScore">100</b><span>Score</span></div>
       <div><b id="resWord">&mdash;</b><span id="resWordLabel">Answer</span></div>
       <div><b id="resTries">0</b><span>Guesses</span></div>
     </div>
+    <p class="sub" id="resHints"></p>
     <button class="btn primary" id="shareBtn">Share</button>
     <button class="btn" id="againBtn" hidden>Play again</button>
   </div>
 </div>
 
-<div class="zoom" id="zoom" hidden><div class="big" id="zoomArt"></div></div>
+<div class="zoom" id="zoom" hidden><div class="big" id="zoomArt"></div><div class="zbar" id="zoomBar"></div></div>
+
+<div class="modal" id="wordSheet" hidden>
+  <div class="sheet wsheet center">
+    <button class="ib x" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h2 id="wsTitle">Hints</h2>
+    <p class="sub" id="wsSub">Each hint costs points.</p>
+    <div class="draw" id="wsDraw"></div>
+    <div class="bank" id="wsBank"></div>
+    <div class="wordrow" id="wsWord"></div>
+  </div>
+</div>
 
 <div class="toast" id="toast"></div>
 
@@ -425,7 +506,8 @@ const PLAY_URL = window.RebusStatic ? location.pathname.replace(/[^/]*$/, "") : 
 // the round. Older saves have no `blanks` array and are dropped.
 // v6: a day is a GROUP of rounds shown together, and `round`/`active` is a
 // cursor that moves between them; a v5 save always sat on round 0.
-const key = () => "rebus:v6:" + (PUZZLE.date || PUZZLE.id);
+// v7: paid hints (`hints`), the drawn words' names (`names`) and `gaveUp`.
+const key = () => "rebus:v7:" + (PUZZLE.date || PUZZLE.id);
 const blankCount = (i) => Math.max(1, (PUZZLE.rounds[i].blankLengths || []).length);
 function load() {
   if (PREVIEW) return null;
@@ -451,6 +533,13 @@ const heading = () => (PREVIEW ? "Preview · nothing is saved"
 const themeLine = () => (finished() && PUZZLE.title ? PUZZLE.title : "");
 function fresh() {
   return { key: key(), date: PUZZLE.date, round: 0, active: 0,
+           // What the player has PAID to see. Keys: a clue picture is
+           // "round.word.unitPath", a drawn word "round.word", a tile its word.
+           hints: { pics: [], words: [], tiles: [] },
+           // Drawn words' names as the server gave them, keyed "round.word" --
+           // bought as a hint, or handed over free once the day is over.
+           names: {},
+           gaveUp: false,
            rounds: PUZZLE.rounds.map((r, i) => ({
              // The category hint is the round's; everything else is per blank.
              showHint: false,
@@ -502,6 +591,41 @@ function advance() {
 }
 const blankId = (ri, bi) => "blank" + ri + "-" + bi;
 
+// ---- score -------------------------------------------------------------------
+// Out of 100, like a Connections skill score: every hint costs, wrong guesses
+// do not. A word's reveal never costs more than COST.word in total, however
+// many of its pictures were already named, so naming pictures first is never
+// a trap. Giving up keeps the share of blanks actually solved.
+const COST = { pic: 5, tile: 5, word: 10, letters: 5, category: 5 };
+const wordKeyOf = (picKey) => picKey.split(".").slice(0, 2).join(".");
+function wordCost(wkey) {
+  const pics = state.hints.pics.filter((k) => wordKeyOf(k) === wkey).length * COST.pic;
+  return state.hints.words.includes(wkey) ? Math.max(COST.word, pics) : pics;
+}
+// What revealing this word would add now.
+const wordPrice = (wkey) => Math.max(0, COST.word - wordCost(wkey));
+function hintTally() {
+  const words = new Set([...state.hints.words, ...state.hints.pics.map(wordKeyOf)]);
+  return {
+    pics: state.hints.pics.length, words: state.hints.words.length, tiles: state.hints.tiles.length,
+    letters: state.rounds.reduce((n, r) => n + r.blanks.filter((b) => b.showLength).length, 0),
+    category: state.rounds.filter((r) => r.showHint).length,
+    spent: [...words].reduce((n, k) => n + wordCost(k), 0),
+  };
+}
+function score() {
+  const t = hintTally();
+  let pts = 100 - t.spent - t.tiles * COST.tile - t.letters * COST.letters - t.category * COST.category;
+  pts = Math.max(0, pts);
+  if (state.gaveUp) {
+    const blanks = allBlanks();
+    pts = pts * blanks.filter((b) => b.status === "solved").length / blanks.length;
+  }
+  return Math.round(pts);
+}
+// Once the day is over nothing costs anything: names are just the answer key.
+const free = () => finished();
+
 // Every tile currently sitting in a blank, across the whole group.
 function usedTiles() {
   const used = new Set();
@@ -513,10 +637,31 @@ function usedTiles() {
 
 // Pictures are drawn small so everything fits on one screen; any of them
 // opens full size here. Never captioned: naming the picture is the puzzle.
-function openZoom(markup) {
+// A pool tile's zoom also offers its name, for a price.
+function openZoom(markup, tileWord) {
   if (!markup) return;
   $("zoomArt").innerHTML = markup;
+  const bar = $("zoomBar"); bar.innerHTML = "";
+  if (tileWord) {
+    if (state.hints.tiles.includes(tileWord)) bar.appendChild(el("span", "zname", tileWord));
+    else {
+      const b = hintButton("What's this?", free() ? 0 : COST.tile);
+      b.onclick = (e) => {
+        e.stopPropagation();
+        if (!free()) state.hints.tiles.push(tileWord);
+        else { bar.innerHTML = ""; bar.appendChild(el("span", "zname", tileWord)); return; }
+        save(); render(); openZoom(markup, tileWord);
+        if (!$("wordSheet").hidden && !$("wsBank").hidden) openBankSheet();
+      };
+      bar.appendChild(b);
+    }
+  }
   $("zoom").hidden = false;
+}
+function hintButton(label, cost) {
+  const b = el("button", "hintbtn", label);
+  if (cost) b.appendChild(el("span", "cost", "−" + cost));
+  return b;
 }
 $("zoom").onclick = () => { $("zoom").hidden = true; };
 
@@ -530,8 +675,9 @@ function tileEl(word, extraCls) {
   b.setAttribute("aria-label", word);
   if (t) {
     const a = el("div", "art"); a.innerHTML = t.markup || ""; b.appendChild(a);
+    if (state.hints.tiles.includes(word)) { b.classList.add("named"); b.appendChild(el("span", "cap", word)); }
     let timer = null, held = false;
-    const arm = () => { held = false; clearTimeout(timer); timer = setTimeout(() => { held = true; openZoom(t.markup); }, HOLD_MS); };
+    const arm = () => { held = false; clearTimeout(timer); timer = setTimeout(() => { held = true; openZoom(t.markup, word); }, HOLD_MS); };
     const disarm = () => clearTimeout(timer);
     b.addEventListener("pointerdown", arm);
     ["pointerup", "pointerleave", "pointercancel"].forEach((ev) => b.addEventListener(ev, disarm));
@@ -546,31 +692,69 @@ function tileEl(word, extraCls) {
 // ---- render ----------------------------------------------------------------
 // A drawn word is a tree: pictures and glyphs, with bracketed sub-expressions
 // for take-aways like H + (MOUSE − M).
-function unitEl(u) {
-  if (u.kind === "group") return unitsInto(el("span", "grp"), u.units);
-  const d = el("div", "u" + (u.kind === "text" ? " g" : " zoomable"));
-  if (u.kind === "text") d.textContent = u.text;
-  else {
-    d.innerHTML = u.markup || "";
+// `wkey` ("round.word") identifies the clue word being drawn, and `path` the
+// piece's place in its unit tree ("1.0" = second unit, first piece inside), so
+// a picture the player paid to name can be captioned. In a clue the whole word
+// is the tap target (it opens the hint sheet); elsewhere a picture zooms.
+// `below(u, path)`, when given, hangs a node under each picture -- the hint
+// sheet's Show button or the picture's name.
+function unitEl(u, wkey, path, below) {
+  if (u.kind === "group") return unitsInto(el("span", "grp"), u.units, wkey, path, below);
+  const d = el("div", "u" + (u.kind === "text" ? " g" : wkey ? "" : " zoomable"));
+  if (u.kind === "text") { d.textContent = u.text; return d; }
+  d.innerHTML = u.markup || "";
+  if (!wkey) {
     d.title = "Tap to enlarge";
     d.onclick = (e) => { e.stopPropagation(); openZoom(u.markup); };
   }
-  return d;
+  if (wkey && state && (state.hints.pics.includes(wkey + "." + path) || state.hints.words.includes(wkey))) {
+    d.classList.add("named"); d.appendChild(el("span", "cap", picName(u)));
+  }
+  if (!below) return d;
+  const pick = el("span", "pick");
+  pick.appendChild(d);
+  const slot = below(u, path);
+  slot.classList.add("below");
+  pick.appendChild(slot);
+  return pick;
 }
-function unitsInto(box, units) {
+function unitsInto(box, units, wkey, path, below) {
   units.forEach((u, i) => {
     if (i) box.appendChild(el("span", "op" + (u.op === "-" ? " minus" : ""), u.op === "-" ? "−" : "+"));
-    box.appendChild(unitEl(u));
+    box.appendChild(unitEl(u, wkey, path == null ? String(i) : path + "." + i, below));
   });
   return box;
 }
-const rebusGroup = (units) => unitsInto(el("span", "pw rebus"), units);
+const rebusGroup = (units, wkey) => unitsInto(el("span", "pw rebus"), units, wkey);
+// A picture's name. Units carry `word`, but a server started before that
+// field existed sends only the markup -- whose alt/aria-label is the word --
+// so fall back to it rather than reveal an empty name.
+function picName(u) {
+  if (u.word) return u.word;
+  const m = /(?:aria-label|alt)="([^"]*)"/.exec(u.markup || "");
+  const t = document.createElement("textarea");
+  t.innerHTML = m ? m[1] : "";
+  return t.value.toUpperCase();
+}
+// Every picture in a word, with its path, in reading order.
+function pictureLeaves(units, path) {
+  return units.flatMap((u, i) => {
+    const p = path == null ? String(i) : path + "." + i;
+    return u.kind === "group" ? pictureLeaves(u.units, p) : u.kind === "picture" ? [{ u, path: p }] : [];
+  });
+}
+// A blank's answer, drawn the way a clue word is: pictures and letters.
+const answerUnits = (answer) => answer.map((t) => {
+  const tile = tileByWord.get(t.word);
+  return tile ? { kind: "picture", op: t.op, word: t.word, markup: tile.markup } : { kind: "text", op: t.op, text: t.word };
+});
 
 // The whole group: one block per clue, each with its phrase and its blanks.
 function renderRounds() {
   const box = $("rounds"); box.innerHTML = "";
   const multi = PUZZLE.rounds.length > 1;
   box.classList.toggle("multi", multi);
+  box.classList.toggle("over", finished());
   $("eyebrow").textContent = multi ? "Read the picture clues" : "Read the picture sentence";
   PUZZLE.rounds.forEach((r, ri) => {
     const rs = state.rounds[ri];
@@ -585,8 +769,19 @@ function renderRounds() {
     const phrase = el("div", "phrase");
     wrap.appendChild(phrase);
     renderPhrase(phrase, r, rs, ri);
+    phrase.classList.toggle("captioned", Boolean(phrase.querySelector(".cap-word")));
     box.appendChild(wrap);
   });
+}
+
+// A word whose name is known hangs it beneath its underline; the phrase then
+// reserves room for the caption.
+function captioned(node, name, cls) {
+  if (!name) return node;
+  const s = el("span", "stack");
+  s.appendChild(node);
+  s.appendChild(el("span", "cap-word" + (cls ? " " + cls : ""), name));
+  return s;
 }
 
 function renderPhrase(box, r, rs, ri) {
@@ -594,30 +789,50 @@ function renderPhrase(box, r, rs, ri) {
   // Punctuation rides with the word it touches instead of standing alone in
   // the sentence's word spacing: a closing mark hugs the word before it, an
   // opening mark the word after. `chunk` is what actually gets laid out.
+  // One token can hold both kinds -- `: "` closes TIGER and opens IT'S -- so
+  // it is split on whitespace and each piece placed on its own. A straight
+  // quote opens or closes by parity, and becomes the curly mark it stands for.
   const chunks = [];
-  for (const w of r.words) {
+  let quoteOpen = false;
+  for (const [at, w] of r.words.entries()) {
     if (w.kind === "punctuation") {
-      const text = w.text || "";
-      const lead = /^["'(\[\u201c\u2018]/.test(text.trim());
-      if (!lead && chunks.length) { chunks[chunks.length - 1].after += text; continue; }
-      chunks.push({ word: null, before: text, after: "" });
+      for (const piece of String(w.text || "").split(/\s+/).filter(Boolean)) {
+        const lead = /^[(\[\u201c\u2018]/.test(piece) || (piece[0] === '"' && !quoteOpen) ||
+                     (piece[0] === "'" && piece.length === 1 && !chunks.length);
+        const text = piece.replace(/"/g, () => (quoteOpen = !quoteOpen) ? "\u201c" : "\u201d")
+                          .replace(/'/g, (_, i) => (lead && i === 0 ? "\u2018" : "\u2019"));
+        if (!lead && chunks.length) { chunks[chunks.length - 1].after.push(text); continue; }
+        const last = chunks[chunks.length - 1];
+        if (last && last.word === null) last.before.push(text);
+        else chunks.push({ word: null, before: [text], after: [] });
+      }
       continue;
     }
     const last = chunks[chunks.length - 1];
-    if (last && last.word === null) { last.word = w; continue; }
-    chunks.push({ word: w, before: "", after: "" });
+    if (last && last.word === null) { last.word = w; last.at = at; continue; }
+    chunks.push({ word: w, at, before: [], after: [] });
   }
+  // `=` is an operator between drawings, not a mark that hugs a word.
+  const markEl = (t) => el("span", "punct-in" + (t === "=" ? " eq" : ""), t);
 
   for (const c of chunks) {
     const w = c.word;
-    if (!w) { box.appendChild(el("span", "pw punct", c.before)); continue; }
+    if (!w) { box.appendChild(el("span", "pw punct", c.before.join(" "))); continue; }
     const wrap = el("span", "chunk");
-    if (c.before) wrap.appendChild(el("span", "punct-in", c.before.trim()));
+    if (c.before.length) wrap.appendChild(markEl(c.before.join("")));
     const add = (node) => { wrap.appendChild(node); box.appendChild(wrap); };
-    const close = () => { if (c.after) wrap.appendChild(el("span", "punct-in", c.after.trim())); };
+    const close = () => c.after.forEach((t) => wrap.appendChild(markEl(t)));
 
-    if (w.kind === "plain") { add(el("span", "pw plain", w.word)); close(); continue; }
-    if (w.kind === "rebus") { add(rebusGroup(w.units)); close(); continue; }
+    if (w.kind === "plain") { add(el("span", "pw plain", w.word.replace(/'/g, "\u2019"))); close(); continue; }
+    if (w.kind === "rebus") {
+      const wkey = ri + "." + c.at;
+      const g = rebusGroup(w.units, wkey);
+      g.classList.add("askable");
+      g.title = "Hints for this word";
+      g.onclick = () => openWordSheet(ri, c.at);
+      add(captioned(g, state.names[wkey], ""));
+      close(); continue;
+    }
 
     // a blank: filled in place. Several may share one phrase, so each carries
     // its own state and only the ACTIVE one receives taps.
@@ -625,7 +840,7 @@ function renderPhrase(box, r, rs, ri) {
     const bs = rs.blanks[bi] || rs.blanks[0];
     const isActive = ri === state.round && bi === state.active && bs.status === "open";
     const many = allSlots().length > 1;
-    const g = el("span", "pw blank" + (bs.status !== "open" ? " done" : "") +
+    const g = el("span", "pw blank" + (bs.status !== "open" ? " done" : "") + (bs.status === "revealed" ? " given" : "") +
                           // Only worth marking when there is a choice to make.
                           (many ? (isActive ? " active" : bs.status === "open" ? " waiting" : "") : ""));
     g.id = blankId(ri, bi);
@@ -635,9 +850,12 @@ function renderPhrase(box, r, rs, ri) {
       g.title = "Fill this one next";
       g.onclick = () => { if (busy) return; state.round = ri; state.active = bi; save(); render(); };
     }
-    wrap.appendChild(g);
+    wrap.appendChild(bs.status !== "open" && bs.word ? captioned(g, bs.word, bs.status === "solved" ? "ok" : "") : g);
     box.appendChild(wrap);
-    if (bs.status !== "open" && bs.word) {
+    if (bs.status !== "open" && bs.answer && bs.answer.length) {
+      // Finished: the blank is drawn as its rebus, the word hanging beneath.
+      unitsInto(g, answerUnits(bs.answer));
+    } else if (bs.status !== "open" && bs.word) {
       g.appendChild(el("span", "solved", bs.word));
     } else if (bs.expr.length) {
       bs.expr.forEach((tap, i) => {
@@ -676,7 +894,7 @@ function renderReveals() {
     svg.innerHTML = '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>';
     return svg;
   };
-  const chip = (shown, label, value, onReveal) => {
+  const chip = (shown, label, value, onReveal, cost) => {
     const b = el("button", "rv" + (shown ? " shown" : ""));
     if (shown) {
       b.appendChild(el("b", null, label));
@@ -685,6 +903,7 @@ function renderReveals() {
     } else {
       b.appendChild(eye());
       b.appendChild(document.createTextNode(label));
+      if (cost) b.appendChild(el("span", "cost", "−" + cost));
       b.onclick = onReveal;
     }
     box.appendChild(b);
@@ -698,11 +917,20 @@ function renderReveals() {
   const many = PUZZLE.rounds.length > 1;
   chip(bs.showLength || done, many ? "Letters (clue " + (state.round + 1) + ")" : "Letters",
        len + (len === 1 ? " letter" : " letters"),
-       () => { bs.showLength = true; save(); render(); });
+       () => { bs.showLength = true; save(); render(); }, COST.letters);
+  // The bank's pictures are tapped to build answers, so their names are asked
+  // for here instead.
+  if (PUZZLE.pool.icons.length) {
+    const b = el("button", "rv");
+    b.appendChild(eye());
+    b.appendChild(document.createTextNode("Tile hints"));
+    b.onclick = openBankSheet;
+    box.appendChild(b);
+  }
   if (r.hint) {
     chip(rs.showHint || rs.blanks.every((b) => b.status !== "open"),
          many ? "Category (clue " + (state.round + 1) + ")" : "Category", r.hint,
-         () => { rs.showHint = true; save(); render(); });
+         () => { rs.showHint = true; save(); render(); }, COST.category);
   }
 }
 
@@ -759,7 +987,7 @@ function render() {
   $("metaText").textContent = heading() + (themeLine() ? "  ·  " + themeLine() : "");
   const everyBlank = allSlots().map((s) => s.b);
   const tries = everyBlank.reduce((n, b) => n + b.tries, 0);
-  $("tries").textContent = tries ? tries + (tries === 1 ? " guess" : " guesses") : "";
+  $("tries").textContent = "Score " + score();
   renderRounds();
   fitPhrase();
   renderReveals();
@@ -787,13 +1015,15 @@ function render() {
   const dayOpen = openBlanks().length > 0;
   $("enterBtn").disabled = busy || (open && bs.expr.length < 1);
   $("deleteBtn").disabled = busy || !open || !bs.expr.length;
-  $("revealBtn").disabled = busy || !open;
+  $("revealBtn").disabled = busy || !dayOpen;
+  $("revealBtn").textContent = giveUpArmed ? "Tap again to give up" : "Give up";
+  $("revealBtn").classList.toggle("armed", giveUpArmed);
   $("minusBtn").disabled = busy || !open || !bs.expr.length;
   $("minusBtn").classList.toggle("armed", bs.nextOp === "-");
   $("enterBtn").textContent = dayOpen ? "Enter" : "Results";
   if (!dayOpen) $("feedback").textContent = everyBlank.every((b) => b.status === "solved")
     ? (tries === everyBlank.length ? "Solved first try" : "Solved in " + tries)
-    : "Revealed";
+    : "Gave up";
 }
 
 // ---- play ------------------------------------------------------------------
@@ -847,7 +1077,7 @@ async function submit() {
       const more = advance();
       save(); busy = false; render();
       toast(bs.tries === 1 ? "Nailed it" : "Got it");
-      if (!more) setTimeout(showResults, 1200);
+      if (!more) { await nameEverything(); render(); setTimeout(showResults, 1200); }
       return;
     }
     save();
@@ -861,20 +1091,125 @@ async function submit() {
   busy = false; render();
 }
 
-async function reveal() {
-  const bs = active();
-  if (bs.status !== "open" || busy) return;
+// Giving up is the whole day at once, and it takes two taps: the page cannot
+// ask with confirm(), and a single stray tap should not end a puzzle.
+let giveUpArmed = false, giveUpTimer = null;
+async function giveUp() {
+  if (busy || !openBlanks().length) return;
+  if (!giveUpArmed) {
+    giveUpArmed = true; render();
+    clearTimeout(giveUpTimer);
+    giveUpTimer = setTimeout(() => { giveUpArmed = false; render(); }, 3000);
+    return;
+  }
+  giveUpArmed = false; clearTimeout(giveUpTimer);
   busy = true; render();
   try {
-    const out = await api.reveal({ ...ref(), round: state.round, blank: state.active });
-    if (out.error) throw new Error(out.error);
-    bs.status = "revealed"; bs.answer = out.answer.map((p) => ({ word: p.word, op: p.op || "+" })); bs.word = out.word;
-    const more = advance();
-    save(); busy = false; render();
-    if (!more) setTimeout(showResults, 1400);
+    for (const { ri, bi, b } of allSlots()) {
+      if (b.status !== "open") continue;
+      const out = await api.reveal({ ...ref(), round: ri, blank: bi });
+      if (out.error) throw new Error(out.error);
+      b.status = "revealed"; b.expr = [];
+      b.answer = out.answer.map((p) => ({ word: p.word, op: p.op || "+" })); b.word = out.word;
+    }
+    state.gaveUp = true;
+    save();
+    await nameEverything();
+    busy = false; render();
+    setTimeout(showResults, 1400);
     return;
   } catch (e) { toast("Could not reveal"); }
   busy = false; render();
+}
+
+// Once the day is over the board becomes its own answer key: every drawn word
+// gets its name beneath it, free.
+async function nameEverything() {
+  try {
+    for (const [ri, r] of PUZZLE.rounds.entries()) {
+      for (const [at, w] of r.words.entries()) {
+        const k = ri + "." + at;
+        if (w.kind !== "rebus" || state.names[k]) continue;
+        const out = await api.reveal({ ...ref(), round: ri, at });
+        if (out.ok && out.word) state.names[k] = out.word;
+      }
+    }
+    save();
+  } catch (e) { /* names are a nicety; the day is still over */ }
+}
+
+// ---- hint sheets -------------------------------------------------------------
+// One modal, two uses: a drawn word (its pictures, then the word) and the tile
+// bank (every picture tile as a card). Tiles in the bank are tapped to BUILD
+// answers, so their hints live here rather than on the tiles themselves.
+function sheetSub() {
+  return free() ? "The puzzle is over — hints are free." : "Hints lower your score. You're on " + score() + ".";
+}
+function showSheet({ title, word, bank }) {
+  $("wsTitle").textContent = title;
+  $("wsSub").textContent = sheetSub();
+  $("wsDraw").hidden = !word; $("wsWord").hidden = !word; $("wsBank").hidden = !bank;
+  $("wordSheet").hidden = false;
+}
+
+function openWordSheet(ri, at) {
+  const wkey = ri + "." + at;
+  const w = PUZZLE.rounds[ri].words[at];
+  const known = state.names[wkey];
+  const wordPaid = state.hints.words.includes(wkey);
+
+  // Drawn without a word key, so its pictures zoom on a tap; each gets its
+  // name, or a Show button, directly beneath it.
+  const draw = $("wsDraw"); draw.innerHTML = "";
+  draw.appendChild(unitsInto(el("span", "pw rebus"), w.units, null, null, (u, path) => {
+    const pkey = wkey + "." + path;
+    if (wordPaid || state.hints.pics.includes(pkey) || free()) return el("span", "name", picName(u));
+    const b = hintButton("Show", COST.pic);
+    b.onclick = (e) => { e.stopPropagation(); state.hints.pics.push(pkey); save(); render(); openWordSheet(ri, at); };
+    return b;
+  }));
+
+  const wr = $("wsWord"); wr.innerHTML = "";
+  if (known && (wordPaid || free())) wr.appendChild(el("span", "theword", known));
+  // A word drawn as one picture of itself has only the one hint to give: the
+  // picture's Show above already names the word.
+  else if (!w.direct) {
+    const b = hintButton("Reveal the word", free() ? 0 : wordPrice(wkey));
+    b.onclick = async () => {
+      if (busy) return;
+      busy = true;
+      try {
+        const out = await api.reveal({ ...ref(), round: ri, at });
+        if (!out.ok) throw new Error(out.error);
+        state.names[wkey] = out.word;
+        if (!free()) state.hints.words.push(wkey);
+        save();
+      } catch (e) { toast("Could not reveal"); }
+      busy = false; render(); openWordSheet(ri, at);
+    };
+    wr.appendChild(b);
+  }
+  showSheet({ title: "Clue hints", word: true });
+  $("wsWord").hidden = Boolean(w.direct);
+}
+
+function openBankSheet() {
+  const box = $("wsBank"); box.innerHTML = "";
+  for (const t of PUZZLE.pool.icons) {
+    const card = el("div", "card");
+    const pic = el("div", "pic"); pic.innerHTML = t.markup || "";
+    pic.title = "Tap to enlarge";
+    pic.onclick = () => openZoom(t.markup, t.word);
+    card.appendChild(pic);
+    if (state.hints.tiles.includes(t.word) || free()) card.appendChild(el("span", "name", t.word));
+    else {
+      const b = hintButton("Show", COST.tile);
+      b.onclick = () => { state.hints.tiles.push(t.word); save(); render(); openBankSheet(); };
+      card.appendChild(b);
+    }
+    box.appendChild(card);
+  }
+  showSheet({ title: "Tile hints", bank: true });
 }
 
 // ---- results ---------------------------------------------------------------
@@ -890,19 +1225,23 @@ function showResults() {
   const blanks = allBlanks();
   const anyOpen = blanks.some((b) => b.status === "open");
   $("resTitle").textContent = anyOpen ? "In progress"
-    : blanks.every((b) => b.status === "solved") ? "Well read" : "Revealed";
+    : state.gaveUp ? "Gave up" : score() === 100 ? "Perfect" : "Well read";
+  $("resScore").textContent = score();
+  const t = hintTally();
+  const parts = [[t.pics, "picture"], [t.tiles, "tile"], [t.words, "word"],
+                 [t.letters, "letter count"], [t.category, "category"]]
+    .filter(([n]) => n).map(([n, w]) => n + " " + w + (n === 1 ? "" : w === "category" ? "" : "s"));
+  $("resHints").textContent = parts.length ? "Hints: " + parts.join(" · ") : "No hints used";
   $("squares").textContent = blanks.map((b) => b.status === "open" ? "◻️" : square(b)).join("");
   const found = blanks.map((b) => b.word).filter(Boolean);
   $("resWord").textContent = found.join(" · ") || "—";
+  $("resWord").style.fontSize = found.length > 1 ? "20px" : "";
   $("resWordLabel").textContent = blanks.length > 1 ? "Answers" : "Answer";
   $("resTries").textContent = blanks.reduce((n, b) => n + b.tries, 0);
-  const asked = state.rounds.reduce((n, r) =>
-    n + (r.showHint ? 1 : 0) + r.blanks.reduce((m, b) => m + (b.showLength ? 1 : 0), 0), 0);
   $("againBtn").hidden = !PREVIEW;
   $("shareBtn").hidden = PREVIEW;   // nothing to share from an unpublished draft
   $("resSub").textContent = (PUZZLE.number && !PREVIEW ? "Rebus " : "") + heading() +
-    (PUZZLE.title ? "  ·  " + PUZZLE.title : "") +
-    (asked ? "  ·  " + asked + (asked === 1 ? " reveal" : " reveals") : "");
+    (PUZZLE.title && !anyOpen ? "  ·  " + PUZZLE.title : "");
   $("results").hidden = false;
 }
 // Start the preview over without a reload: the curator is judging the puzzle,
@@ -914,7 +1253,7 @@ $("againBtn").onclick = () => {
   render();
 };
 $("shareBtn").onclick = async () => {
-  const text = "Rebus No. " + PUZZLE.number + "\n" + $("squares").textContent + "\n" + location.origin + PLAY_URL;
+  const text = "Rebus No. " + PUZZLE.number + "\nScore " + score() + "/100\n" + $("squares").textContent + "\n" + location.origin + PLAY_URL;
   try { await navigator.clipboard.writeText(text); toast("Copied to clipboard"); }
   catch (e) { toast("Copy failed"); }
 };
@@ -936,7 +1275,7 @@ $("minusBtn").onclick = () => {
   b.nextOp = b.nextOp === "-" ? "+" : "-";
   save(); render();
 };
-$("revealBtn").onclick = reveal;
+$("revealBtn").onclick = giveUp;
 $("helpBtn").onclick = () => { $("help").hidden = false; };
 $("statsBtn").onclick = () => { if (state) showResults(); };
 document.querySelectorAll("[data-close]").forEach((b) => { b.onclick = () => { b.closest(".modal").hidden = true; }; });
@@ -996,6 +1335,8 @@ async function init() {
   link("prevLink", PUZZLE.prev); link("nextLink", PUZZLE.next);
   PUZZLE.pool.icons.forEach((t) => tileByWord.set(t.word, t));
   state = load() || fresh();
+  // A finished day reopened: make sure its answer key is complete.
+  if (finished()) nameEverything().then(() => { if (!$("board").hidden) render(); });
   demo();
   $("introDate").textContent = PREVIEW ? "Preview"
     : PUZZLE.date ? prettyDate(PUZZLE.date) : "Unscheduled";
